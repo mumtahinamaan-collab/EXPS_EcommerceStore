@@ -47,7 +47,7 @@ export default function ResetPassword() {
       setLoading(true);
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/password-reset/confirm/",
+        "https://exps-ecommercestore.onrender.com/api/password-reset/confirm/",
         {
           token: token,
           password: password,

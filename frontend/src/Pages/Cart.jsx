@@ -24,7 +24,7 @@ export default function Cart() {
       navigate("/login");
       return;
     }
-    fetch(`http://127.0.0.1:8000/api/cart/${userId}`)
+    fetch(`https://exps-ecommercestore.onrender.com/api/cart/${userId}`)
       .then((response) => response.json())
       .then((data) => {
         setCartItems(data);
@@ -41,7 +41,7 @@ export default function Cart() {
     const confirmDelete=window.confirm("Are you sure you want to remove this item")
     if(!confirmDelete) return;
     try {
-          const response = await fetch(`http://127.0.0.1:8000/api/cart/delete/${cartId}/`, {
+          const response = await fetch(`https://exps-ecommercestore.onrender.com/api/cart/delete/${cartId}/`, {
             method: "DELETE",
     
             headers: {
@@ -51,7 +51,7 @@ export default function Cart() {
           });
         
           if (response.status==200) {
-            const updated= await fetch (`http://127.0.0.1:8000/api/cart/${userId}` )
+            const updated= await fetch (`https://exps-ecommercestore.onrender.com/api/cart/${userId}` )
             const data =await updated.json();
             setCartItems(data);
             const total = data.reduce(
@@ -73,7 +73,7 @@ export default function Cart() {
       const setQuantity = async(cartId,newQty)=>{
     if(newQty<1) return;
     try {
-          const response = await fetch("http://127.0.0.1:8000/api/cart/update_quantity/", {
+          const response = await fetch("https://exps-ecommercestore.onrender.com/api/cart/update_quantity/", {
             method: "PUT",
     
             headers: {
@@ -89,7 +89,7 @@ export default function Cart() {
           const result = await response.json();
     
           if (response.status==200) {
-            const updated= await fetch (`http://127.0.0.1:8000/api/cart/${userId}/` )
+            const updated= await fetch (`https://exps-ecommercestore.onrender.com/api/cart/${userId}/` )
             const data =await updated.json();
             setCartItems(data);
             const total = data.reduce(

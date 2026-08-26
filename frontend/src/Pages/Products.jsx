@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from "react";
-import ProductCard from "../components/ProductCard";
+import ProductCard from "../components/Productcard";
 import { useNavigate, useParams } from "react-router-dom";
 
 const Products = () => {
@@ -25,7 +25,7 @@ const Products = () => {
   // ==========================================
 
   useEffect(() => {
-    fetch("http://127.0.0.1:8000/api/products/")
+    fetch("https://exps-ecommercestore.onrender.com/api/products/")
       .then((response) => response.json())
       .then((data) => {
         const productData = Array.isArray(data)

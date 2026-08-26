@@ -36,7 +36,7 @@ export default function MyOrders() {
       return;
     }
 
-    fetch(`http://127.0.0.1:8000/api/orders/${userId}/`)
+    fetch(`https://exps-ecommercestore.onrender.com/api/orders/${userId}/`)
       .then(async (res) => {
         const data = await res.json();
 
@@ -73,7 +73,7 @@ export default function MyOrders() {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/orders/${orderNumber}/cancel/`,
+        `https://exps-ecommercestore.onrender.com/api/orders/${orderNumber}/cancel/`,
         {
           method: "POST",
           headers: {
@@ -94,7 +94,7 @@ export default function MyOrders() {
       toast.success("Order cancelled successfully");
 
       const ordersResponse = await fetch(
-        `http://127.0.0.1:8000/api/orders/${userId}/`
+        `https://exps-ecommercestore.onrender.com/api/orders/${userId}/`
       );
 
       const ordersData = await ordersResponse.json();

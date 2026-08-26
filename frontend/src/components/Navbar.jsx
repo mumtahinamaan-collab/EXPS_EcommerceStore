@@ -54,7 +54,7 @@ const Navbar = () => {
 
     try {
       const response = await fetch(
-        `http://127.0.0.1:8000/api/cart/${userId}/`
+        `https://exps-ecommercestore.onrender.com/api/cart/${userId}/`
       );
 
       if (!response.ok) {

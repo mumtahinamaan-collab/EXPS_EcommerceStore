@@ -1,6 +1,6 @@
 import Hero from "../components/Hero.jsx";
 import Benefits from "../components/Benefits.jsx";
-import ProductCard from "../components/ProductCard.jsx";
+import ProductCard from "../components/Productcard.jsx";
 import CategorySection from "../components/CategorySection";
 import axios from "axios";
 import { useEffect, useState } from "react";
@@ -11,7 +11,7 @@ export default function Home() {
 
 useEffect(() => {
   axios
-    .get("http://127.0.0.1:8000/api/random/")
+    .get("https://exps-ecommercestore.onrender.com/api/random/")
     .then((res) => {
       console.log("RANDOM PRODUCTS API RESPONSE:", res.data);
 

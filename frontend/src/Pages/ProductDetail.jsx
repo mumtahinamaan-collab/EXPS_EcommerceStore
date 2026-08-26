@@ -23,7 +23,7 @@ const ProductDetail = () => {
   // =========================
 
   useEffect(() => {
-    fetch(`http://127.0.0.1:8000/api/products/${productSlug}/`)
+    fetch(`https://exps-ecommercestore.onrender.com/api/products/${productSlug}/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Product not found");
@@ -56,7 +56,7 @@ const ProductDetail = () => {
     }
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/cart/add/", {
+      const response = await fetch("https://exps-ecommercestore.onrender.com/api/cart/add/", {
         method: "POST",
 
         headers: {

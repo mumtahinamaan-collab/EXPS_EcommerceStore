@@ -29,7 +29,7 @@ export default function ProductCard({ product }) {
     console.log("QUANTITY:", quantity);
 
     try {
-      const response = await fetch("http://127.0.0.1:8000/api/cart/add/", {
+      const response = await fetch("https://exps-ecommercestore.onrender.com/api/cart/add/", {
         method: "POST",
 
         headers: {

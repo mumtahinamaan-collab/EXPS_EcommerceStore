@@ -81,7 +81,7 @@ export default function Checkout() {
     // NORMAL CART CHECKOUT
     // -----------------------------------------
 
-    fetch(`http://127.0.0.1:8000/api/cart/${userId}/`)
+    fetch(`https://exps-ecommercestore.onrender.com/api/cart/${userId}/`)
       .then(async (res) => {
         const data = await res.json();
 
@@ -267,7 +267,7 @@ export default function Checkout() {
       // -----------------------------------------
 
       const response = await fetch(
-        "http://127.0.0.1:8000/api/place_order/",
+        "https://exps-ecommercestore.onrender.com/api/place_order/",
         {
           method: "POST",
 

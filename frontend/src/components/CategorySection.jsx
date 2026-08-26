@@ -7,7 +7,7 @@ function CategorySection() {
     const [categories, setCategories] = useState([]);
 
     useEffect(() => {
-        axios.get("/api/categories/")
+        axios.get("https://exps-ecommercestore.onrender.com/api/categories/")
     .then((response) => {
 
         const allowedCategories = [

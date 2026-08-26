@@ -1,7 +1,7 @@
 import Hero from "../components/Hero.jsx";
 import Benefits from "../components/Benefits.jsx";
 import ProductCard from "../components/Productcard.jsx";
-import CategorySection from "../components/CategorySection";
+import CategorySection from "../components/CategorySection.jsx";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";

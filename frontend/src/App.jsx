@@ -1,20 +1,20 @@
 import { useState } from "react";
 import Navbar from "./components/Navbar";
 import { Routes, Route } from "react-router-dom";
-import Home from "./Pages/Home";
-import About from "./Pages/About";
-import Contact from "./Pages/Contact";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 import Footer from "./components/Footer";
 import Login from "./Pages/Login";
 import Search from "./Pages/Search";
 import ProductDetail from "./Pages/ProductDetail";
-import Products from "./Pages/Products";
+import Products from "./pages/Products";
 import Register from "./Pages/Register";
-import ForgotPassword from "./pages/ForgotPassword";
-import ResetPassword from "./pages/ResetPassword";
-import Cart from "./pages/Cart";
-import MyOrders from "./pages/MyOrders";
-import Checkout from "./pages/Checkout";
+import ForgotPassword from "./Pages/ForgotPassword";
+import ResetPassword from "./Pages/ResetPassword";
+import Cart from "./Pages/Cart";
+import MyOrders from "./Pages/MyOrders";
+import Checkout from "./Pages/Checkout";
 function App() {
   return (
     <>

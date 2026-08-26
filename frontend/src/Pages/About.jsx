@@ -5,6 +5,8 @@ import {
   Headphones,
   ArrowRight,
 } from "lucide-react"
+import { Link } from "react-router-dom";
+
 
 import heroimg from "../assets/about1.png"
 import story from "../assets/about2.png"
@@ -426,13 +428,13 @@ function About() {
             at prices you'll love.
           </p>
 
-          <button className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-7 py-3 rounded-lg transition">
+          <Link  to="/products" className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-7 py-3 rounded-lg transition">
 
             Shop Now
 
             <ArrowRight size={18} />
 
-          </button>
+          </Link>
 
         </div>
 

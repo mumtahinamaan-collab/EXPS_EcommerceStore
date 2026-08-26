@@ -12,6 +12,8 @@ import {
   FaTwitter,
   FaLinkedinIn,
 } from "react-icons/fa"
+import { Link } from "react-router-dom";
+
 
 import contactImg from "../assets/contact.png"
 
@@ -269,14 +271,14 @@ function Contact() {
         <p className="text-slate-500 max-w-xl mx-auto mb-6">
           Explore our products and discover something you'll love.
         </p>
-
-        <button className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-7 py-3 rounded-lg transition duration-300">
+ 
+        <Link to="/products" className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-7 py-3 rounded-lg transition duration-300">
 
           Shop Now
 
           <ArrowRight size={18} />
 
-        </button>
+        </Link>
 
       </section>
 

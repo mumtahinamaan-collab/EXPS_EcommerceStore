@@ -1,0 +1,63 @@
+import Hero from "../components/Hero.jsx";
+import Benefits from "../components/Benefits.jsx";
+import ProductCard from "../components/ProductCard.jsx";
+import CategorySection from "../components/CategorySection";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+
+export default function Home() {
+  const [products, setProducts] = useState([]);
+
+useEffect(() => {
+  axios
+    .get("http://127.0.0.1:8000/api/random/")
+    .then((res) => {
+      console.log("RANDOM PRODUCTS API RESPONSE:", res.data);
+
+      const data = Array.isArray(res.data)
+        ? res.data
+        : res.data.results || [];
+
+      console.log("RANDOM PRODUCTS:", data);
+
+      setProducts(data);
+    })
+    .catch((error) => {
+      console.error("RANDOM PRODUCTS API ERROR:", error);
+    });
+}, []);
+
+const FreshPicks = products;
+
+  return (
+    <div>
+      <Hero />
+
+      <Benefits />
+      <CategorySection />
+
+      <div className="flex justify-between items-center px-8">
+        <div className="text-3xl font-bold py-4 ">
+          Fresh Picks
+        </div>
+
+        <Link
+          to="/products"
+          className="text-md py-4 text-red-500 cursor-pointer"
+        >
+          View All Products →
+        </Link>
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
+        {FreshPicks.map((product) => (
+                    <ProductCard
+                      key={product.id}
+                      product={product}
+                    />
+                  ))}
+      </div>
+    </div>
+  );
+}

@@ -92,30 +92,26 @@ export default function ProductCard({ product }) {
         {product?.name || "Product"}
       </Link>
 
-      {/* PRICE */}
-      <div className="flex items-end justify-between gap-2">
-        <div>
-          <span className="text-lg font-bold text-red-500 sm:text-xl">
-            ${product.price}
-          </span>
+      {/* PRICE & CART */}
+      <div className="flex items-center justify-between gap-2">
+  <span className="text-lg font-bold text-red-500 sm:text-xl">
+    ${product.price}
+  </span>
 
-          {/* CART */}
-
-          <button
-            type="button"
-            disabled={!product.in_stock}
-            onClick={handleAddToCart}
-            aria-label="Add to cart"
-            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-200 sm:h-10 sm:w-10 ${
-              !product.in_stock
-                ? "cursor-not-allowed border-black bg-black text-white"
-                : "border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
-            }`}
-          >
-            <ShoppingCart size={18} />
-          </button>
-        </div>
-      </div>
+  <button
+    type="button"
+    disabled={!product.in_stock}
+    onClick={handleAddToCart}
+    aria-label="Add to cart"
+    className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-200 sm:h-10 sm:w-10 ${
+      !product.in_stock
+        ? "cursor-not-allowed border-black bg-black text-white"
+        : "border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
+    }`}
+  >
+    <ShoppingCart size={18} />
+  </button>
+</div>
     </div>
   );
 }

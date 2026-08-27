@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import { FaUser, FaLock, FaSignInAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
-import loginImage from "../assets/register.png";
+import loginImage from "../assets/register.jpg";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 const Login = () => {

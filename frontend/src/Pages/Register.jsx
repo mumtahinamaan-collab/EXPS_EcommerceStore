@@ -3,7 +3,7 @@ import { FaUser, FaLock, FaSignInAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import register from "../assets/register.png";
+import register from "../assets/register.jpg";
 const Register = () => {
   const [formData, setFormData] = useState({
     first_name: "",

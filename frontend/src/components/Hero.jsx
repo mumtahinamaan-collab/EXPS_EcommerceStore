@@ -1,25 +1,78 @@
-import heroImage from "../assets/heroimg.png"
+import heroImage from "../assets/heroimg.jpg";
+
 export default function Hero() {
   return (
-     <div
-      className=" flex items-center w-full h-[400px]  bg-cover bg-center "
-      style={{ backgroundImage: `url(${heroImage })` }}
+    <section
+      className="flex w-full h-[240px] sm:h-[300px] md:h-[320px] items-center bg-cover bg-right md:bg-center"
+      style={{ backgroundImage: `url(${heroImage})` }}
     >
-      <div className="max-w- pl-6 md:pl-14">  
-  <h1 className="text- md:text- font-extrabold leading-[1.1] text-6xl mb-3">
-    Shop Smart. <br /> Live Better
-  </h1>
-  <p className=" leading-[1.5] mb-6 text-2xl max-w-">
-    Explore the latest products at prices you'll love<br></br> Easy shopping, secure payments, and fast delivery
-  </p>
-  <div className="flex items-center gap-3">
-    <button className="bg-black text-white text- px-5 py-2.5 rounded-md flex items-center gap-2">
-      Shop Now <span>→</span>
-    </button>
-    
-  </div>
+      {/* Optional dark overlay */}
+      <div className="absolute inset-0 "></div>
 
-</div>
-    </div>
-  )
+      <div
+        className="
+          relative z-10
+          w-full
+          px-5
+          sm:px-8
+          md:max-w-2xl
+          md:px-14
+        "
+      >
+        <h1
+          className="
+            mb-2
+            text-3xl
+            font-extrabold
+            leading-tight
+            sm:text-4xl
+            md:mb-4
+            md:text-6xl
+          "
+        >
+          Shop Smart.
+          <br />
+          Live Better
+        </h1>
+
+        <p
+          className="
+            mb-4
+            max-w-lg
+            text-sm
+            leading-relaxed
+            sm:text-base
+            md:mb-6
+            md:text-xl
+          "
+        >
+          Explore the latest products at prices you'll love.
+          Easy shopping, secure payments, and fast delivery.
+        </p>
+
+        <button
+          className="
+            inline-flex
+            items-center
+            gap-2
+            rounded-md
+            bg-black
+            px-5
+            py-2.5
+            text-sm
+            font-medium
+            text-white
+            transition
+            hover:bg-gray-800
+            sm:px-6
+            sm:py-3
+            md:text-base
+          "
+        >
+          Shop Now
+          <span>→</span>
+        </button>
+      </div>
+    </section>
+  );
 }

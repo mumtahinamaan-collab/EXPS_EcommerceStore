@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 
 import {
@@ -17,6 +17,14 @@ import {
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const showMobileSearch =
+    location.pathname === "/" || location.pathname.startsWith("/products");
+  const isAuthPage =
+    location.pathname === "/login" ||
+    location.pathname === "/register" ||
+    location.pathname === "/forgot-password" ||
+    location.pathname === "/reset-password";
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
@@ -54,7 +62,7 @@ const Navbar = () => {
 
     try {
       const response = await fetch(
-        `https://exps-ecommercestore.onrender.com/api/cart/${userId}/`
+        `https://exps-ecommercestore.onrender.com/api/cart/${userId}/`,
       );
 
       if (!response.ok) {
@@ -72,7 +80,7 @@ const Navbar = () => {
       // Har cart item ki quantity ka total
       const totalQuantity = items.reduce(
         (total, item) => total + Number(item.quantity || 0),
-        0
+        0,
       );
 
       setCartCount(totalQuantity);
@@ -152,9 +160,13 @@ const Navbar = () => {
           DESKTOP NAVBAR
       ===================================================== */}
 
-      <nav className="sticky top-0 z-50 hidden h-16 w-full bg-white shadow-sm md:block">
+      <nav
+        className={`sticky top-0 z-50 h-16 w-full bg-white shadow-sm ${
+          isAuthPage ? "hidden" : "hidden md:block"
+        }`}
+      >
+        {" "}
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-3">
-
           {/* ================= LOGO ================= */}
 
           <Link to="/" className="flex items-center gap-2">
@@ -210,7 +222,6 @@ const Navbar = () => {
           {/* ================= RIGHT SIDE ================= */}
 
           <div className="flex items-center gap-2">
-
             {/* SEARCH */}
 
             <form
@@ -249,16 +260,13 @@ const Navbar = () => {
 
             {isLoggedIn ? (
               <div className="relative">
-
                 <button
                   onClick={() => setShowDropdown(!showDropdown)}
                   className="flex items-center gap-2 rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800"
                 >
                   <User size={17} />
 
-                  <span>
-                    {userName || "My Account"}
-                  </span>
+                  <span>{userName || "My Account"}</span>
 
                   <ChevronDown
                     size={15}
@@ -272,11 +280,8 @@ const Navbar = () => {
 
                 {showDropdown && (
                   <div className="absolute right-0 top-12 w-48 rounded-lg border border-gray-100 bg-white py-2 shadow-lg">
-
                     <div className="border-b px-4 py-2">
-                      <p className="text-xs text-gray-400">
-                        Logged in as
-                      </p>
+                      <p className="text-xs text-gray-400">Logged in as</p>
 
                       <p className="truncate text-sm font-medium text-gray-800">
                         {userName || "User"}
@@ -305,6 +310,58 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      {/* =====================================================
+    MOBILE TOP HEADER
+===================================================== */}
+
+      <nav
+        className={`sticky top-0 z-40 bg-white shadow-sm ${
+          isAuthPage ? "block" : "md:hidden"
+        }`}
+      >
+        {" "}
+        <div className="flex flex-col items-center px-4 py-3">
+          {/* LOGO */}
+          <Link to="/" className="flex flex-col items-center">
+            <img
+              src={logo}
+              alt="Shopora Logo"
+              className="h-12 w-12 object-contain"
+            />
+
+            <h1 className="font-serif text-xl font-semibold tracking-wide text-red-500">
+              SHOPORA
+            </h1>
+
+            <div className="mt-0.5 flex items-center justify-center gap-1">
+              <span className="h-px w-2 bg-red-500"></span>
+
+              <p className="text-[7px] font-medium uppercase tracking-[1.5px] text-red-500">
+                FIND YOUR STYLE
+              </p>
+
+              <span className="h-px w-2 bg-red-500"></span>
+            </div>
+          </Link>
+
+          {/* SEARCH */}
+          {showMobileSearch && (
+            <form
+              method="GET"
+              action="/search"
+              className="mt-3 flex w-full max-w-md items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2"
+            >
+              <Search size={18} className="shrink-0 text-gray-400" />
+
+              <input
+                name="q"
+                placeholder="Search products..."
+                className="ml-2 w-full bg-transparent text-sm text-gray-700 outline-none"
+              />
+            </form>
+          )}
+        </div>
+      </nav>
 
       {/* =====================================================
           MOBILE NAVBAR
@@ -312,7 +369,6 @@ const Navbar = () => {
 
       <nav className="fixed bottom-0 left-0 z-50 w-full border-t bg-white shadow-lg md:hidden">
         <div className="flex items-center justify-around px-1 py-2">
-
           {/* HOME */}
 
           <NavLink to="/" end className={mobileNavClass}>
@@ -341,24 +397,24 @@ const Navbar = () => {
               </div>
             </NavLink>
           )}
+          {/*CART*/}
 
-          {/* ABOUT */}
+          <Link
+            to="/cart"
+            className="flex flex-col items-center gap-1 text-[10px]"
+            title="Cart"
+          >
+            <ShoppingCart size={22} />
+            <span>Cart</span>
 
-          <NavLink to="/about" className={mobileNavClass}>
-            <div className="flex flex-col items-center gap-1 text-[10px]">
-              <Info size={21} />
-              <span>About</span>
-            </div>
-          </NavLink>
+            {/* CART COUNT */}
 
-          {/* CONTACT */}
-
-          <NavLink to="/contact" className={mobileNavClass}>
-            <div className="flex flex-col items-center gap-1 text-[10px]">
-              <Phone size={21} />
-              <span>Contact</span>
-            </div>
-          </NavLink>
+            {cartCount > 0 && (
+              <span className="absolute -right-1 -top-1 flex h-5 min-w-5 items-center justify-center rounded-full bg-red-600 px-1 text-[10px] font-bold text-white">
+                {cartCount > 99 ? "99+" : cartCount}
+              </span>
+            )}
+          </Link>
 
           {/* ACCOUNT / LOGIN */}
 
@@ -373,10 +429,7 @@ const Navbar = () => {
               </div>
             </button>
           ) : (
-            <Link
-              to="/login"
-              className="text-gray-600 hover:text-red-600"
-            >
+            <Link to="/login" className="text-gray-600 hover:text-red-600">
               <div className="flex flex-col items-center gap-1 text-[10px]">
                 <User size={21} />
                 <span>Login</span>

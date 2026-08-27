@@ -15,7 +15,7 @@ import {
 import { Link } from "react-router-dom";
 
 
-import contactImg from "../assets/contact.png"
+import contactImg from "../assets/contact.jpg"
 
 
 function Contact() {
@@ -23,52 +23,50 @@ function Contact() {
     <div className="w-full bg-white">
 
       {/* ================= HERO ================= */}
-      <section className="bg-[#fff3ef] rounded-2xl px-4 w-auto py-10 md:px-10 md:py-12">
+<section className="relative overflow-hidden  bg-[#fff3ef] px-4 py-10 md:px-10 md:py-12">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+  {/* Background Image */}
+  <div
+className="pointer-events-none absolute inset-0 bg-contain bg-right bg-no-repeat opacity-60 md:bg-[length:auto_100%]"    style={{
+      backgroundImage: `url(${contactImg})`,
+    }}
+  />
 
-          {/* Text */}
-          <div className="text-center md:text-left">
+  {/* Content */}
+  <div className="relative z-10 grid grid-cols-1 items-center md:grid-cols-2">
 
-            <p className="text-red-500 text-sm font-bold uppercase tracking-wide mb-3">
-              Contact Us
-            </p>
+    {/* Text */}
+    <div className="text-center md:text-left">
 
-            <h1 className="text-4xl md:text-5xl font-bold text-slate-900 leading-tight mb-5">
-              We'd Love To
-              <br />
-              <span className="text-red-500">
-                Hear From You
-              </span>
-            </h1>
+      <p className="mb-3 text-sm font-bold uppercase tracking-wide text-red-500">
+        Contact Us
+      </p>
 
-            <p className="max-w-xl text-slate-500 leading-7">
-              Have a question or need help?
-              Feel free to reach out to our team.
-              We're always happy to help you with your shopping experience.
-            </p>
+      <h1 className="mb-5 text-lg font-bold leading-tight text-slate-900 md:text-5xl">
+        We'd Love To
+        <br />
+        <span className="text-red-500">
+          Hear From You
+        </span>
+      </h1>
 
-          </div>
+      <p className="max-w-xl text-sm leading-7 ">
+        Have a question or need help?
+        Feel free to reach out to our team.
+        We're always happy to help you with your shopping experience.
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
 
 
-          {/* Image */}
-          <div className="flex justify-center md:justify-end">
-
-            <img
-              src={contactImg}
-              alt="Contact ShopEase"
-              className="w-full max-w-[380px] h-[300px] object-contain"
-            />
-
-          </div>
-
-        </div>
-
-      </section>
 
 
       {/* ================= CONTACT INFO ================= */}
-      <section className="py-14 md:py-16">
+      <section className="py-6 md:py-10">
 
         <div className="text-center mb-10">
 
@@ -76,7 +74,7 @@ function Contact() {
             Get In Touch
           </p>
 
-          <h2 className="text-3xl md:text-4xl font-bold text-slate-900">
+          <h2 className="text-lg md:text-4xl font-bold text-slate-900">
             We're Here To Help
           </h2>
 
@@ -88,7 +86,7 @@ function Contact() {
 
 
         {/* Contact Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2  lg:grid-cols-4 gap-5">
 
 
           {/* Email */}
@@ -188,7 +186,7 @@ function Contact() {
 
 
       {/* ================= SOCIAL MEDIA ================= */}
-      <section className="bg-slate-50 rounded-2xl py-12 md:py-14 px-6 text-center">
+      <section className="bg-slate-50 rounded-2xl py-6 md:py-1 px-2 text-center">
 
         <p className="text-red-500 text-sm font-bold uppercase tracking-wide mb-2">
           Follow Us

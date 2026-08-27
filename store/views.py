@@ -69,7 +69,7 @@ def random_products(request):
 
     random.shuffle(products)
     
-    limited_prodcuts = products[0:4]
+    limited_prodcuts = products[0:8]
 
     category = request.GET.get("category")
 

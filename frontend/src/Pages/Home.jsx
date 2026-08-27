@@ -67,6 +67,14 @@ export default function Home() {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
+      <div className="my-6 flex justify-center md:hidden">
+  <Link
+    to="/products"
+    className="rounded-lg bg-red-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-600"
+  >
+    Explore More Products
+  </Link>
+</div>
     </div>
   );
 }

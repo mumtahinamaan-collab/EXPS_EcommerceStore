@@ -1,1542 +1,1465 @@
 [
-{
-  "model": "store.product",
-  "pk": 1,
-  "fields": {
-    "name": "Black Women's Gown",
-    "description": "The Black Women's Gown is an elegant and timeless evening gown. With a sleek black design, it's perfect for formal events and special occasions, exuding sophistication and style.",
-    "price": "129.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-1E8EC2C3A5",
-    "in_stock": true,
-    "quantity": 25,
-    "category": 1,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:30.525Z",
-    "slug": "black-womens-gown"
+  {
+    "model": "store.product",
+    "pk": 1,
+    "fields": {
+      "name": "Black Women's Gown",
+      "description": "The Black Women's Gown is an elegant and timeless evening gown. With a sleek black design, it's perfect for formal events and special occasions, exuding sophistication and style.",
+      "price": "129.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-dresses/black-women's-gown/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-1E8EC2C3A5",
+      "in_stock": true,
+      "quantity": 25,
+      "category": 1,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:30.525Z",
+      "slug": "black-womens-gown"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 2,
+    "fields": {
+      "name": "Corset Leather With Skirt",
+      "description": "The Corset Leather With Skirt is a bold and edgy ensemble that combines a stylish corset with a matching skirt. Ideal for fashion-forward individuals, it makes a statement at any event.",
+      "price": "89.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-0C542DDEAB",
+      "in_stock": true,
+      "quantity": 30,
+      "category": 1,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:30.541Z",
+      "slug": "corset-leather-with-skirt"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 3,
+    "fields": {
+      "name": "Corset With Black Skirt",
+      "description": "The Corset With Black Skirt is a chic and versatile outfit that pairs a fashionable corset with a classic black skirt. It offers a trendy and coordinated look for various occasions.",
+      "price": "79.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-C8EEAC5CFE",
+      "in_stock": true,
+      "quantity": 33,
+      "category": 1,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:30.555Z",
+      "slug": "corset-with-black-skirt"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 4,
+    "fields": {
+      "name": "Dress Pea",
+      "description": "The Dress Pea is a stylish and comfortable dress with a pea pattern. Perfect for casual outings, it adds a playful and fun element to your wardrobe, making it a great choice for day-to-day wear.",
+      "price": "49.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-92302C777B",
+      "in_stock": true,
+      "quantity": 6,
+      "category": 1,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:30.563Z",
+      "slug": "dress-pea"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 5,
+    "fields": {
+      "name": "Marni Red & Black Suit",
+      "description": "The Marni Red & Black Suit is a sophisticated and fashion-forward suit ensemble. With a combination of red and black tones, it showcases a modern design for a bold and confident look.",
+      "price": "179.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-DA69962D8B",
+      "in_stock": true,
+      "quantity": 62,
+      "category": 1,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:30.573Z",
+      "slug": "marni-red-black-suit"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 6,
+    "fields": {
+      "name": "Black & Brown Slipper",
+      "description": "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation.",
+      "price": "19.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-3D3A7005FA",
+      "in_stock": true,
+      "quantity": 3,
+      "category": 2,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:32.909Z",
+      "slug": "black-brown-slipper"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 7,
+    "fields": {
+      "name": "Calvin Klein Heel Shoes",
+      "description": "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble.",
+      "price": "79.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-63256F6E9E",
+      "in_stock": true,
+      "quantity": 93,
+      "category": 2,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:32.926Z",
+      "slug": "calvin-klein-heel-shoes"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 8,
+    "fields": {
+      "name": "Golden Shoes Woman",
+      "description": "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit.",
+      "price": "49.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-6BCEF2ED18",
+      "in_stock": true,
+      "quantity": 88,
+      "category": 2,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:32.926Z",
+      "slug": "golden-shoes-woman"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 9,
+    "fields": {
+      "name": "Pampi Shoes",
+      "description": "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look.",
+      "price": "29.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-7D54243632",
+      "in_stock": true,
+      "quantity": 49,
+      "category": 2,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:32.941Z",
+      "slug": "pampi-shoes"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 10,
+    "fields": {
+      "name": "Red Shoes",
+      "description": "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe.",
+      "price": "34.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-1B1EB04E1F",
+      "in_stock": true,
+      "quantity": 7,
+      "category": 2,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:32.958Z",
+      "slug": "red-shoes"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 11,
+    "fields": {
+      "name": "Blue Women's Handbag",
+      "description": "The Blue Women's Handbag is a stylish and spacious accessory for everyday use. With a vibrant blue color and multiple compartments, it combines fashion and functionality.",
+      "price": "49.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-bags/blue-women's-handbag/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-D9A48FE353",
+      "in_stock": true,
+      "quantity": 76,
+      "category": 6,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:34.475Z",
+      "slug": "blue-womens-handbag"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 12,
+    "fields": {
+      "name": "Heshe Women's Leather Bag",
+      "description": "The Heshe Women's Leather Bag is a luxurious and high-quality leather bag for the sophisticated woman. With a timeless design and durable craftsmanship, it's a versatile accessory.",
+      "price": "129.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women's-leather-bag/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-C1D7BDE10B",
+      "in_stock": true,
+      "quantity": 99,
+      "category": 6,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:34.491Z",
+      "slug": "heshe-womens-leather-bag"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 13,
+    "fields": {
+      "name": "Prada Women Bag",
+      "description": "The Prada Women Bag is an iconic designer bag that exudes elegance and luxury. Crafted with precision and featuring the Prada logo, it's a statement piece for fashion enthusiasts.",
+      "price": "599.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-EF25D00422",
+      "in_stock": true,
+      "quantity": 75,
+      "category": 6,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:34.513Z",
+      "slug": "prada-women-bag"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 14,
+    "fields": {
+      "name": "White Faux Leather Backpack",
+      "description": "The White Faux Leather Backpack is a trendy and practical backpack for the modern woman. With a sleek white design and ample storage space, it's perfect for both casual and on-the-go styles.",
+      "price": "39.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-1D1A091CAE",
+      "in_stock": true,
+      "quantity": 39,
+      "category": 6,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:34.532Z",
+      "slug": "white-faux-leather-backpack"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 15,
+    "fields": {
+      "name": "Women Handbag Black",
+      "description": "The Women Handbag in Black is a classic and versatile accessory that complements various outfits. With a timeless black color and functional design, it's a must-have in every woman's wardrobe.",
+      "price": "59.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-BA081F3E79",
+      "in_stock": true,
+      "quantity": 11,
+      "category": 6,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:34.534Z",
+      "slug": "women-handbag-black"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 16,
+    "fields": {
+      "name": "Green Crystal Earring",
+      "description": "The Green Crystal Earring is a dazzling accessory that features a vibrant green crystal. With a classic design, it adds a touch of elegance to your ensemble, perfect for formal or special occasions.",
+      "price": "29.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-8078C372AD",
+      "in_stock": true,
+      "quantity": 54,
+      "category": 7,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:37.090Z",
+      "slug": "green-crystal-earring"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 17,
+    "fields": {
+      "name": "Green Oval Earring",
+      "description": "The Green Oval Earring is a stylish and versatile accessory with a unique oval shape. Whether for casual or dressy occasions, its green hue and contemporary design make it a standout piece.",
+      "price": "24.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-3E42A49269",
+      "in_stock": true,
+      "quantity": 73,
+      "category": 7,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:37.115Z",
+      "slug": "green-oval-earring"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 18,
+    "fields": {
+      "name": "Tropical Earring",
+      "description": "The Tropical Earring is a fun and playful accessory inspired by tropical elements. Featuring vibrant colors and a lively design, it's perfect for adding a touch of summer to your look.",
+      "price": "19.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-FB6309410A",
+      "in_stock": true,
+      "quantity": 1,
+      "category": 7,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:37.117Z",
+      "slug": "tropical-earring"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 19,
+    "fields": {
+      "name": "iPhone 5s",
+      "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
+      "price": "199.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-58966BE624",
+      "in_stock": true,
+      "quantity": 25,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.185Z",
+      "slug": "iphone-5s"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 20,
+    "fields": {
+      "name": "iPhone 6",
+      "description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
+      "price": "299.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-C82FD97E00",
+      "in_stock": true,
+      "quantity": 60,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.185Z",
+      "slug": "iphone-6"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 21,
+    "fields": {
+      "name": "iPhone 13 Pro",
+      "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
+      "price": "1099.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-1E4021F866",
+      "in_stock": true,
+      "quantity": 56,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.200Z",
+      "slug": "iphone-13-pro"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 22,
+    "fields": {
+      "name": "iPhone X",
+      "description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
+      "price": "899.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-7345830185",
+      "in_stock": true,
+      "quantity": 37,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.209Z",
+      "slug": "iphone-x"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 23,
+    "fields": {
+      "name": "Oppo A57",
+      "description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
+      "price": "249.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-BDE0EE9B0B",
+      "in_stock": true,
+      "quantity": 19,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.209Z",
+      "slug": "oppo-a57"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 24,
+    "fields": {
+      "name": "Oppo F19 Pro Plus",
+      "description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
+      "price": "399.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-CA4C7EFCC4",
+      "in_stock": true,
+      "quantity": 78,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.225Z",
+      "slug": "oppo-f19-pro-plus"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 25,
+    "fields": {
+      "name": "Oppo K1",
+      "description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
+      "price": "299.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-F6F9DF110B",
+      "in_stock": true,
+      "quantity": 55,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.225Z",
+      "slug": "oppo-k1"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 26,
+    "fields": {
+      "name": "Realme C35",
+      "description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
+      "price": "149.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-F7E58FB060",
+      "in_stock": true,
+      "quantity": 48,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.241Z",
+      "slug": "realme-c35"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 27,
+    "fields": {
+      "name": "Realme X",
+      "description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
+      "price": "299.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-x/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-D3E570FA34",
+      "in_stock": true,
+      "quantity": 12,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.241Z",
+      "slug": "realme-x"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 28,
+    "fields": {
+      "name": "Realme XT",
+      "description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
+      "price": "349.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-F8B430656C",
+      "in_stock": true,
+      "quantity": 80,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.256Z",
+      "slug": "realme-xt"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 29,
+    "fields": {
+      "name": "Samsung Galaxy S7",
+      "description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
+      "price": "299.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-6DB9093F3D",
+      "in_stock": true,
+      "quantity": 67,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.263Z",
+      "slug": "samsung-galaxy-s7"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 30,
+    "fields": {
+      "name": "Samsung Galaxy S8",
+      "description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
+      "price": "499.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-C70F3AFAE3",
+      "in_stock": true,
+      "quantity": 0,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.266Z",
+      "slug": "samsung-galaxy-s8"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 31,
+    "fields": {
+      "name": "Samsung Galaxy S10",
+      "description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
+      "price": "699.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-71380F1C50",
+      "in_stock": true,
+      "quantity": 19,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.266Z",
+      "slug": "samsung-galaxy-s10"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 32,
+    "fields": {
+      "name": "Vivo S1",
+      "description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
+      "price": "249.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-384DDF8FE8",
+      "in_stock": true,
+      "quantity": 50,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.282Z",
+      "slug": "vivo-s1"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 33,
+    "fields": {
+      "name": "Vivo V9",
+      "description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
+      "price": "299.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-94CFFB5FBD",
+      "in_stock": true,
+      "quantity": 82,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.282Z",
+      "slug": "vivo-v9"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 34,
+    "fields": {
+      "name": "Vivo X21",
+      "description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
+      "price": "499.99",
+      "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-CC7C7100E9",
+      "in_stock": true,
+      "quantity": 7,
+      "category": 3,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:39.298Z",
+      "slug": "vivo-x21"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 35,
+    "fields": {
+      "name": "Amazon Echo Plus",
+      "description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
+      "price": "99.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-F0F561A153",
+      "in_stock": true,
+      "quantity": 61,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.342Z",
+      "slug": "amazon-echo-plus"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 36,
+    "fields": {
+      "name": "Apple Airpods",
+      "description": "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
+      "price": "129.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-0B803EDFA5",
+      "in_stock": true,
+      "quantity": 67,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.359Z",
+      "slug": "apple-airpods"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 37,
+    "fields": {
+      "name": "Apple AirPods Max Silver",
+      "description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
+      "price": "549.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-A1E7CA508E",
+      "in_stock": true,
+      "quantity": 59,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.376Z",
+      "slug": "apple-airpods-max-silver"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 38,
+    "fields": {
+      "name": "Apple Airpower Wireless Charger",
+      "description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
+      "price": "79.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-7F8ABF5205",
+      "in_stock": true,
+      "quantity": 1,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.376Z",
+      "slug": "apple-airpower-wireless-charger"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 39,
+    "fields": {
+      "name": "Apple HomePod Mini Cosmic Grey",
+      "description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
+      "price": "99.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-69EF2AC208",
+      "in_stock": true,
+      "quantity": 27,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.392Z",
+      "slug": "apple-homepod-mini-cosmic-grey"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 40,
+    "fields": {
+      "name": "Apple iPhone Charger",
+      "description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
+      "price": "19.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-3BAF721A5E",
+      "in_stock": true,
+      "quantity": 31,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.392Z",
+      "slug": "apple-iphone-charger"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 41,
+    "fields": {
+      "name": "Apple MagSafe Battery Pack",
+      "description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
+      "price": "99.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-7458064035",
+      "in_stock": true,
+      "quantity": 1,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.412Z",
+      "slug": "apple-magsafe-battery-pack"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 42,
+    "fields": {
+      "name": "Apple Watch Series 4 Gold",
+      "description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
+      "price": "349.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-652C0D905A",
+      "in_stock": true,
+      "quantity": 33,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.412Z",
+      "slug": "apple-watch-series-4-gold"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 43,
+    "fields": {
+      "name": "Beats Flex Wireless Earphones",
+      "description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
+      "price": "49.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-1499C79341",
+      "in_stock": true,
+      "quantity": 50,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.424Z",
+      "slug": "beats-flex-wireless-earphones"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 44,
+    "fields": {
+      "name": "iPhone 12 Silicone Case with MagSafe Plum",
+      "description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
+      "price": "29.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-0D29390BAF",
+      "in_stock": true,
+      "quantity": 69,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.431Z",
+      "slug": "iphone-12-silicone-case-with-magsafe-plum"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 45,
+    "fields": {
+      "name": "Monopod",
+      "description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
+      "price": "19.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-7B045180B2",
+      "in_stock": true,
+      "quantity": 48,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.441Z",
+      "slug": "monopod"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 46,
+    "fields": {
+      "name": "Selfie Lamp with iPhone",
+      "description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
+      "price": "14.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-49E78A33B7",
+      "in_stock": true,
+      "quantity": 58,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.441Z",
+      "slug": "selfie-lamp-with-iphone"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 47,
+    "fields": {
+      "name": "Selfie Stick Monopod",
+      "description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
+      "price": "12.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-11BB0D802A",
+      "in_stock": true,
+      "quantity": 11,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.450Z",
+      "slug": "selfie-stick-monopod"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 48,
+    "fields": {
+      "name": "TV Studio Camera Pedestal",
+      "description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
+      "price": "499.99",
+      "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-35C7BF216E",
+      "in_stock": true,
+      "quantity": 15,
+      "category": 5,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:40.458Z",
+      "slug": "tv-studio-camera-pedestal"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 49,
+    "fields": {
+      "name": "Brown Leather Belt Watch",
+      "description": "The Brown Leather Belt Watch is a stylish timepiece with a classic design. Featuring a genuine leather strap and a sleek dial, it adds a touch of sophistication to your look.",
+      "price": "89.99",
+      "image": "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-E1749FFEEA",
+      "in_stock": true,
+      "quantity": 32,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:42.143Z",
+      "slug": "brown-leather-belt-watch"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 50,
+    "fields": {
+      "name": "Longines Master Collection",
+      "description": "The Longines Master Collection is an elegant and refined watch known for its precision and craftsmanship. With a timeless design, it's a symbol of luxury and sophistication.",
+      "price": "1499.99",
+      "image": "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-BFA2B8F84B",
+      "in_stock": true,
+      "quantity": 100,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:42.171Z",
+      "slug": "longines-master-collection"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 51,
+    "fields": {
+      "name": "Rolex Cellini Date Black Dial",
+      "description": "The Rolex Cellini Date with Black Dial is a classic and prestigious watch. With a black dial and date complication, it exudes sophistication and is a symbol of Rolex's heritage.",
+      "price": "8999.99",
+      "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-E5B87947B2",
+      "in_stock": true,
+      "quantity": 40,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:42.173Z",
+      "slug": "rolex-cellini-date-black-dial"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 52,
+    "fields": {
+      "name": "Rolex Cellini Moonphase",
+      "description": "The Rolex Cellini Moonphase is a masterpiece of horology, featuring a moon phase complication and exquisite design. It reflects Rolex's commitment to precision and elegance.",
+      "price": "12999.99",
+      "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-6E5524E495",
+      "in_stock": true,
+      "quantity": 36,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:42.192Z",
+      "slug": "rolex-cellini-moonphase"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 53,
+    "fields": {
+      "name": "Rolex Datejust",
+      "description": "The Rolex Datejust is an iconic and versatile timepiece with a date window. Known for its timeless design and reliability, it's a symbol of Rolex's watchmaking excellence.",
+      "price": "10999.99",
+      "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-489A4638F5",
+      "in_stock": true,
+      "quantity": 86,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:42.200Z",
+      "slug": "rolex-datejust"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 54,
+    "fields": {
+      "name": "Rolex Submariner Watch",
+      "description": "The Rolex Submariner is a legendary dive watch with a rich history. Known for its durability and water resistance, it's a symbol of adventure and exploration.",
+      "price": "13999.99",
+      "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-397AB1A04B",
+      "in_stock": true,
+      "quantity": 55,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:42.201Z",
+      "slug": "rolex-submariner-watch"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 55,
+    "fields": {
+      "name": "IWC Ingenieur Automatic Steel",
+      "description": "The IWC Ingenieur Automatic Steel watch is a durable and sophisticated timepiece. With a stainless steel case and automatic movement, it combines precision and style for watch enthusiasts.",
+      "price": "4999.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-4C1FE5FAC4",
+      "in_stock": true,
+      "quantity": 90,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:43.227Z",
+      "slug": "iwc-ingenieur-automatic-steel"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 56,
+    "fields": {
+      "name": "Rolex Cellini Moonphase",
+      "description": "The Rolex Cellini Moonphase watch is a masterpiece of horology. Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is renowned for.",
+      "price": "15999.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-71D074C2F1",
+      "in_stock": true,
+      "quantity": 52,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:43.233Z",
+      "slug": "rolex-cellini-moonphase"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 57,
+    "fields": {
+      "name": "Rolex Datejust Women",
+      "description": "The Rolex Datejust Women's watch is an iconic timepiece designed for women. With a timeless design and a date complication, it offers both elegance and functionality.",
+      "price": "10999.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-7F966049C3",
+      "in_stock": true,
+      "quantity": 4,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:43.241Z",
+      "slug": "rolex-datejust-women"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 58,
+    "fields": {
+      "name": "Watch Gold for Women",
+      "description": "The Gold Women's Watch is a stunning accessory that combines luxury and style. Featuring a gold-plated case and a chic design, it adds a touch of glamour to any outfit.",
+      "price": "799.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-29567975CB",
+      "in_stock": true,
+      "quantity": 0,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:43.241Z",
+      "slug": "watch-gold-for-women"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 59,
+    "fields": {
+      "name": "Women's Wrist Watch",
+      "description": "The Women's Wrist Watch is a versatile and fashionable timepiece for everyday wear. With a comfortable strap and a simple yet elegant design, it complements various styles.",
+      "price": "129.99",
+      "image": "https://cdn.dummyjson.com/product-images/womens-watches/women's-wrist-watch/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-1B53BC9BB9",
+      "in_stock": true,
+      "quantity": 12,
+      "category": 4,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:43.259Z",
+      "slug": "womens-wrist-watch"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 60,
+    "fields": {
+      "name": "Apple MacBook Pro 14 Inch Space Grey",
+      "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
+      "price": "1999.99",
+      "image": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-1AC9B8FF0B",
+      "in_stock": true,
+      "quantity": 24,
+      "category": 8,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:46.024Z",
+      "slug": "apple-macbook-pro-14-inch-space-grey"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 61,
+    "fields": {
+      "name": "Asus Zenbook Pro Dual Screen Laptop",
+      "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
+      "price": "1799.99",
+      "image": "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-2D3E4CB513",
+      "in_stock": true,
+      "quantity": 45,
+      "category": 8,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:46.039Z",
+      "slug": "asus-zenbook-pro-dual-screen-laptop"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 62,
+    "fields": {
+      "name": "Huawei Matebook X Pro",
+      "description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
+      "price": "1399.99",
+      "image": "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-D5C7273727",
+      "in_stock": true,
+      "quantity": 75,
+      "category": 8,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:46.059Z",
+      "slug": "huawei-matebook-x-pro"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 63,
+    "fields": {
+      "name": "Lenovo Yoga 920",
+      "description": "The Lenovo Yoga 920 is a 2-in-1 convertible laptop with a flexible hinge, allowing you to use it as a laptop or tablet, offering versatility and portability.",
+      "price": "1099.99",
+      "image": "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-53724967D2",
+      "in_stock": true,
+      "quantity": 40,
+      "category": 8,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:46.059Z",
+      "slug": "lenovo-yoga-920"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 64,
+    "fields": {
+      "name": "New DELL XPS 13 9300 Laptop",
+      "description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
+      "price": "1499.99",
+      "image": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-2C09525A5F",
+      "in_stock": true,
+      "quantity": 74,
+      "category": 8,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:46.075Z",
+      "slug": "new-dell-xps-13-9300-laptop"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 65,
+    "fields": {
+      "name": "Essence Mascara Lash Princess",
+      "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
+      "price": "9.99",
+      "image": "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-78E3B1F037",
+      "in_stock": true,
+      "quantity": 99,
+      "category": 9,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:47.522Z",
+      "slug": "essence-mascara-lash-princess"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 66,
+    "fields": {
+      "name": "Eyeshadow Palette with Mirror",
+      "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
+      "price": "19.99",
+      "image": "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-03F6ABDD07",
+      "in_stock": true,
+      "quantity": 34,
+      "category": 9,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:47.537Z",
+      "slug": "eyeshadow-palette-with-mirror"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 67,
+    "fields": {
+      "name": "Powder Canister",
+      "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
+      "price": "14.99",
+      "image": "https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-9C9B6A97A3",
+      "in_stock": true,
+      "quantity": 89,
+      "category": 9,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:47.558Z",
+      "slug": "powder-canister"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 68,
+    "fields": {
+      "name": "Red Lipstick",
+      "description": "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish.",
+      "price": "12.99",
+      "image": "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-FD86C79166",
+      "in_stock": true,
+      "quantity": 91,
+      "category": 9,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:47.575Z",
+      "slug": "red-lipstick"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 69,
+    "fields": {
+      "name": "Red Nail Polish",
+      "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
+      "price": "8.99",
+      "image": "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-EF82D8C903",
+      "in_stock": true,
+      "quantity": 79,
+      "category": 9,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:47.575Z",
+      "slug": "red-nail-polish"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 70,
+    "fields": {
+      "name": "Attitude Super Leaves Hand Soap",
+      "description": "Attitude Super Leaves Hand Soap is a natural and nourishing hand soap enriched with the goodness of super leaves. It cleanses and moisturizes your hands, leaving them feeling fresh and soft.",
+      "price": "8.99",
+      "image": "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-8DCD34E3BB",
+      "in_stock": true,
+      "quantity": 94,
+      "category": 10,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:48.659Z",
+      "slug": "attitude-super-leaves-hand-soap"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 71,
+    "fields": {
+      "name": "Olay Ultra Moisture Shea Butter Body Wash",
+      "description": "Olay Ultra Moisture Shea Butter Body Wash is a luxurious body wash that hydrates and nourishes your skin with the moisturizing power of shea butter. Enjoy a rich lather and silky-smooth skin.",
+      "price": "12.99",
+      "image": "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-F1A45C3DDE",
+      "in_stock": true,
+      "quantity": 34,
+      "category": 10,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:48.662Z",
+      "slug": "olay-ultra-moisture-shea-butter-body-wash"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 72,
+    "fields": {
+      "name": "Vaseline Men Body and Face Lotion",
+      "description": "Vaseline Men Body and Face Lotion is a specially formulated lotion designed to provide long-lasting moisture to men's skin. It absorbs quickly and helps keep the skin hydrated and healthy.",
+      "price": "9.99",
+      "image": "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-FAFB664D8B",
+      "in_stock": true,
+      "quantity": 95,
+      "category": 10,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:48.673Z",
+      "slug": "vaseline-men-body-and-face-lotion"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 73,
+    "fields": {
+      "name": "Calvin Klein CK One",
+      "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
+      "price": "49.99",
+      "image": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-1E71677733",
+      "in_stock": true,
+      "quantity": 29,
+      "category": 11,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:49.722Z",
+      "slug": "calvin-klein-ck-one"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 74,
+    "fields": {
+      "name": "Chanel Coco Noir Eau De",
+      "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
+      "price": "129.99",
+      "image": "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-30D32C2DA6",
+      "in_stock": true,
+      "quantity": 58,
+      "category": 11,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:49.739Z",
+      "slug": "chanel-coco-noir-eau-de"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 75,
+    "fields": {
+      "name": "Dior J'adore",
+      "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
+      "price": "89.99",
+      "image": "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-53B2FB78BA",
+      "in_stock": true,
+      "quantity": 98,
+      "category": 11,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:49.739Z",
+      "slug": "dior-jadore"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 76,
+    "fields": {
+      "name": "Dolce Shine Eau de",
+      "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
+      "price": "69.99",
+      "image": "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-BDA31FDE94",
+      "in_stock": true,
+      "quantity": 4,
+      "category": 11,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:49.750Z",
+      "slug": "dolce-shine-eau-de"
+    }
+  },
+  {
+    "model": "store.product",
+    "pk": 77,
+    "fields": {
+      "name": "Gucci Bloom Eau de",
+      "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
+      "price": "79.99",
+      "image": "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp",
+      "brand": "Generic",
+      "sku": "SKU-81FE7118F9",
+      "in_stock": false,
+      "quantity": 91,
+      "category": 11,
+      "average_rating": "0.00",
+      "review_count": 0,
+      "created_at": "2026-08-14T12:46:49.756Z",
+      "slug": "gucci-bloom-eau-de"
+    }
   }
-},
-{
-  "model": "store.product",
-  "pk": 2,
-  "fields": {
-    "name": "Corset Leather With Skirt",
-    "description": "The Corset Leather With Skirt is a bold and edgy ensemble that combines a stylish corset with a matching skirt. Ideal for fashion-forward individuals, it makes a statement at any event.",
-    "price": "89.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-leather-with-skirt/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-0C542DDEAB",
-    "in_stock": true,
-    "quantity": 30,
-    "category": 1,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:30.541Z",
-    "slug": "corset-leather-with-skirt"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 3,
-  "fields": {
-    "name": "Corset With Black Skirt",
-    "description": "The Corset With Black Skirt is a chic and versatile outfit that pairs a fashionable corset with a classic black skirt. It offers a trendy and coordinated look for various occasions.",
-    "price": "79.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/corset-with-black-skirt/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-C8EEAC5CFE",
-    "in_stock": true,
-    "quantity": 33,
-    "category": 1,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:30.555Z",
-    "slug": "corset-with-black-skirt"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 4,
-  "fields": {
-    "name": "Dress Pea",
-    "description": "The Dress Pea is a stylish and comfortable dress with a pea pattern. Perfect for casual outings, it adds a playful and fun element to your wardrobe, making it a great choice for day-to-day wear.",
-    "price": "49.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/dress-pea/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-92302C777B",
-    "in_stock": true,
-    "quantity": 6,
-    "category": 1,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:30.563Z",
-    "slug": "dress-pea"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 5,
-  "fields": {
-    "name": "Marni Red & Black Suit",
-    "description": "The Marni Red & Black Suit is a sophisticated and fashion-forward suit ensemble. With a combination of red and black tones, it showcases a modern design for a bold and confident look.",
-    "price": "179.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-dresses/marni-red-&-black-suit/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-DA69962D8B",
-    "in_stock": true,
-    "quantity": 62,
-    "category": 1,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:30.573Z",
-    "slug": "marni-red-black-suit"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 6,
-  "fields": {
-    "name": "Black & Brown Slipper",
-    "description": "The Black & Brown Slipper is a comfortable and stylish choice for casual wear. Featuring a blend of black and brown colors, it adds a touch of sophistication to your relaxation.",
-    "price": "19.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/black-&-brown-slipper/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-3D3A7005FA",
-    "in_stock": true,
-    "quantity": 3,
-    "category": 2,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:32.909Z",
-    "slug": "black-brown-slipper"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 7,
-  "fields": {
-    "name": "Calvin Klein Heel Shoes",
-    "description": "Calvin Klein Heel Shoes are elegant and sophisticated, designed for formal occasions. With a classic design and high-quality materials, they complement your stylish ensemble.",
-    "price": "79.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/calvin-klein-heel-shoes/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-63256F6E9E",
-    "in_stock": true,
-    "quantity": 93,
-    "category": 2,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:32.926Z",
-    "slug": "calvin-klein-heel-shoes"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 8,
-  "fields": {
-    "name": "Golden Shoes Woman",
-    "description": "The Golden Shoes for Women are a glamorous choice for special occasions. Featuring a golden hue and stylish design, they add a touch of luxury to your outfit.",
-    "price": "49.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/golden-shoes-woman/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-6BCEF2ED18",
-    "in_stock": true,
-    "quantity": 88,
-    "category": 2,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:32.926Z",
-    "slug": "golden-shoes-woman"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 9,
-  "fields": {
-    "name": "Pampi Shoes",
-    "description": "Pampi Shoes offer a blend of comfort and style for everyday use. With a versatile design, they are suitable for various casual occasions, providing a trendy and relaxed look.",
-    "price": "29.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/pampi-shoes/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-7D54243632",
-    "in_stock": true,
-    "quantity": 49,
-    "category": 2,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:32.941Z",
-    "slug": "pampi-shoes"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 10,
-  "fields": {
-    "name": "Red Shoes",
-    "description": "The Red Shoes make a bold statement with their vibrant red color. Whether for a party or a casual outing, these shoes add a pop of color and style to your wardrobe.",
-    "price": "34.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-shoes/red-shoes/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-1B1EB04E1F",
-    "in_stock": true,
-    "quantity": 7,
-    "category": 2,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:32.958Z",
-    "slug": "red-shoes"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 11,
-  "fields": {
-    "name": "Blue Women's Handbag",
-    "description": "The Blue Women's Handbag is a stylish and spacious accessory for everyday use. With a vibrant blue color and multiple compartments, it combines fashion and functionality.",
-    "price": "49.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-bags/blue-women's-handbag/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-D9A48FE353",
-    "in_stock": true,
-    "quantity": 76,
-    "category": 6,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:34.475Z",
-    "slug": "blue-womens-handbag"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 12,
-  "fields": {
-    "name": "Heshe Women's Leather Bag",
-    "description": "The Heshe Women's Leather Bag is a luxurious and high-quality leather bag for the sophisticated woman. With a timeless design and durable craftsmanship, it's a versatile accessory.",
-    "price": "129.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-bags/heshe-women's-leather-bag/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-C1D7BDE10B",
-    "in_stock": true,
-    "quantity": 99,
-    "category": 6,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:34.491Z",
-    "slug": "heshe-womens-leather-bag"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 13,
-  "fields": {
-    "name": "Prada Women Bag",
-    "description": "The Prada Women Bag is an iconic designer bag that exudes elegance and luxury. Crafted with precision and featuring the Prada logo, it's a statement piece for fashion enthusiasts.",
-    "price": "599.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-bags/prada-women-bag/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-EF25D00422",
-    "in_stock": true,
-    "quantity": 75,
-    "category": 6,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:34.513Z",
-    "slug": "prada-women-bag"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 14,
-  "fields": {
-    "name": "White Faux Leather Backpack",
-    "description": "The White Faux Leather Backpack is a trendy and practical backpack for the modern woman. With a sleek white design and ample storage space, it's perfect for both casual and on-the-go styles.",
-    "price": "39.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-bags/white-faux-leather-backpack/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-1D1A091CAE",
-    "in_stock": true,
-    "quantity": 39,
-    "category": 6,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:34.532Z",
-    "slug": "white-faux-leather-backpack"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 15,
-  "fields": {
-    "name": "Women Handbag Black",
-    "description": "The Women Handbag in Black is a classic and versatile accessory that complements various outfits. With a timeless black color and functional design, it's a must-have in every woman's wardrobe.",
-    "price": "59.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-bags/women-handbag-black/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-BA081F3E79",
-    "in_stock": true,
-    "quantity": 11,
-    "category": 6,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:34.534Z",
-    "slug": "women-handbag-black"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 16,
-  "fields": {
-    "name": "Green Crystal Earring",
-    "description": "The Green Crystal Earring is a dazzling accessory that features a vibrant green crystal. With a classic design, it adds a touch of elegance to your ensemble, perfect for formal or special occasions.",
-    "price": "29.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-crystal-earring/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-8078C372AD",
-    "in_stock": true,
-    "quantity": 54,
-    "category": 7,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:37.090Z",
-    "slug": "green-crystal-earring"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 17,
-  "fields": {
-    "name": "Green Oval Earring",
-    "description": "The Green Oval Earring is a stylish and versatile accessory with a unique oval shape. Whether for casual or dressy occasions, its green hue and contemporary design make it a standout piece.",
-    "price": "24.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/green-oval-earring/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-3E42A49269",
-    "in_stock": true,
-    "quantity": 73,
-    "category": 7,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:37.115Z",
-    "slug": "green-oval-earring"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 18,
-  "fields": {
-    "name": "Tropical Earring",
-    "description": "The Tropical Earring is a fun and playful accessory inspired by tropical elements. Featuring vibrant colors and a lively design, it's perfect for adding a touch of summer to your look.",
-    "price": "19.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-jewellery/tropical-earring/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-FB6309410A",
-    "in_stock": true,
-    "quantity": 1,
-    "category": 7,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:37.117Z",
-    "slug": "tropical-earring"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 19,
-  "fields": {
-    "name": "iPhone 5s",
-    "description": "The iPhone 5s is a classic smartphone known for its compact design and advanced features during its release. While it's an older model, it still provides a reliable user experience.",
-    "price": "199.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-5s/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-58966BE624",
-    "in_stock": true,
-    "quantity": 25,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.185Z",
-    "slug": "iphone-5s"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 20,
-  "fields": {
-    "name": "iPhone 6",
-    "description": "The iPhone 6 is a stylish and capable smartphone with a larger display and improved performance. It introduced new features and design elements, making it a popular choice in its time.",
-    "price": "299.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-6/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-C82FD97E00",
-    "in_stock": true,
-    "quantity": 60,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.185Z",
-    "slug": "iphone-6"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 21,
-  "fields": {
-    "name": "iPhone 13 Pro",
-    "description": "The iPhone 13 Pro is a cutting-edge smartphone with a powerful camera system, high-performance chip, and stunning display. It offers advanced features for users who demand top-notch technology.",
-    "price": "1099.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-13-pro/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-1E4021F866",
-    "in_stock": true,
-    "quantity": 56,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.200Z",
-    "slug": "iphone-13-pro"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 22,
-  "fields": {
-    "name": "iPhone X",
-    "description": "The iPhone X is a flagship smartphone featuring a bezel-less OLED display, facial recognition technology (Face ID), and impressive performance. It represents a milestone in iPhone design and innovation.",
-    "price": "899.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/iphone-x/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-7345830185",
-    "in_stock": true,
-    "quantity": 37,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.209Z",
-    "slug": "iphone-x"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 23,
-  "fields": {
-    "name": "Oppo A57",
-    "description": "The Oppo A57 is a mid-range smartphone known for its sleek design and capable features. It offers a balance of performance and affordability, making it a popular choice.",
-    "price": "249.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-a57/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-BDE0EE9B0B",
-    "in_stock": true,
-    "quantity": 19,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.209Z",
-    "slug": "oppo-a57"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 24,
-  "fields": {
-    "name": "Oppo F19 Pro Plus",
-    "description": "The Oppo F19 Pro Plus is a feature-rich smartphone with a focus on camera capabilities. It boasts advanced photography features and a powerful performance for a premium user experience.",
-    "price": "399.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-f19-pro-plus/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-CA4C7EFCC4",
-    "in_stock": true,
-    "quantity": 78,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.225Z",
-    "slug": "oppo-f19-pro-plus"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 25,
-  "fields": {
-    "name": "Oppo K1",
-    "description": "The Oppo K1 series offers a range of smartphones with various features and specifications. Known for their stylish design and reliable performance, the Oppo K1 series caters to diverse user preferences.",
-    "price": "299.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/oppo-k1/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-F6F9DF110B",
-    "in_stock": true,
-    "quantity": 55,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.225Z",
-    "slug": "oppo-k1"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 26,
-  "fields": {
-    "name": "Realme C35",
-    "description": "The Realme C35 is a budget-friendly smartphone with a focus on providing essential features for everyday use. It offers a reliable performance and user-friendly experience.",
-    "price": "149.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-c35/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-F7E58FB060",
-    "in_stock": true,
-    "quantity": 48,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.241Z",
-    "slug": "realme-c35"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 27,
-  "fields": {
-    "name": "Realme X",
-    "description": "The Realme X is a mid-range smartphone known for its sleek design and impressive display. It offers a good balance of performance and camera capabilities for users seeking a quality device.",
-    "price": "299.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-x/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-D3E570FA34",
-    "in_stock": true,
-    "quantity": 12,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.241Z",
-    "slug": "realme-x"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 28,
-  "fields": {
-    "name": "Realme XT",
-    "description": "The Realme XT is a feature-rich smartphone with a focus on camera technology. It comes equipped with advanced camera sensors, delivering high-quality photos and videos for photography enthusiasts.",
-    "price": "349.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/realme-xt/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-F8B430656C",
-    "in_stock": true,
-    "quantity": 80,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.256Z",
-    "slug": "realme-xt"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 29,
-  "fields": {
-    "name": "Samsung Galaxy S7",
-    "description": "The Samsung Galaxy S7 is a flagship smartphone known for its sleek design and advanced features. It features a high-resolution display, powerful camera, and robust performance.",
-    "price": "299.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s7/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-6DB9093F3D",
-    "in_stock": true,
-    "quantity": 67,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.263Z",
-    "slug": "samsung-galaxy-s7"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 30,
-  "fields": {
-    "name": "Samsung Galaxy S8",
-    "description": "The Samsung Galaxy S8 is a premium smartphone with an Infinity Display, offering a stunning visual experience. It boasts advanced camera capabilities and cutting-edge technology.",
-    "price": "499.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s8/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-C70F3AFAE3",
-    "in_stock": true,
-    "quantity": 0,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.266Z",
-    "slug": "samsung-galaxy-s8"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 31,
-  "fields": {
-    "name": "Samsung Galaxy S10",
-    "description": "The Samsung Galaxy S10 is a flagship device featuring a dynamic AMOLED display, versatile camera system, and powerful performance. It represents innovation and excellence in smartphone technology.",
-    "price": "699.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/samsung-galaxy-s10/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-71380F1C50",
-    "in_stock": true,
-    "quantity": 19,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.266Z",
-    "slug": "samsung-galaxy-s10"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 32,
-  "fields": {
-    "name": "Vivo S1",
-    "description": "The Vivo S1 is a stylish and mid-range smartphone offering a blend of design and performance. It features a vibrant display, capable camera system, and reliable functionality.",
-    "price": "249.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-s1/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-384DDF8FE8",
-    "in_stock": true,
-    "quantity": 50,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.282Z",
-    "slug": "vivo-s1"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 33,
-  "fields": {
-    "name": "Vivo V9",
-    "description": "The Vivo V9 is a smartphone known for its sleek design and emphasis on capturing high-quality selfies. It features a notch display, dual-camera setup, and a modern design.",
-    "price": "299.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-v9/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-94CFFB5FBD",
-    "in_stock": true,
-    "quantity": 82,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.282Z",
-    "slug": "vivo-v9"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 34,
-  "fields": {
-    "name": "Vivo X21",
-    "description": "The Vivo X21 is a premium smartphone with a focus on cutting-edge technology. It features an in-display fingerprint sensor, a high-resolution display, and advanced camera capabilities.",
-    "price": "499.99",
-    "image": "https://cdn.dummyjson.com/product-images/smartphones/vivo-x21/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-CC7C7100E9",
-    "in_stock": true,
-    "quantity": 7,
-    "category": 3,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:39.298Z",
-    "slug": "vivo-x21"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 35,
-  "fields": {
-    "name": "Amazon Echo Plus",
-    "description": "The Amazon Echo Plus is a smart speaker with built-in Alexa voice control. It features premium sound quality and serves as a hub for controlling smart home devices.",
-    "price": "99.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/amazon-echo-plus/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-F0F561A153",
-    "in_stock": true,
-    "quantity": 61,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.342Z",
-    "slug": "amazon-echo-plus"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 36,
-  "fields": {
-    "name": "Apple Airpods",
-    "description": "The Apple Airpods offer a seamless wireless audio experience. With easy pairing, high-quality sound, and Siri integration, they are perfect for on-the-go listening.",
-    "price": "129.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-0B803EDFA5",
-    "in_stock": true,
-    "quantity": 67,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.359Z",
-    "slug": "apple-airpods"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 37,
-  "fields": {
-    "name": "Apple AirPods Max Silver",
-    "description": "The Apple AirPods Max in Silver are premium over-ear headphones with high-fidelity audio, adaptive EQ, and active noise cancellation. Experience immersive sound in style.",
-    "price": "549.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpods-max-silver/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-A1E7CA508E",
-    "in_stock": true,
-    "quantity": 59,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.376Z",
-    "slug": "apple-airpods-max-silver"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 38,
-  "fields": {
-    "name": "Apple Airpower Wireless Charger",
-    "description": "The Apple AirPower Wireless Charger provides a convenient way to charge your compatible Apple devices wirelessly. Simply place your devices on the charging mat for effortless charging.",
-    "price": "79.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-airpower-wireless-charger/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-7F8ABF5205",
-    "in_stock": true,
-    "quantity": 1,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.376Z",
-    "slug": "apple-airpower-wireless-charger"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 39,
-  "fields": {
-    "name": "Apple HomePod Mini Cosmic Grey",
-    "description": "The Apple HomePod Mini in Cosmic Grey is a compact smart speaker that delivers impressive audio and integrates seamlessly with the Apple ecosystem for a smart home experience.",
-    "price": "99.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-homepod-mini-cosmic-grey/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-69EF2AC208",
-    "in_stock": true,
-    "quantity": 27,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.392Z",
-    "slug": "apple-homepod-mini-cosmic-grey"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 40,
-  "fields": {
-    "name": "Apple iPhone Charger",
-    "description": "The Apple iPhone Charger is a high-quality charger designed for fast and efficient charging of your iPhone. Ensure your device stays powered up and ready to go.",
-    "price": "19.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-iphone-charger/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-3BAF721A5E",
-    "in_stock": true,
-    "quantity": 31,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.392Z",
-    "slug": "apple-iphone-charger"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 41,
-  "fields": {
-    "name": "Apple MagSafe Battery Pack",
-    "description": "The Apple MagSafe Battery Pack is a portable and convenient way to add extra battery life to your MagSafe-compatible iPhone. Attach it magnetically for a secure connection.",
-    "price": "99.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-magsafe-battery-pack/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-7458064035",
-    "in_stock": true,
-    "quantity": 1,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.412Z",
-    "slug": "apple-magsafe-battery-pack"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 42,
-  "fields": {
-    "name": "Apple Watch Series 4 Gold",
-    "description": "The Apple Watch Series 4 in Gold is a stylish and advanced smartwatch with features like heart rate monitoring, fitness tracking, and a beautiful Retina display.",
-    "price": "349.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/apple-watch-series-4-gold/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-652C0D905A",
-    "in_stock": true,
-    "quantity": 33,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.412Z",
-    "slug": "apple-watch-series-4-gold"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 43,
-  "fields": {
-    "name": "Beats Flex Wireless Earphones",
-    "description": "The Beats Flex Wireless Earphones offer a comfortable and versatile audio experience. With magnetic earbuds and up to 12 hours of battery life, they are ideal for everyday use.",
-    "price": "49.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/beats-flex-wireless-earphones/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-1499C79341",
-    "in_stock": true,
-    "quantity": 50,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.424Z",
-    "slug": "beats-flex-wireless-earphones"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 44,
-  "fields": {
-    "name": "iPhone 12 Silicone Case with MagSafe Plum",
-    "description": "The iPhone 12 Silicone Case with MagSafe in Plum is a stylish and protective case designed for the iPhone 12. It features MagSafe technology for easy attachment of accessories.",
-    "price": "29.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/iphone-12-silicone-case-with-magsafe-plum/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-0D29390BAF",
-    "in_stock": true,
-    "quantity": 69,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.431Z",
-    "slug": "iphone-12-silicone-case-with-magsafe-plum"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 45,
-  "fields": {
-    "name": "Monopod",
-    "description": "The Monopod is a versatile camera accessory for stable and adjustable shooting. Perfect for capturing selfies, group photos, and videos with ease.",
-    "price": "19.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/monopod/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-7B045180B2",
-    "in_stock": true,
-    "quantity": 48,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.441Z",
-    "slug": "monopod"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 46,
-  "fields": {
-    "name": "Selfie Lamp with iPhone",
-    "description": "The Selfie Lamp with iPhone is a portable and adjustable LED light designed to enhance your selfies and video calls. Attach it to your iPhone for well-lit photos.",
-    "price": "14.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-lamp-with-iphone/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-49E78A33B7",
-    "in_stock": true,
-    "quantity": 58,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.441Z",
-    "slug": "selfie-lamp-with-iphone"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 47,
-  "fields": {
-    "name": "Selfie Stick Monopod",
-    "description": "The Selfie Stick Monopod is a extendable and foldable device for capturing the perfect selfie or group photo. Compatible with smartphones and cameras.",
-    "price": "12.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/selfie-stick-monopod/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-11BB0D802A",
-    "in_stock": true,
-    "quantity": 11,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.450Z",
-    "slug": "selfie-stick-monopod"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 48,
-  "fields": {
-    "name": "TV Studio Camera Pedestal",
-    "description": "The TV Studio Camera Pedestal is a professional-grade camera support system for smooth and precise camera movements in a studio setting. Ideal for broadcast and production.",
-    "price": "499.99",
-    "image": "https://cdn.dummyjson.com/product-images/mobile-accessories/tv-studio-camera-pedestal/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-35C7BF216E",
-    "in_stock": true,
-    "quantity": 15,
-    "category": 5,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:40.458Z",
-    "slug": "tv-studio-camera-pedestal"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 49,
-  "fields": {
-    "name": "Brown Leather Belt Watch",
-    "description": "The Brown Leather Belt Watch is a stylish timepiece with a classic design. Featuring a genuine leather strap and a sleek dial, it adds a touch of sophistication to your look.",
-    "price": "89.99",
-    "image": "https://cdn.dummyjson.com/product-images/mens-watches/brown-leather-belt-watch/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-E1749FFEEA",
-    "in_stock": true,
-    "quantity": 32,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:42.143Z",
-    "slug": "brown-leather-belt-watch"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 50,
-  "fields": {
-    "name": "Longines Master Collection",
-    "description": "The Longines Master Collection is an elegant and refined watch known for its precision and craftsmanship. With a timeless design, it's a symbol of luxury and sophistication.",
-    "price": "1499.99",
-    "image": "https://cdn.dummyjson.com/product-images/mens-watches/longines-master-collection/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-BFA2B8F84B",
-    "in_stock": true,
-    "quantity": 100,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:42.171Z",
-    "slug": "longines-master-collection"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 51,
-  "fields": {
-    "name": "Rolex Cellini Date Black Dial",
-    "description": "The Rolex Cellini Date with Black Dial is a classic and prestigious watch. With a black dial and date complication, it exudes sophistication and is a symbol of Rolex's heritage.",
-    "price": "8999.99",
-    "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-date-black-dial/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-E5B87947B2",
-    "in_stock": true,
-    "quantity": 40,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:42.173Z",
-    "slug": "rolex-cellini-date-black-dial"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 52,
-  "fields": {
-    "name": "Rolex Cellini Moonphase",
-    "description": "The Rolex Cellini Moonphase is a masterpiece of horology, featuring a moon phase complication and exquisite design. It reflects Rolex's commitment to precision and elegance.",
-    "price": "12999.99",
-    "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-cellini-moonphase/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-6E5524E495",
-    "in_stock": true,
-    "quantity": 36,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:42.192Z",
-    "slug": "rolex-cellini-moonphase"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 53,
-  "fields": {
-    "name": "Rolex Datejust",
-    "description": "The Rolex Datejust is an iconic and versatile timepiece with a date window. Known for its timeless design and reliability, it's a symbol of Rolex's watchmaking excellence.",
-    "price": "10999.99",
-    "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-datejust/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-489A4638F5",
-    "in_stock": true,
-    "quantity": 86,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:42.200Z",
-    "slug": "rolex-datejust"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 54,
-  "fields": {
-    "name": "Rolex Submariner Watch",
-    "description": "The Rolex Submariner is a legendary dive watch with a rich history. Known for its durability and water resistance, it's a symbol of adventure and exploration.",
-    "price": "13999.99",
-    "image": "https://cdn.dummyjson.com/product-images/mens-watches/rolex-submariner-watch/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-397AB1A04B",
-    "in_stock": true,
-    "quantity": 55,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:42.201Z",
-    "slug": "rolex-submariner-watch"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 55,
-  "fields": {
-    "name": "IWC Ingenieur Automatic Steel",
-    "description": "The IWC Ingenieur Automatic Steel watch is a durable and sophisticated timepiece. With a stainless steel case and automatic movement, it combines precision and style for watch enthusiasts.",
-    "price": "4999.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-watches/iwc-ingenieur-automatic-steel/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-4C1FE5FAC4",
-    "in_stock": true,
-    "quantity": 90,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:43.227Z",
-    "slug": "iwc-ingenieur-automatic-steel"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 56,
-  "fields": {
-    "name": "Rolex Cellini Moonphase",
-    "description": "The Rolex Cellini Moonphase watch is a masterpiece of horology. Featuring a moon phase complication, it showcases the craftsmanship and elegance that Rolex is renowned for.",
-    "price": "15999.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-watches/rolex-cellini-moonphase/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-71D074C2F1",
-    "in_stock": true,
-    "quantity": 52,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:43.233Z",
-    "slug": "rolex-cellini-moonphase"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 57,
-  "fields": {
-    "name": "Rolex Datejust Women",
-    "description": "The Rolex Datejust Women's watch is an iconic timepiece designed for women. With a timeless design and a date complication, it offers both elegance and functionality.",
-    "price": "10999.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-watches/rolex-datejust-women/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-7F966049C3",
-    "in_stock": true,
-    "quantity": 4,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:43.241Z",
-    "slug": "rolex-datejust-women"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 58,
-  "fields": {
-    "name": "Watch Gold for Women",
-    "description": "The Gold Women's Watch is a stunning accessory that combines luxury and style. Featuring a gold-plated case and a chic design, it adds a touch of glamour to any outfit.",
-    "price": "799.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-watches/watch-gold-for-women/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-29567975CB",
-    "in_stock": true,
-    "quantity": 0,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:43.241Z",
-    "slug": "watch-gold-for-women"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 59,
-  "fields": {
-    "name": "Women's Wrist Watch",
-    "description": "The Women's Wrist Watch is a versatile and fashionable timepiece for everyday wear. With a comfortable strap and a simple yet elegant design, it complements various styles.",
-    "price": "129.99",
-    "image": "https://cdn.dummyjson.com/product-images/womens-watches/women's-wrist-watch/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-1B53BC9BB9",
-    "in_stock": true,
-    "quantity": 12,
-    "category": 4,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:43.259Z",
-    "slug": "womens-wrist-watch"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 60,
-  "fields": {
-    "name": "Apple MacBook Pro 14 Inch Space Grey",
-    "description": "The MacBook Pro 14 Inch in Space Grey is a powerful and sleek laptop, featuring Apple's M1 Pro chip for exceptional performance and a stunning Retina display.",
-    "price": "1999.99",
-    "image": "https://cdn.dummyjson.com/product-images/laptops/apple-macbook-pro-14-inch-space-grey/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-1AC9B8FF0B",
-    "in_stock": true,
-    "quantity": 24,
-    "category": 8,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:46.024Z",
-    "slug": "apple-macbook-pro-14-inch-space-grey"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 61,
-  "fields": {
-    "name": "Asus Zenbook Pro Dual Screen Laptop",
-    "description": "The Asus Zenbook Pro Dual Screen Laptop is a high-performance device with dual screens, providing productivity and versatility for creative professionals.",
-    "price": "1799.99",
-    "image": "https://cdn.dummyjson.com/product-images/laptops/asus-zenbook-pro-dual-screen-laptop/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-2D3E4CB513",
-    "in_stock": true,
-    "quantity": 45,
-    "category": 8,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:46.039Z",
-    "slug": "asus-zenbook-pro-dual-screen-laptop"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 62,
-  "fields": {
-    "name": "Huawei Matebook X Pro",
-    "description": "The Huawei Matebook X Pro is a slim and stylish laptop with a high-resolution touchscreen display, offering a premium experience for users on the go.",
-    "price": "1399.99",
-    "image": "https://cdn.dummyjson.com/product-images/laptops/huawei-matebook-x-pro/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-D5C7273727",
-    "in_stock": true,
-    "quantity": 75,
-    "category": 8,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:46.059Z",
-    "slug": "huawei-matebook-x-pro"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 63,
-  "fields": {
-    "name": "Lenovo Yoga 920",
-    "description": "The Lenovo Yoga 920 is a 2-in-1 convertible laptop with a flexible hinge, allowing you to use it as a laptop or tablet, offering versatility and portability.",
-    "price": "1099.99",
-    "image": "https://cdn.dummyjson.com/product-images/laptops/lenovo-yoga-920/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-53724967D2",
-    "in_stock": true,
-    "quantity": 40,
-    "category": 8,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:46.059Z",
-    "slug": "lenovo-yoga-920"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 64,
-  "fields": {
-    "name": "New DELL XPS 13 9300 Laptop",
-    "description": "The New DELL XPS 13 9300 Laptop is a compact and powerful device, featuring a virtually borderless InfinityEdge display and high-end performance for various tasks.",
-    "price": "1499.99",
-    "image": "https://cdn.dummyjson.com/product-images/laptops/new-dell-xps-13-9300-laptop/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-2C09525A5F",
-    "in_stock": true,
-    "quantity": 74,
-    "category": 8,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:46.075Z",
-    "slug": "new-dell-xps-13-9300-laptop"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 65,
-  "fields": {
-    "name": "Essence Mascara Lash Princess",
-    "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
-    "price": "9.99",
-    "image": "https://cdn.dummyjson.com/product-images/beauty/essence-mascara-lash-princess/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-78E3B1F037",
-    "in_stock": true,
-    "quantity": 99,
-    "category": 9,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:47.522Z",
-    "slug": "essence-mascara-lash-princess"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 66,
-  "fields": {
-    "name": "Eyeshadow Palette with Mirror",
-    "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
-    "price": "19.99",
-    "image": "https://cdn.dummyjson.com/product-images/beauty/eyeshadow-palette-with-mirror/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-03F6ABDD07",
-    "in_stock": true,
-    "quantity": 34,
-    "category": 9,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:47.537Z",
-    "slug": "eyeshadow-palette-with-mirror"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 67,
-  "fields": {
-    "name": "Powder Canister",
-    "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
-    "price": "14.99",
-    "image": "https://cdn.dummyjson.com/product-images/beauty/powder-canister/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-9C9B6A97A3",
-    "in_stock": true,
-    "quantity": 89,
-    "category": 9,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:47.558Z",
-    "slug": "powder-canister"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 68,
-  "fields": {
-    "name": "Red Lipstick",
-    "description": "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish.",
-    "price": "12.99",
-    "image": "https://cdn.dummyjson.com/product-images/beauty/red-lipstick/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-FD86C79166",
-    "in_stock": true,
-    "quantity": 91,
-    "category": 9,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:47.575Z",
-    "slug": "red-lipstick"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 69,
-  "fields": {
-    "name": "Red Nail Polish",
-    "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
-    "price": "8.99",
-    "image": "https://cdn.dummyjson.com/product-images/beauty/red-nail-polish/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-EF82D8C903",
-    "in_stock": true,
-    "quantity": 79,
-    "category": 9,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:47.575Z",
-    "slug": "red-nail-polish"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 70,
-  "fields": {
-    "name": "Attitude Super Leaves Hand Soap",
-    "description": "Attitude Super Leaves Hand Soap is a natural and nourishing hand soap enriched with the goodness of super leaves. It cleanses and moisturizes your hands, leaving them feeling fresh and soft.",
-    "price": "8.99",
-    "image": "https://cdn.dummyjson.com/product-images/skin-care/attitude-super-leaves-hand-soap/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-8DCD34E3BB",
-    "in_stock": true,
-    "quantity": 94,
-    "category": 10,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:48.659Z",
-    "slug": "attitude-super-leaves-hand-soap"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 71,
-  "fields": {
-    "name": "Olay Ultra Moisture Shea Butter Body Wash",
-    "description": "Olay Ultra Moisture Shea Butter Body Wash is a luxurious body wash that hydrates and nourishes your skin with the moisturizing power of shea butter. Enjoy a rich lather and silky-smooth skin.",
-    "price": "12.99",
-    "image": "https://cdn.dummyjson.com/product-images/skin-care/olay-ultra-moisture-shea-butter-body-wash/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-F1A45C3DDE",
-    "in_stock": true,
-    "quantity": 34,
-    "category": 10,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:48.662Z",
-    "slug": "olay-ultra-moisture-shea-butter-body-wash"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 72,
-  "fields": {
-    "name": "Vaseline Men Body and Face Lotion",
-    "description": "Vaseline Men Body and Face Lotion is a specially formulated lotion designed to provide long-lasting moisture to men's skin. It absorbs quickly and helps keep the skin hydrated and healthy.",
-    "price": "9.99",
-    "image": "https://cdn.dummyjson.com/product-images/skin-care/vaseline-men-body-and-face-lotion/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-FAFB664D8B",
-    "in_stock": true,
-    "quantity": 95,
-    "category": 10,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:48.673Z",
-    "slug": "vaseline-men-body-and-face-lotion"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 73,
-  "fields": {
-    "name": "Calvin Klein CK One",
-    "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
-    "price": "49.99",
-    "image": "https://cdn.dummyjson.com/product-images/fragrances/calvin-klein-ck-one/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-1E71677733",
-    "in_stock": true,
-    "quantity": 29,
-    "category": 11,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:49.722Z",
-    "slug": "calvin-klein-ck-one"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 74,
-  "fields": {
-    "name": "Chanel Coco Noir Eau De",
-    "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
-    "price": "129.99",
-    "image": "https://cdn.dummyjson.com/product-images/fragrances/chanel-coco-noir-eau-de/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-30D32C2DA6",
-    "in_stock": true,
-    "quantity": 58,
-    "category": 11,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:49.739Z",
-    "slug": "chanel-coco-noir-eau-de"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 75,
-  "fields": {
-    "name": "Dior J'adore",
-    "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
-    "price": "89.99",
-    "image": "https://cdn.dummyjson.com/product-images/fragrances/dior-j'adore/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-53B2FB78BA",
-    "in_stock": true,
-    "quantity": 98,
-    "category": 11,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:49.739Z",
-    "slug": "dior-jadore"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 76,
-  "fields": {
-    "name": "Dolce Shine Eau de",
-    "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
-    "price": "69.99",
-    "image": "https://cdn.dummyjson.com/product-images/fragrances/dolce-shine-eau-de/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-BDA31FDE94",
-    "in_stock": true,
-    "quantity": 4,
-    "category": 11,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:49.750Z",
-    "slug": "dolce-shine-eau-de"
-  }
-},
-{
-  "model": "store.product",
-  "pk": 77,
-  "fields": {
-    "name": "Gucci Bloom Eau de",
-    "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
-    "price": "79.99",
-    "image": "https://cdn.dummyjson.com/product-images/fragrances/gucci-bloom-eau-de/thumbnail.webp",
-    "brand": "Generic",
-    "discount_percentage": "0.00",
-    "sku": "SKU-81FE7118F9",
-    "in_stock": false,
-    "quantity": 91,
-    "category": 11,
-    "average_rating": "0.00",
-    "review_count": 0,
-    "created_at": "2026-08-14T12:46:49.756Z",
-    "slug": "gucci-bloom-eau-de"
-  }
-}
 ]

@@ -1,112 +1,167 @@
 from django.urls import path
+from rest_framework_simplejwt.views import TokenRefreshView
 
 from .views import (
-    category_list,
-    random_products,
-    list_product,
-    product_detail,
-    product_search,
+    # Authentication
     register,
     login,
     forgot_password,
     reset_password,
+    current_user,
 
+    # Categories
+    category_list,
+
+    # Products
+    random_products,
+    list_product,
+    product_detail,
+    product_search,
+
+    # Cart
     get_cart_items,
     add_to_cart,
     update_cart_item,
     remove_from_cart,
-    create_order,
-    my_orders,
-    cancel_order
-)
 
+    # Orders
+    create_order,
+    confirm_stripe_payment,
+    my_orders,
+    cancel_order,
+)
 
 urlpatterns = [
 
-    # Categories
+    # ========================================================
+    # CATEGORIES
+    # ========================================================
+
     path(
         "categories/",
-        category_list
+        category_list,
+        name="category-list"
     ),
 
-    # Random Products
+
+    # ========================================================
+    # PRODUCTS
+    # ========================================================
+
     path(
         "random/",
-        random_products
+        random_products,
+        name="random-products"
     ),
 
-    # Products
     path(
         "products/",
-        list_product
+        list_product,
+        name="product-list"
     ),
 
     path(
         "products/search/",
-        product_search
+        product_search,
+        name="product-search"
     ),
 
     path(
         "products/<slug:slug>/",
-        product_detail
+        product_detail,
+        name="product-detail"
     ),
 
-    # Authentication
+
+    # ========================================================
+    # AUTHENTICATION
+    # ========================================================
+
     path(
         "register/",
-        register
+        register,
+        name="register"
     ),
 
     path(
         "login/",
-        login
+        login,
+        name="login"
     ),
+
     path(
         "password-reset/",
-        forgot_password
+        forgot_password,
+        name="password-reset"
     ),
 
     path(
         "password-reset/confirm/",
-        reset_password   ),
+        reset_password,
+        name="password-reset-confirm"
+    ),
 
-    # Cart
     path(
-        "cart/<int:user_id>/",
-        get_cart_items
+        "me/",
+        current_user,
+        name="current-user"
+    ),
+    path("token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
+
+
+    # ========================================================
+    # CART
+    # ========================================================
+
+    path(
+        "cart/",
+        get_cart_items,
+        name="cart"
     ),
 
     path(
         "cart/add/",
-        add_to_cart
+        add_to_cart,
+        name="cart-add"
     ),
 
     path(
-        "cart/update_quantity/",
-        update_cart_item
+        "cart/update/",
+        update_cart_item,
+        name="cart-update"
     ),
 
     path(
         "cart/delete/<int:cart_id>/",
-        remove_from_cart
-     ),
+        remove_from_cart,
+        name="cart-delete"
+    ),
 
 
-#      Orders
+    # ========================================================
+    # ORDERS
+    # ========================================================
+
     path(
-        "place_order/",
-        create_order
+        "orders/place/",
+        create_order,
+        name="place-order"
     ),
 
     path(
-        "orders/<int:user_id>/",
-        my_orders
+        "orders/",
+        my_orders,
+        name="my-orders"
     ),
 
     path(
-        "orders/<int:order_number>/cancel/",
-        cancel_order
-        )
-
-      
- ]
+        "orders/<str:order_number>/cancel/",
+        cancel_order,
+        name="cancel-order"
+    ),
+    path(
+        "orders/confirm-stripe/",
+        confirm_stripe_payment,
+        name="confirm-stripe-payment"
+),
+]

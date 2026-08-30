@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import ProductCard from "../components/Productcard";
+import API_BASE_URL from "../config/api";
 
 const Search = () => {
   const [product, setProduct] = useState([]);
@@ -13,7 +14,7 @@ const Search = () => {
   useEffect(() => {
     if (query) {
       fetch(
-        `https://exps-ecommercestore.onrender.com/api/products/search?q=${encodeURIComponent(query)}`
+        `${API_BASE_URL}/products/search?q=${encodeURIComponent(query)}`
       )
         .then((res) => res.json())
         .then((data) => {

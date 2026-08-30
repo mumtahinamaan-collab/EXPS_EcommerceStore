@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import register from "../assets/register.jpg";
+import API_BASE_URL from "../config/api";
 const Register = () => {
   const [formData, setFormData] = useState({
     first_name: "",
@@ -23,20 +24,37 @@ const Register = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { first_name, last_name, email, password, repeat_password } =
-      formData;
+    const first_name = formData.first_name.trim();
+    const last_name = formData.last_name.trim();
+    const email = formData.email.trim().toLowerCase();
+    const password = formData.password;
+    const repeat_password = formData.repeat_password;
+    if (!first_name || !last_name || !email || !password || !repeat_password) {
+      toast.error("All fields are required");
+      return;
+    }
+    if (password.length < 8) {
+      toast.error("Password must be at least 8 characters");
+      return;
+    }
     if (password !== repeat_password) {
       toast.error("Password and Confirm Password do not match");
       return;
     }
     try {
-      const response = await fetch("https://exps-ecommercestore.onrender.com/api/register/", {
+      const response = await fetch(`${API_BASE_URL}/register/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ first_name, last_name, email, password }),
       });
-      const result = await response.json();
-      if (response.status === 201) {
+      let result = {};
+
+      try {
+        result = await response.json();
+      } catch {
+        result = {};
+      }
+      if (response.ok) {
         toast.success(result.message || "Registration successful!");
         setFormData({
           first_name: "",
@@ -47,7 +65,7 @@ const Register = () => {
         });
         setTimeout(() => {
           navigate("/login");
-        }, 2000);
+        }, 1000);
       } else {
         toast.error(
           result.message || "Something went wrong. Please try again.",

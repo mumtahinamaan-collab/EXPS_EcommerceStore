@@ -4,6 +4,7 @@ import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link } from "react-router-dom";
 import { FaLock, FaPaperPlane } from "react-icons/fa";
+import API_BASE_URL from "../config/api";
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ export default function ForgotPassword() {
       setLoading(true);
 
       const response = await axios.post(
-        "https://exps-ecommercestore.onrender.com/api/password-reset/",
+        `${API_BASE_URL}/password-reset/`,
         {
           email: email.trim(),
         }

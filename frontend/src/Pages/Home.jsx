@@ -5,13 +5,14 @@ import CategorySection from "../components/CategorySection.jsx";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import API_BASE_URL from "../config/api";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
     axios
-      .get("https://exps-ecommercestore.onrender.com/api/random/")
+      .get(`${API_BASE_URL}/random/`)
       .then((res) => {
         console.log("RANDOM PRODUCTS API RESPONSE:", res.data);
 

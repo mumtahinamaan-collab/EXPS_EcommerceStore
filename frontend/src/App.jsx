@@ -15,6 +15,7 @@ import ResetPassword from "./Pages/ResetPassword";
 import Cart from "./Pages/Cart";
 import MyOrders from "./Pages/MyOrders";
 import Checkout from "./Pages/Checkout";
+import StripePayment from "./Pages/StripePayment";
 function App() {
   return (
     <>
@@ -38,6 +39,7 @@ function App() {
         <Route path="/cart" element={<Cart />} />
         <Route path="/myorder" element={<MyOrders />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/stripe-payment" element={<StripePayment />} />
       </Routes>
       <Footer />
     </>

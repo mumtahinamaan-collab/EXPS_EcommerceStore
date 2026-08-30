@@ -2,6 +2,7 @@ import React, { useEffect, useState, useRef } from "react";
 import ProductCard from "../components/Productcard";
 import { useNavigate, useParams } from "react-router-dom";
 import CategorySection from "../components/CategorySection";
+import API_BASE_URL from "../config/api";
 
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -53,7 +54,7 @@ const Products = () => {
 
   useEffect(() => {
     console.log("🔥 PRODUCTS EFFECT RUN");
-    fetch("https://exps-ecommercestore.onrender.com/api/products/")
+    fetch(`${API_BASE_URL}/products/`)
       .then((response) => response.json())
       .then((data) => {
         const productData = Array.isArray(data) ? data : data.results || [];

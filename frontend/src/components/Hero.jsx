@@ -36,15 +36,8 @@ export default function Hero() {
         </h1>
 
         <p
-          className="
-            mb-4
-            max-w-lg
-            text-sm
-            leading-relaxed
-            sm:text-base
-            md:mb-6
-            md:text-xl
-          "
+          className="mb-4 max-w-lg bg-transparent text-sm leading-relaxed text-semibold sm:text-base md:mb-6 md:text-xl "
+          
         >
           Explore the latest products at prices you'll love.
           Easy shopping, secure payments, and fast delivery.

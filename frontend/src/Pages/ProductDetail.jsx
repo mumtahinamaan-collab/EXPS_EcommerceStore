@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
@@ -9,9 +10,10 @@ import "react-medium-image-zoom/dist/styles.css";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const ProductDetail = () => {
-  const userId = localStorage.getItem("userId");
+import API_BASE_URL from "../config/api";
+import { authFetch } from "../utils/auth";
 
+const ProductDetail = () => {
   const { productSlug } = useParams();
   const navigate = useNavigate();
 
@@ -20,10 +22,11 @@ const ProductDetail = () => {
 
   // =========================
   // GET PRODUCT
+  // Public API - authFetch not needed
   // =========================
 
   useEffect(() => {
-    fetch(`https://exps-ecommercestore.onrender.com/api/products/${productSlug}/`)
+    fetch(`${API_BASE_URL}/products/${productSlug}/`)
       .then((response) => {
         if (!response.ok) {
           throw new Error("Product not found");
@@ -44,7 +47,9 @@ const ProductDetail = () => {
   // =========================
 
   const handleAddToCart = async () => {
-    if (!userId) {
+    const accessToken = localStorage.getItem("accessToken");
+
+    if (!accessToken) {
       toast.error("Please login first");
       navigate("/login");
       return;
@@ -56,32 +61,71 @@ const ProductDetail = () => {
     }
 
     try {
-      const response = await fetch("https://exps-ecommercestore.onrender.com/api/cart/add/", {
+      const response = await authFetch(`${API_BASE_URL}/cart/add/`, {
         method: "POST",
-
         headers: {
           "Content-Type": "application/json",
+          Accept: "application/json",
         },
-
         body: JSON.stringify({
-          userId: userId,
           productId: product.id,
           quantity: quantity,
         }),
       });
 
-      const result = await response.json();
+      let result = {};
+
+      try {
+        result = await response.json();
+      } catch {
+        result = {};
+      }
+
+      // =========================
+      // SUCCESS
+      // =========================
 
       if (response.ok) {
-        toast.success(result.message || "Item added to cart");
+        toast.success(
+          result.message || "Item added to cart"
+        );
+
+        // Navbar cart count update
+        window.dispatchEvent(new Event("cartUpdated"));
 
         setTimeout(() => {
           navigate("/cart");
-        }, 1500);
-      } else {
-        toast.error(result.message || "Something went wrong");
+        }, 1000);
+
+        return;
       }
-    } catch (error) {
+
+      // =========================
+      // AUTH FAILED AFTER REFRESH
+      // =========================
+
+      if (response.status === 401) {
+        toast.error(
+          "Your session has expired. Please login again."
+        );
+
+        window.dispatchEvent(new Event("authChanged"));
+
+        navigate("/login");
+
+        return;
+      }
+
+      // =========================
+      // OTHER API ERROR
+      // =========================
+
+      toast.error(
+        result.message ||
+          result.detail ||
+          "Unable to add item to cart"
+      );
+    } catch {
       toast.error("Unable to add item to cart");
     }
   };
@@ -91,17 +135,19 @@ const ProductDetail = () => {
   // =========================
 
   const handleBuyNow = () => {
-    if (!userId) {
+    const accessToken = localStorage.getItem("accessToken");
+
+    if (!accessToken) {
       toast.error("Please login first");
       navigate("/login");
       return;
     }
 
     if (!product?.in_stock) {
+      toast.error("Product is out of stock");
       return;
     }
 
-    // Direct checkout
     navigate("/checkout", {
       state: {
         product: product,
@@ -117,10 +163,15 @@ const ProductDetail = () => {
   if (!product) {
     return (
       <>
-        <ToastContainer position="top-center" autoClose={2000} />
+        <ToastContainer
+          position="top-center"
+          autoClose={2000}
+        />
 
         <div className="flex min-h-screen items-center justify-center">
-          <p className="text-gray-500">Product not available</p>
+          <p className="text-gray-500">
+            Product not available
+          </p>
         </div>
       </>
     );
@@ -128,12 +179,14 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-stone-100 px-4 py-8">
-      <ToastContainer position="top-center" autoClose={2000} />
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+      />
 
       <div className="mx-auto max-w-6xl">
-        {/* =========================
-            BACK
-        ========================= */}
+
+        {/* BACK */}
 
         <Link
           to="/products"
@@ -143,14 +196,11 @@ const ProductDetail = () => {
           Back to Products
         </Link>
 
-        {/* =========================
-            PRODUCT
-        ========================= */}
+        {/* PRODUCT */}
 
         <div className="grid grid-cols-1 gap-8 rounded-2xl bg-white p-2 shadow-md md:grid-cols-2 md:p-8">
-          {/* =========================
-              IMAGE
-          ========================= */}
+
+          {/* IMAGE */}
 
           <div className="relative flex h-[450px] items-center justify-center overflow-hidden rounded-xl bg-gray-100">
             <Zoom>
@@ -162,31 +212,40 @@ const ProductDetail = () => {
             </Zoom>
           </div>
 
-          {/* =========================
-              PRODUCT INFO
-          ========================= */}
+          {/* PRODUCT INFO */}
 
           <div>
+
             {/* NAME */}
 
-            <h1 className="text-2xl font-bold text-gray-900">{product.name}</h1>
+            <h1 className="text-2xl font-bold text-gray-900">
+              {product.name}
+            </h1>
 
             {/* STOCK */}
 
             <div className="mt-5">
               {product.in_stock ? (
-                <p className="font-semibold text-green-600">✓ In Stock</p>
+                <p className="font-semibold text-green-600">
+                  ✓ In Stock
+                </p>
               ) : (
-                <p className="font-semibold text-red-500">✕ Out of Stock</p>
+                <p className="font-semibold text-red-500">
+                  ✕ Out of Stock
+                </p>
               )}
             </div>
 
             {/* DELIVERY */}
 
             <div className="p-2">
-              <p className="text-md font-semibold">🚚 Fast & Free Delivery</p>
+              <p className="text-md font-semibold">
+                🚚 Fast & Free Delivery
+              </p>
 
-              <p className="mt-1 text-sm text-gray-500">On all orders</p>
+              <p className="mt-1 text-sm text-gray-500">
+                On all orders
+              </p>
 
               <p className="mt-1 text-sm text-gray-500">
                 Get your order within 2–3 business days
@@ -195,20 +254,25 @@ const ProductDetail = () => {
 
             {/* PRICE */}
 
-            <p className="text-3xl font-bold text-red-500">${product.price}</p>
+            <p className="text-3xl font-bold text-red-500">
+              ${product.price}
+            </p>
 
             {/* QUANTITY */}
 
             <div className="mt-4 flex items-center gap-2">
-              <span className="font-semibold">Quantity:</span>
+              <span className="font-semibold">
+                Quantity:
+              </span>
 
               <div className="flex items-center overflow-hidden rounded-md border">
-                {/* MINUS */}
 
                 <button
                   type="button"
                   disabled={quantity <= 1}
-                  onClick={() => setQuantity(quantity - 1)}
+                  onClick={() =>
+                    setQuantity((prev) => prev - 1)
+                  }
                   className={`flex h-9 w-9 items-center justify-center ${
                     !product.in_stock
                       ? "cursor-not-allowed bg-black text-white"
@@ -218,18 +282,16 @@ const ProductDetail = () => {
                   <Minus size={12} />
                 </button>
 
-                {/* QUANTITY */}
-
                 <span className="flex h-9 min-w-10 items-center justify-center border-x bg-white">
                   {quantity}
                 </span>
 
-                {/* PLUS */}
-
                 <button
                   type="button"
                   disabled={quantity >= 5}
-                  onClick={() => setQuantity(quantity + 1)}
+                  onClick={() =>
+                    setQuantity((prev) => prev + 1)
+                  }
                   className={`flex h-9 w-9 items-center justify-center ${
                     !product.in_stock
                       ? "cursor-not-allowed bg-black text-white"
@@ -238,17 +300,15 @@ const ProductDetail = () => {
                 >
                   <Plus size={16} />
                 </button>
+
               </div>
             </div>
 
-            {/* =========================
-                BUTTONS
-            ========================= */}
+            {/* BUTTONS */}
 
             <div className="mt-16 flex flex-col gap-4">
-              {/* =========================
-                  BUY NOW
-              ========================= */}
+
+              {/* BUY NOW */}
 
               <button
                 type="button"
@@ -259,9 +319,7 @@ const ProductDetail = () => {
                 Buy it Now
               </button>
 
-              {/* =========================
-                  ADD TO CART
-              ========================= */}
+              {/* ADD TO CART */}
 
               <button
                 type="button"
@@ -272,19 +330,21 @@ const ProductDetail = () => {
                 <ShoppingCart size={19} />
                 Add To Cart
               </button>
+
             </div>
           </div>
         </div>
 
-        {/* =========================
-            DETAILS
-        ========================= */}
+        {/* DETAILS */}
 
         <div className="mt-8 grid gap-6 md:grid-cols-2">
+
           {/* PRODUCT DETAILS */}
 
           <div className="rounded-2xl bg-white p-6 shadow-md">
-            <h2 className="text-xl font-bold">Product Details</h2>
+            <h2 className="text-xl font-bold">
+              Product Details
+            </h2>
 
             <p className="mt-4 leading-7 text-gray-600">
               {product.description}
@@ -294,34 +354,55 @@ const ProductDetail = () => {
           {/* MORE INFORMATION */}
 
           <div className="rounded-2xl bg-white p-6 shadow-md">
-            <h2 className="text-xl font-bold">More Information</h2>
+            <h2 className="text-xl font-bold">
+              More Information
+            </h2>
 
             <div className="mt-5 space-y-4 text-sm">
-              <div className="flex justify-between">
-                <span className="font-semibold">Category</span>
 
-                <span className="text-gray-600">{product.category_name}</span>
+              <div className="flex justify-between">
+                <span className="font-semibold">
+                  Category
+                </span>
+
+                <span className="text-gray-600">
+                  {product.category_name}
+                </span>
               </div>
 
               <div className="flex justify-between">
-                <span className="font-semibold">SKU</span>
+                <span className="font-semibold">
+                  SKU
+                </span>
 
-                <span className="text-gray-600">{product.sku}</span>
+                <span className="text-gray-600">
+                  {product.sku}
+                </span>
               </div>
 
               <div className="flex justify-between">
-                <span className="font-semibold">Brand</span>
+                <span className="font-semibold">
+                  Brand
+                </span>
 
-                <span className="text-gray-600">{product.brand}</span>
+                <span className="text-gray-600">
+                  {product.brand}
+                </span>
               </div>
 
               <div className="flex justify-between">
-                <span className="font-semibold">↩ 7 Days Return</span>
+                <span className="font-semibold">
+                  ↩ 7 Days Return
+                </span>
 
-                <span className="text-gray-600">Easy returns</span>
+                <span className="text-gray-600">
+                  Easy returns
+                </span>
               </div>
+
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -329,3 +410,4 @@ const ProductDetail = () => {
 };
 
 export default ProductDetail;
+

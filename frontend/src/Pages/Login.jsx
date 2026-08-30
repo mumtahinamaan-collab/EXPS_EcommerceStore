@@ -1,9 +1,11 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import { FaUser, FaLock, FaSignInAlt } from "react-icons/fa";
 import { Link, useNavigate } from "react-router-dom";
 import loginImage from "../assets/register.jpg";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import API_BASE_URL from "../config/api";
+
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -20,18 +22,29 @@ const Login = () => {
   };
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const { email, password } = formData;
+    const email = formData.email.trim().toLowerCase();
+    const password = formData.password;
+    if (!email || !password) {
+      toast.error("Email and password are required");
+      return;
+    }
     try {
-      const response = await fetch("https://exps-ecommercestore.onrender.com/api/login/", {
+      const response = await fetch(`${API_BASE_URL}/login/`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({email, password }),
+        body: JSON.stringify({ email, password }),
       });
-      const result = await response.json();
-      if (response.status === 200) {
+      let result = {};
+
+      try {
+        result = await response.json();
+      } catch {
+        result = {};
+      }
+      if (response.ok) {
         toast.success(result.message || "Login successful!");
-        localStorage.setItem("userId", result.userId)
-        localStorage.setItem("userName", result.userName)
+        localStorage.setItem("userId", result.userId);
+        localStorage.setItem("userName", result.userName);
         localStorage.setItem("email", email);
         localStorage.setItem("accessToken", result.access);
         localStorage.setItem("refreshToken", result.refresh);
@@ -39,24 +52,20 @@ const Login = () => {
           email: "",
           password: "",
         });
-        setTimeout(()=>{
-          navigate('/')
-
-        },2000);
-        
-
+        window.dispatchEvent(new Event("storage"));
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
       } else {
-        toast.error(
-          result.message || "Invalid email or password",
-          
-        );
+        toast.error(result.message || "Invalid email or password");
       }
     } catch (error) {
       toast.error("Error connecting to server");
-        console.log("LOGIN STATUS:", error.response?.status);
-  console.log("LOGIN ERROR:", error.response?.data);
+      console.log("LOGIN ERROR:", error);
+    } finally {
     }
   };
+  
   return (
     <div className="min-h-screen bg-gradient-to-br from-rose-50 via-white to-stone-100 px-4 py-10">
       <ToastContainer position="top-center" autoClose={2000} />
@@ -78,7 +87,7 @@ const Login = () => {
             </div>
 
             {/* LOGIN FORM */}
-            <form onSubmit={handleSubmit}  className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-5">
               {/* Email */}
               <div>
                 <label className="mb-1 block text-sm font-medium text-gray-700">
@@ -91,8 +100,8 @@ const Login = () => {
                   <input
                     type="email"
                     name="email"
-                  value={formData.email}
-                  onChange={handleChange}
+                    value={formData.email}
+                    onChange={handleChange}
                     placeholder="Enter your email"
                     className="w-full bg-transparent text-sm outline-none"
                   />

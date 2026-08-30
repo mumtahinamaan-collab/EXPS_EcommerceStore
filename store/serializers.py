@@ -5,26 +5,18 @@ from .models import (
     ProductImage,
     Category,
     Cart,
-    Address,
+    Order,
+    OrderItem,
     Payment,
     Tracking,
-    
 )
 
-# ==================================================
+
+# ============================================================
 # IMAGE URL HELPER
-# ==================================================
+# ============================================================
 
 def get_image_url(obj, request=None):
-    """
-    Supports both:
-
-    1. Local uploaded image:
-       /media/product_images/shoes.jpg
-
-    2. External image:
-       https://cdn.dummyjson.com/...
-    """
 
     if not obj:
         return None
@@ -35,7 +27,6 @@ def get_image_url(obj, request=None):
     if image.startswith("http://") or image.startswith("https://"):
         return image
 
-    # Local image
     try:
         url = obj.url
 
@@ -44,13 +35,13 @@ def get_image_url(obj, request=None):
 
         return url
 
-    except ValueError:
+    except (ValueError, AttributeError):
         return None
 
 
-# ==================================================
+# ============================================================
 # PRODUCT IMAGE SERIALIZER
-# ==================================================
+# ============================================================
 
 class ProductImageSerializer(serializers.ModelSerializer):
 
@@ -71,12 +62,15 @@ class ProductImageSerializer(serializers.ModelSerializer):
 
         request = self.context.get("request")
 
-        return get_image_url(obj.image, request)
+        return get_image_url(
+            obj.image,
+            request
+        )
 
 
-# ==================================================
+# ============================================================
 # CATEGORY SERIALIZER
-# ==================================================
+# ============================================================
 
 class CategorySerializer(serializers.ModelSerializer):
 
@@ -98,12 +92,15 @@ class CategorySerializer(serializers.ModelSerializer):
 
         request = self.context.get("request")
 
-        return get_image_url(obj.image, request)
+        return get_image_url(
+            obj.image,
+            request
+        )
 
 
-# ==================================================
+# ============================================================
 # PRODUCT SERIALIZER
-# ==================================================
+# ============================================================
 
 class ProductSerializer(serializers.ModelSerializer):
 
@@ -136,15 +133,12 @@ class ProductSerializer(serializers.ModelSerializer):
             "image_url",
             "images",
             "brand",
-            "discount_percentage",
             "sku",
             "in_stock",
             "quantity",
             "category",
             "category_name",
             "category_slug",
-            "average_rating",
-            "review_count",
             "created_at",
             "slug",
         ]
@@ -153,28 +147,134 @@ class ProductSerializer(serializers.ModelSerializer):
 
         request = self.context.get("request")
 
-        return get_image_url(obj.image, request)
+        return get_image_url(
+            obj.image,
+            request
+        )
 
-# ==================================================
+
+# ============================================================
 # CART SERIALIZER
-# ==================================================
+# ============================================================
 
 class CartSerializer(serializers.ModelSerializer):
-    product = ProductSerializer(read_only=True)
+
+    product = ProductSerializer(
+        read_only=True
+    )
+
+    subtotal = serializers.SerializerMethodField()
 
     class Meta:
         model = Cart
 
-        fields = "__all__"
+        fields = [
+            "id",
+            "product",
+            "quantity",
+            "created_at",
+            "subtotal",
+        ]
 
-# ==================================================
+    def get_subtotal(self, obj):
+
+        if not obj.product:
+            return "0.00"
+
+        total = (
+            obj.product.price *
+            obj.quantity
+        )
+
+        return str(total)
+
+
+# ============================================================
+# ORDER ITEM SERIALIZER
+# ============================================================
+
+class OrderItemSerializer(serializers.ModelSerializer):
+
+    product_name = serializers.SerializerMethodField()
+
+    product_image = serializers.SerializerMethodField()
+
+    class Meta:
+        model = OrderItem
+
+        fields = [
+            "id",
+            "product",
+            "product_name",
+            "product_image",
+            "quantity",
+            "price",
+            "subtotal",
+        ]
+
+    def get_product_name(self, obj):
+
+        if obj.product:
+            return obj.product.name
+
+        return "Deleted Product"
+
+    def get_product_image(self, obj):
+
+        if not obj.product:
+            return None
+
+        request = self.context.get("request")
+
+        return get_image_url(
+            obj.product.image,
+            request
+        )
+
+
+# ============================================================
+# PAYMENT SERIALIZER
+# ============================================================
+
+class PaymentSerializer(serializers.ModelSerializer):
+
+    order_number = serializers.CharField(
+        source="order.order_number",
+        read_only=True
+    )
+
+    class Meta:
+        model = Payment
+
+        fields = [
+            "id",
+            "order_number",
+            "payment_method",
+            "payment_status",
+            "payment_reference",
+            "created_at",
+            "updated_at",
+        ]
+
+        read_only_fields = [
+            "id",
+            "order_number",
+            "payment_status",
+            "payment_reference",
+            "created_at",
+            "updated_at",
+        ]
+
+
+# ============================================================
 # TRACKING SERIALIZER
-# ==================================================
+# ============================================================
 
 class TrackingSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Tracking
+
         fields = [
             "id",
             "status",
@@ -183,138 +283,84 @@ class TrackingSerializer(serializers.ModelSerializer):
             "order_cancelled_by_user",
         ]
 
-# ==================================================
+
+# ============================================================
 # ORDER SERIALIZER
-# ==================================================
+# ============================================================
 
 class OrderSerializer(serializers.ModelSerializer):
 
-    status = serializers.SerializerMethodField()
+    items = OrderItemSerializer(
+        many=True,
+        read_only=True
+    )
+
     tracking = serializers.SerializerMethodField()
-    payment_method = serializers.SerializerMethodField()
-    products = serializers.SerializerMethodField()
-    total_amount = serializers.SerializerMethodField()
+
+    payment = serializers.SerializerMethodField()
+
+    item_count = serializers.SerializerMethodField()
 
     class Meta:
-        model = Address
+        model = Order
 
         fields = [
             "id",
             "order_number",
             "address",
-            "order_at",
-            "status",
-            "tracking",
-            "payment_method",
-            "products",
             "total_amount",
+            "status",
+            "payment_method",
+            "payment_status",
+            "created_at",
+            "updated_at",
+            "items",
+            "item_count",
+            "tracking",
+            "payment",
         ]
 
-    # ==========================
-    # CURRENT ORDER STATUS
-    # ==========================
+    # --------------------------------------------------------
+    # ITEM COUNT
+    # --------------------------------------------------------
 
-    def get_status(self, obj):
+    def get_item_count(self, obj):
 
-        tracking = Tracking.objects.filter(
-            cart__order_number=obj.order_number,
-            cart__is_order_placed=True
-        ).order_by("-status_date").first()
+        return sum(
+            item.quantity
+            for item in obj.items.all()
+        )
 
-        if tracking:
-            return tracking.status
-
-        return "pending"
-
-    # ==========================
-    # TRACKING HISTORY
-    # ==========================
+    # --------------------------------------------------------
+    # TRACKING
+    # --------------------------------------------------------
 
     def get_tracking(self, obj):
 
-        tracking = Tracking.objects.filter(
-            cart__order_number=obj.order_number,
-            cart__is_order_placed=True
-        ).order_by("status_date")
+        tracking = (
+            Tracking.objects
+            .filter(order=obj)
+            .order_by("status_date")
+        )
 
         return TrackingSerializer(
             tracking,
             many=True
         ).data
 
-    # ==========================
+    # --------------------------------------------------------
     # PAYMENT
-    # ==========================
+    # --------------------------------------------------------
 
-    def get_payment_method(self, obj):
+    def get_payment(self, obj):
 
-        payment = Payment.objects.filter(
-            order_number=obj.order_number
-        ).first()
+        try:
+            payment = obj.payment
 
-        if payment:
-            return payment.payment_method
+        except Payment.DoesNotExist:
+            return None
 
-        return "cod"
-
-    # ==========================
-    # PRODUCTS
-    # ==========================
-
-    def get_products(self, obj):
-
-        carts = Cart.objects.filter(
-            order_number=obj.order_number,
-            is_order_placed=True
-        ).select_related("product")
-
-        data = []
-
-        for cart in carts:
-
-            data.append({
-                "product_id": (
-                    cart.product.id
-                    if cart.product
-                    else None
-                ),
-
-                "product_name": (
-                    cart.product.name
-                    if cart.product
-                    else "Product"
-                ),
-
-                "quantity": cart.quantity,
-
-                "price": (
-                    str(cart.product.price)
-                    if cart.product
-                    else "0.00"
-                ),
-            })
-
-        return data
-
-    # ==========================
-    # TOTAL AMOUNT
-    # ==========================
-
-    def get_total_amount(self, obj):
-
-        carts = Cart.objects.filter(
-            order_number=obj.order_number,
-            is_order_placed=True
-        ).select_related("product")
-
-        total = 0
-
-        for cart in carts:
-
-            if cart.product:
-                total += (
-                    cart.product.price *
-                    cart.quantity
-                )
-
-        return str(total)
+        return PaymentSerializer(
+            payment,
+            context=self.context
+        ).data

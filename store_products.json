@@ -12,8 +12,6 @@
       "in_stock": true,
       "quantity": 25,
       "category": 1,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:30.525Z",
       "slug": "black-womens-gown"
     }
@@ -31,8 +29,6 @@
       "in_stock": true,
       "quantity": 30,
       "category": 1,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:30.541Z",
       "slug": "corset-leather-with-skirt"
     }
@@ -50,8 +46,6 @@
       "in_stock": true,
       "quantity": 33,
       "category": 1,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:30.555Z",
       "slug": "corset-with-black-skirt"
     }
@@ -69,8 +63,6 @@
       "in_stock": true,
       "quantity": 6,
       "category": 1,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:30.563Z",
       "slug": "dress-pea"
     }
@@ -88,8 +80,6 @@
       "in_stock": true,
       "quantity": 62,
       "category": 1,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:30.573Z",
       "slug": "marni-red-black-suit"
     }
@@ -107,8 +97,6 @@
       "in_stock": true,
       "quantity": 3,
       "category": 2,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:32.909Z",
       "slug": "black-brown-slipper"
     }
@@ -126,8 +114,6 @@
       "in_stock": true,
       "quantity": 93,
       "category": 2,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:32.926Z",
       "slug": "calvin-klein-heel-shoes"
     }
@@ -145,8 +131,6 @@
       "in_stock": true,
       "quantity": 88,
       "category": 2,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:32.926Z",
       "slug": "golden-shoes-woman"
     }
@@ -164,8 +148,6 @@
       "in_stock": true,
       "quantity": 49,
       "category": 2,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:32.941Z",
       "slug": "pampi-shoes"
     }
@@ -183,8 +165,6 @@
       "in_stock": true,
       "quantity": 7,
       "category": 2,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:32.958Z",
       "slug": "red-shoes"
     }
@@ -202,8 +182,6 @@
       "in_stock": true,
       "quantity": 76,
       "category": 6,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:34.475Z",
       "slug": "blue-womens-handbag"
     }
@@ -221,8 +199,6 @@
       "in_stock": true,
       "quantity": 99,
       "category": 6,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:34.491Z",
       "slug": "heshe-womens-leather-bag"
     }
@@ -240,8 +216,6 @@
       "in_stock": true,
       "quantity": 75,
       "category": 6,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:34.513Z",
       "slug": "prada-women-bag"
     }
@@ -259,8 +233,6 @@
       "in_stock": true,
       "quantity": 39,
       "category": 6,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:34.532Z",
       "slug": "white-faux-leather-backpack"
     }
@@ -278,8 +250,6 @@
       "in_stock": true,
       "quantity": 11,
       "category": 6,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:34.534Z",
       "slug": "women-handbag-black"
     }
@@ -297,8 +267,6 @@
       "in_stock": true,
       "quantity": 54,
       "category": 7,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:37.090Z",
       "slug": "green-crystal-earring"
     }
@@ -316,8 +284,6 @@
       "in_stock": true,
       "quantity": 73,
       "category": 7,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:37.115Z",
       "slug": "green-oval-earring"
     }
@@ -335,8 +301,6 @@
       "in_stock": true,
       "quantity": 1,
       "category": 7,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:37.117Z",
       "slug": "tropical-earring"
     }
@@ -354,8 +318,6 @@
       "in_stock": true,
       "quantity": 25,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.185Z",
       "slug": "iphone-5s"
     }
@@ -373,8 +335,6 @@
       "in_stock": true,
       "quantity": 60,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.185Z",
       "slug": "iphone-6"
     }
@@ -392,8 +352,6 @@
       "in_stock": true,
       "quantity": 56,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.200Z",
       "slug": "iphone-13-pro"
     }
@@ -411,8 +369,6 @@
       "in_stock": true,
       "quantity": 37,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.209Z",
       "slug": "iphone-x"
     }
@@ -430,8 +386,6 @@
       "in_stock": true,
       "quantity": 19,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.209Z",
       "slug": "oppo-a57"
     }
@@ -449,8 +403,6 @@
       "in_stock": true,
       "quantity": 78,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.225Z",
       "slug": "oppo-f19-pro-plus"
     }
@@ -468,8 +420,6 @@
       "in_stock": true,
       "quantity": 55,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.225Z",
       "slug": "oppo-k1"
     }
@@ -487,8 +437,6 @@
       "in_stock": true,
       "quantity": 48,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.241Z",
       "slug": "realme-c35"
     }
@@ -506,8 +454,6 @@
       "in_stock": true,
       "quantity": 12,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.241Z",
       "slug": "realme-x"
     }
@@ -525,8 +471,6 @@
       "in_stock": true,
       "quantity": 80,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.256Z",
       "slug": "realme-xt"
     }
@@ -544,8 +488,6 @@
       "in_stock": true,
       "quantity": 67,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.263Z",
       "slug": "samsung-galaxy-s7"
     }
@@ -563,8 +505,6 @@
       "in_stock": true,
       "quantity": 0,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.266Z",
       "slug": "samsung-galaxy-s8"
     }
@@ -582,8 +522,6 @@
       "in_stock": true,
       "quantity": 19,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.266Z",
       "slug": "samsung-galaxy-s10"
     }
@@ -601,8 +539,6 @@
       "in_stock": true,
       "quantity": 50,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.282Z",
       "slug": "vivo-s1"
     }
@@ -620,8 +556,6 @@
       "in_stock": true,
       "quantity": 82,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.282Z",
       "slug": "vivo-v9"
     }
@@ -639,8 +573,6 @@
       "in_stock": true,
       "quantity": 7,
       "category": 3,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:39.298Z",
       "slug": "vivo-x21"
     }
@@ -658,8 +590,6 @@
       "in_stock": true,
       "quantity": 61,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.342Z",
       "slug": "amazon-echo-plus"
     }
@@ -677,8 +607,6 @@
       "in_stock": true,
       "quantity": 67,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.359Z",
       "slug": "apple-airpods"
     }
@@ -696,8 +624,6 @@
       "in_stock": true,
       "quantity": 59,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.376Z",
       "slug": "apple-airpods-max-silver"
     }
@@ -715,8 +641,6 @@
       "in_stock": true,
       "quantity": 1,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.376Z",
       "slug": "apple-airpower-wireless-charger"
     }
@@ -734,8 +658,6 @@
       "in_stock": true,
       "quantity": 27,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.392Z",
       "slug": "apple-homepod-mini-cosmic-grey"
     }
@@ -753,8 +675,6 @@
       "in_stock": true,
       "quantity": 31,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.392Z",
       "slug": "apple-iphone-charger"
     }
@@ -772,8 +692,6 @@
       "in_stock": true,
       "quantity": 1,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.412Z",
       "slug": "apple-magsafe-battery-pack"
     }
@@ -791,8 +709,6 @@
       "in_stock": true,
       "quantity": 33,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.412Z",
       "slug": "apple-watch-series-4-gold"
     }
@@ -810,8 +726,6 @@
       "in_stock": true,
       "quantity": 50,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.424Z",
       "slug": "beats-flex-wireless-earphones"
     }
@@ -829,8 +743,6 @@
       "in_stock": true,
       "quantity": 69,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.431Z",
       "slug": "iphone-12-silicone-case-with-magsafe-plum"
     }
@@ -848,8 +760,6 @@
       "in_stock": true,
       "quantity": 48,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.441Z",
       "slug": "monopod"
     }
@@ -867,8 +777,6 @@
       "in_stock": true,
       "quantity": 58,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.441Z",
       "slug": "selfie-lamp-with-iphone"
     }
@@ -886,8 +794,6 @@
       "in_stock": true,
       "quantity": 11,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.450Z",
       "slug": "selfie-stick-monopod"
     }
@@ -905,8 +811,6 @@
       "in_stock": true,
       "quantity": 15,
       "category": 5,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:40.458Z",
       "slug": "tv-studio-camera-pedestal"
     }
@@ -924,8 +828,6 @@
       "in_stock": true,
       "quantity": 32,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:42.143Z",
       "slug": "brown-leather-belt-watch"
     }
@@ -943,8 +845,6 @@
       "in_stock": true,
       "quantity": 100,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:42.171Z",
       "slug": "longines-master-collection"
     }
@@ -962,8 +862,6 @@
       "in_stock": true,
       "quantity": 40,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:42.173Z",
       "slug": "rolex-cellini-date-black-dial"
     }
@@ -981,8 +879,6 @@
       "in_stock": true,
       "quantity": 36,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:42.192Z",
       "slug": "rolex-cellini-moonphase"
     }
@@ -1000,8 +896,6 @@
       "in_stock": true,
       "quantity": 86,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:42.200Z",
       "slug": "rolex-datejust"
     }
@@ -1019,8 +913,6 @@
       "in_stock": true,
       "quantity": 55,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:42.201Z",
       "slug": "rolex-submariner-watch"
     }
@@ -1038,8 +930,6 @@
       "in_stock": true,
       "quantity": 90,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:43.227Z",
       "slug": "iwc-ingenieur-automatic-steel"
     }
@@ -1057,8 +947,6 @@
       "in_stock": true,
       "quantity": 52,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:43.233Z",
       "slug": "rolex-cellini-moonphase"
     }
@@ -1076,8 +964,6 @@
       "in_stock": true,
       "quantity": 4,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:43.241Z",
       "slug": "rolex-datejust-women"
     }
@@ -1095,8 +981,6 @@
       "in_stock": true,
       "quantity": 0,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:43.241Z",
       "slug": "watch-gold-for-women"
     }
@@ -1114,8 +998,6 @@
       "in_stock": true,
       "quantity": 12,
       "category": 4,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:43.259Z",
       "slug": "womens-wrist-watch"
     }
@@ -1133,8 +1015,6 @@
       "in_stock": true,
       "quantity": 24,
       "category": 8,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:46.024Z",
       "slug": "apple-macbook-pro-14-inch-space-grey"
     }
@@ -1152,8 +1032,6 @@
       "in_stock": true,
       "quantity": 45,
       "category": 8,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:46.039Z",
       "slug": "asus-zenbook-pro-dual-screen-laptop"
     }
@@ -1171,8 +1049,6 @@
       "in_stock": true,
       "quantity": 75,
       "category": 8,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:46.059Z",
       "slug": "huawei-matebook-x-pro"
     }
@@ -1190,8 +1066,6 @@
       "in_stock": true,
       "quantity": 40,
       "category": 8,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:46.059Z",
       "slug": "lenovo-yoga-920"
     }
@@ -1209,8 +1083,6 @@
       "in_stock": true,
       "quantity": 74,
       "category": 8,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:46.075Z",
       "slug": "new-dell-xps-13-9300-laptop"
     }
@@ -1228,8 +1100,6 @@
       "in_stock": true,
       "quantity": 99,
       "category": 9,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:47.522Z",
       "slug": "essence-mascara-lash-princess"
     }
@@ -1247,8 +1117,6 @@
       "in_stock": true,
       "quantity": 34,
       "category": 9,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:47.537Z",
       "slug": "eyeshadow-palette-with-mirror"
     }
@@ -1266,8 +1134,6 @@
       "in_stock": true,
       "quantity": 89,
       "category": 9,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:47.558Z",
       "slug": "powder-canister"
     }
@@ -1285,8 +1151,6 @@
       "in_stock": true,
       "quantity": 91,
       "category": 9,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:47.575Z",
       "slug": "red-lipstick"
     }
@@ -1304,8 +1168,6 @@
       "in_stock": true,
       "quantity": 79,
       "category": 9,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:47.575Z",
       "slug": "red-nail-polish"
     }
@@ -1323,8 +1185,6 @@
       "in_stock": true,
       "quantity": 94,
       "category": 10,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:48.659Z",
       "slug": "attitude-super-leaves-hand-soap"
     }
@@ -1342,8 +1202,6 @@
       "in_stock": true,
       "quantity": 34,
       "category": 10,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:48.662Z",
       "slug": "olay-ultra-moisture-shea-butter-body-wash"
     }
@@ -1361,8 +1219,6 @@
       "in_stock": true,
       "quantity": 95,
       "category": 10,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:48.673Z",
       "slug": "vaseline-men-body-and-face-lotion"
     }
@@ -1380,8 +1236,6 @@
       "in_stock": true,
       "quantity": 29,
       "category": 11,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:49.722Z",
       "slug": "calvin-klein-ck-one"
     }
@@ -1399,8 +1253,6 @@
       "in_stock": true,
       "quantity": 58,
       "category": 11,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:49.739Z",
       "slug": "chanel-coco-noir-eau-de"
     }
@@ -1418,8 +1270,6 @@
       "in_stock": true,
       "quantity": 98,
       "category": 11,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:49.739Z",
       "slug": "dior-jadore"
     }
@@ -1437,8 +1287,6 @@
       "in_stock": true,
       "quantity": 4,
       "category": 11,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:49.750Z",
       "slug": "dolce-shine-eau-de"
     }
@@ -1456,8 +1304,6 @@
       "in_stock": false,
       "quantity": 91,
       "category": 11,
-      "average_rating": "0.00",
-      "review_count": 0,
       "created_at": "2026-08-14T12:46:49.756Z",
       "slug": "gucci-bloom-eau-de"
     }

@@ -117,20 +117,30 @@ def login(request):
 import requests
 import os
 
+import os
+import requests
+from django.contrib.auth.tokens import default_token_generator
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import AllowAny
+from rest_framework.response import Response
+
+
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def forgot_password(request):
+
     email = request.data.get("email", "").strip().lower()
 
     if not email:
         return Response(
-            {"message": "Email is required"},
+            {"success": False, "message": "Email is required"},
             status=400
         )
 
+    # Find user
     user = User.objects.filter(email=email).first()
 
-    # Security: email exist kare ya na kare same response
+    # Security: don't reveal whether email exists
     if not user:
         return Response(
             {
@@ -140,21 +150,25 @@ def forgot_password(request):
             status=200
         )
 
-    # Django secure reset token
-    uid = urlsafe_base64_encode(force_bytes(user.pk))
+    # Generate Django reset token
     token = default_token_generator.make_token(user)
 
-    frontend_url = os.getenv("FRONTEND_URL", "").rstrip("/")
+    frontend_url = os.getenv("FRONTEND_URL")
 
-    reset_url = f"{frontend_url}/reset-password/{uid}/{token}/"
+    reset_url = (
+        f"{frontend_url}/reset-password/"
+        f"{user.id}/{token}/"
+    )
 
-    brevo_api_key = os.getenv("BREVO_API_KEY")
+    api_key = os.getenv("BREVO_API_KEY")
 
-    if not brevo_api_key:
+    # Check API key
+    if not api_key:
+        print("ERROR: BREVO_API_KEY is missing")
         return Response(
             {
                 "success": False,
-                "message": "BREVO_API_KEY is not configured."
+                "message": "Email service is not configured."
             },
             status=500
         )
@@ -166,63 +180,50 @@ def forgot_password(request):
         },
         "to": [
             {
-                "email": user.email,
-                "name": f"{user.first_name} {user.last_name}"
+                "email": email
             }
         ],
         "subject": "Shopora - Reset Your Password",
         "htmlContent": f"""
-        <!DOCTYPE html>
         <html>
-        <body style="font-family: Arial, sans-serif; background:#f8fafc; padding:30px;">
+        <body>
 
-            <div style="
-                max-width:600px;
-                margin:auto;
-                background:white;
-                padding:30px;
-                border-radius:12px;
-            ">
+            <h2>Reset Your Shopora Password</h2>
 
-                <h2 style="color:#e11d48;">
-                    Reset Your Password
-                </h2>
+            <p>Hello {user.first_name},</p>
 
-                <p>Hello {user.first_name},</p>
+            <p>
+                We received a request to reset your Shopora password.
+            </p>
 
-                <p>
-                    We received a request to reset your Shopora password.
-                </p>
+            <p>
+                Click the button below:
+            </p>
 
-                <p>
-                    Click the button below to create a new password:
-                </p>
+            <p>
+                <a href="{reset_url}"
+                   style="
+                   display:inline-block;
+                   padding:12px 20px;
+                   background:#e11d48;
+                   color:#ffffff;
+                   text-decoration:none;
+                   border-radius:6px;
+                   font-weight:bold;
+                   ">
+                   Reset Password
+                </a>
+            </p>
 
-                <p style="margin:30px 0;">
-                    <a href="{reset_url}"
-                       style="
-                       background:#e11d48;
-                       color:white;
-                       padding:12px 22px;
-                       text-decoration:none;
-                       border-radius:7px;
-                       font-weight:bold;
-                       ">
-                        Reset Password
-                    </a>
-                </p>
+            <p>
+                If you did not request this password reset,
+                you can safely ignore this email.
+            </p>
 
-                <p>
-                    If you did not request this password reset,
-                    you can safely ignore this email.
-                </p>
-
-                <p>
-                    Thanks,<br>
-                    <strong>Shopora Team</strong>
-                </p>
-
-            </div>
+            <p>
+                Thanks,<br>
+                Shopora Team
+            </p>
 
         </body>
         </html>
@@ -230,25 +231,31 @@ def forgot_password(request):
     }
 
     try:
+
         response = requests.post(
             "https://api.brevo.com/v3/smtp/email",
             headers={
                 "accept": "application/json",
-                "api-key": brevo_api_key,
+                "api-key": api_key,
                 "content-type": "application/json",
             },
             json=payload,
-            timeout=20,
+            timeout=15,
         )
 
+        print("====================================")
         print("BREVO STATUS:", response.status_code)
         print("BREVO RESPONSE:", response.text)
+        print("====================================")
 
         if response.status_code not in [200, 201, 202]:
+
             return Response(
                 {
                     "success": False,
-                    "message": "Unable to send reset email."
+                    "message": "Unable to send reset email.",
+                    "brevo_status": response.status_code,
+                    "brevo_error": response.text,
                 },
                 status=500
             )
@@ -261,16 +268,32 @@ def forgot_password(request):
             status=200
         )
 
-    except requests.RequestException as e:
+    except requests.exceptions.Timeout:
+
+        print("BREVO ERROR: Request timed out")
+
+        return Response(
+            {
+                "success": False,
+                "message": "Email service timed out."
+            },
+            status=500
+        )
+
+    except Exception as e:
+
         print("BREVO ERROR:", str(e))
 
         return Response(
             {
                 "success": False,
-                "message": "Email service error."
+                "message": "Email service error.",
+                "error": str(e),
             },
             status=500
         )
+   
+
 
 
 @api_view(["POST"])

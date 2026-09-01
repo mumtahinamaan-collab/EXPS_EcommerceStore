@@ -1,5 +1,6 @@
 from django.urls import path
 from rest_framework_simplejwt.views import TokenRefreshView
+from .views import test_email
 
 from .views import (
     # Authentication
@@ -163,5 +164,10 @@ urlpatterns = [
         "orders/confirm-stripe/",
         confirm_stripe_payment,
         name="confirm-stripe-payment"
+),
+    path(
+        "test-email/",
+        test_email,
+        name="test-email"
 ),
 ]

@@ -450,3 +450,25 @@ def cancel_order(request, order_number):
     order.save(update_fields=["status", "payment_status"])
     Tracking.objects.create(order=order, status="cancelled", remark="Order cancelled by user", order_cancelled_by_user=True)
     return Response({"message": "Order cancelled successfully", "order_number": order.order_number}, status=200)
+@api_view(["GET"])
+@permission_classes([AllowAny])
+def test_email(request):
+    try:
+        send_mail(
+            subject="Shopora Email Test",
+            message="Email system is working!",
+            from_email=settings.DEFAULT_FROM_EMAIL,
+            recipient_list=["mumtahina486@gmail.com"],
+            fail_silently=False,
+        )
+
+        return Response({
+            "success": True,
+            "message": "Email sent successfully"
+        })
+
+    except Exception as e:
+        return Response({
+            "success": False,
+            "error": str(e)
+        }, status=500)

@@ -2,6 +2,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework.permissions import AllowAny, IsAuthenticated
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
+from django.contrib.auth.tokens import default_token_generator
+import os
 
 import stripe
 from django.shortcuts import get_object_or_404
@@ -13,6 +15,8 @@ from django.db import transaction
 from datetime import timedelta
 import uuid
 import random
+from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
+from django.utils.encoding import force_bytes, force_str
 
 from.models import (
     User, Product, Category, Cart, Order, OrderItem, Payment, Tracking,
@@ -116,7 +120,7 @@ import os
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def forgot_password(request):
-    email = request.data.get("email")
+    email = request.data.get("email", "").strip().lower()
 
     if not email:
         return Response(
@@ -126,20 +130,34 @@ def forgot_password(request):
 
     user = User.objects.filter(email=email).first()
 
+    # Security: email exist kare ya na kare same response
     if not user:
         return Response(
-            {"message": "If this email exists, a reset link has been sent."},
+            {
+                "success": True,
+                "message": "If this email exists, a reset link has been sent."
+            },
             status=200
         )
 
+    # Django secure reset token
+    uid = urlsafe_base64_encode(force_bytes(user.pk))
     token = default_token_generator.make_token(user)
 
-    reset_url = (
-        f"{os.getenv('FRONTEND_URL')}"
-        f"/reset-password/{user.id}/{token}/"
-    )
+    frontend_url = os.getenv("FRONTEND_URL", "").rstrip("/")
 
-    api_key = os.getenv("BREVO_API_KEY")
+    reset_url = f"{frontend_url}/reset-password/{uid}/{token}/"
+
+    brevo_api_key = os.getenv("BREVO_API_KEY")
+
+    if not brevo_api_key:
+        return Response(
+            {
+                "success": False,
+                "message": "BREVO_API_KEY is not configured."
+            },
+            status=500
+        )
 
     payload = {
         "sender": {
@@ -148,36 +166,66 @@ def forgot_password(request):
         },
         "to": [
             {
-                "email": email
+                "email": user.email,
+                "name": f"{user.first_name} {user.last_name}"
             }
         ],
         "subject": "Shopora - Reset Your Password",
         "htmlContent": f"""
-            <h2>Reset Your Password</h2>
+        <!DOCTYPE html>
+        <html>
+        <body style="font-family: Arial, sans-serif; background:#f8fafc; padding:30px;">
 
-            <p>Hello {user.first_name},</p>
+            <div style="
+                max-width:600px;
+                margin:auto;
+                background:white;
+                padding:30px;
+                border-radius:12px;
+            ">
 
-            <p>
-                Click the button below to reset your Shopora password.
-            </p>
+                <h2 style="color:#e11d48;">
+                    Reset Your Password
+                </h2>
 
-            <p>
-                <a href="{reset_url}"
-                   style="
-                   display:inline-block;
-                   padding:12px 20px;
-                   background:#e11d48;
-                   color:white;
-                   text-decoration:none;
-                   border-radius:6px;
-                   ">
-                   Reset Password
-                </a>
-            </p>
+                <p>Hello {user.first_name},</p>
 
-            <p>This link will expire for security reasons.</p>
+                <p>
+                    We received a request to reset your Shopora password.
+                </p>
 
-            <p>Thanks,<br>Shopora Team</p>
+                <p>
+                    Click the button below to create a new password:
+                </p>
+
+                <p style="margin:30px 0;">
+                    <a href="{reset_url}"
+                       style="
+                       background:#e11d48;
+                       color:white;
+                       padding:12px 22px;
+                       text-decoration:none;
+                       border-radius:7px;
+                       font-weight:bold;
+                       ">
+                        Reset Password
+                    </a>
+                </p>
+
+                <p>
+                    If you did not request this password reset,
+                    you can safely ignore this email.
+                </p>
+
+                <p>
+                    Thanks,<br>
+                    <strong>Shopora Team</strong>
+                </p>
+
+            </div>
+
+        </body>
+        </html>
         """
     }
 
@@ -186,7 +234,7 @@ def forgot_password(request):
             "https://api.brevo.com/v3/smtp/email",
             headers={
                 "accept": "application/json",
-                "api-key": api_key,
+                "api-key": brevo_api_key,
                 "content-type": "application/json",
             },
             json=payload,
@@ -200,8 +248,7 @@ def forgot_password(request):
             return Response(
                 {
                     "success": False,
-                    "message": "Unable to send reset email.",
-                    "brevo": response.text,
+                    "message": "Unable to send reset email."
                 },
                 status=500
             )
@@ -214,7 +261,7 @@ def forgot_password(request):
             status=200
         )
 
-    except Exception as e:
+    except requests.RequestException as e:
         print("BREVO ERROR:", str(e))
 
         return Response(
@@ -224,26 +271,52 @@ def forgot_password(request):
             },
             status=500
         )
+
+
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def reset_password(request):
+    uid = request.data.get("uid")
     token = request.data.get("token")
     password = request.data.get("password")
-    if not token or not password:
-        return Response({"message": "Token and password are required"}, status=400)
-    try:
-        user = User.objects.get(reset_token=token)
-    except User.DoesNotExist:
-        return Response({"message": "Invalid or expired token"}, status=400)
-    if not user.reset_token_created or timezone.now() > user.reset_token_created + timedelta(minutes=15):
-        return Response({"message": "Reset token has expired"}, status=400)
+
+    if not uid or not token or not password:
+        return Response(
+            {"message": "UID, token and password are required"},
+            status=400
+        )
+
     if len(password) < 8:
-        return Response({"message": "Password must be at least 8 characters"}, status=400)
+        return Response(
+            {"message": "Password must be at least 8 characters"},
+            status=400
+        )
+
+    try:
+        user_id = force_str(urlsafe_base64_decode(uid))
+        user = User.objects.get(pk=user_id)
+
+    except (TypeError, ValueError, OverflowError, User.DoesNotExist):
+        return Response(
+            {"message": "Invalid or expired reset link"},
+            status=400
+        )
+
+    # Django token validation
+    if not default_token_generator.check_token(user, token):
+        return Response(
+            {"message": "Invalid or expired reset link"},
+            status=400
+        )
+
     user.set_password(password)
-    user.reset_token = None
-    user.reset_token_created = None
-    user.save(update_fields=["password", "reset_token", "reset_token_created"])
-    return Response({"message": "Password reset successfully"}, status=200)
+    user.save(update_fields=["password"])
+
+    return Response(
+        {"message": "Password reset successfully"},
+        status=200
+    )
+        
 
 @api_view(["GET"])
 @permission_classes([IsAuthenticated])

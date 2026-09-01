@@ -1,6 +1,6 @@
-import { useState } from "react";
 import Navbar from "./components/Navbar";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
+
 import Home from "./Pages/Home";
 import About from "./Pages/About";
 import Contact from "./Pages/Contact";
@@ -17,35 +17,93 @@ import MyOrders from "./Pages/MyOrders";
 import Checkout from "./Pages/Checkout";
 import StripePayment from "./Pages/StripePayment";
 import NotFound from "./Pages/NotFounf";
+
 function App() {
+
+  const location = useLocation();
+
+  const is404Page =
+    location.pathname !== "/" &&
+    !location.pathname.startsWith("/about") &&
+    !location.pathname.startsWith("/contact") &&
+    !location.pathname.startsWith("/login") &&
+    !location.pathname.startsWith("/register") &&
+    !location.pathname.startsWith("/forgot-password") &&
+    !location.pathname.startsWith("/search") &&
+    !location.pathname.startsWith("/products") &&
+    !location.pathname.startsWith("/reset-password") &&
+    !location.pathname.startsWith("/cart") &&
+    !location.pathname.startsWith("/myorder") &&
+    !location.pathname.startsWith("/checkout") &&
+    !location.pathname.startsWith("/stripe-payment");
+
   return (
     <>
-      <Navbar />
+      {!is404Page && <Navbar />}
+
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} />
-        <Route path="/forgot-password" element={<ForgotPassword />} />
 
-        <Route path="/search" element={<Search />} />
-        <Route path="/products/:categorySlug?" element={<Products />} />
+        <Route path="/about" element={<About />} />
+
+        <Route path="/contact" element={<Contact />} />
+
+        <Route path="/login" element={<Login />} />
+
+        <Route path="/register" element={<Register />} />
+
+        <Route
+          path="/forgot-password"
+          element={<ForgotPassword />}
+        />
+
+        <Route
+          path="/search"
+          element={<Search />}
+        />
+
+        <Route
+          path="/products/:categorySlug?"
+          element={<Products />}
+        />
+
         <Route
           path="/products/:categorySlug/:productSlug"
           element={<ProductDetail />}
-        
         />
 
-        <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/cart" element={<Cart />} />
-        <Route path="/myorder" element={<MyOrders />} />
-        <Route path="/checkout" element={<Checkout />} />
-        <Route path="/stripe-payment" element={<StripePayment />} />
-          <Route path="*" element={<NotFound />} />
+        <Route
+          path="/reset-password"
+          element={<ResetPassword />}
+        />
 
+        <Route
+          path="/cart"
+          element={<Cart />}
+        />
+
+        <Route
+          path="/myorder"
+          element={<MyOrders />}
+        />
+
+        <Route
+          path="/checkout"
+          element={<Checkout />}
+        />
+
+        <Route
+          path="/stripe-payment"
+          element={<StripePayment />}
+        />
+
+        <Route
+          path="*"
+          element={<NotFound />}
+        />
       </Routes>
-      <Footer />
+
+      {!is404Page && <Footer />}
     </>
   );
 }

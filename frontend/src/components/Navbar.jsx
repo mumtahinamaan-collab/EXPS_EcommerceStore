@@ -25,10 +25,11 @@ const Navbar = () => {
     location.pathname.startsWith("/products");
 
   const isAuthPage =
-    location.pathname === "/login" ||
-    location.pathname === "/register" ||
-    location.pathname === "/forgot-password" ||
-    location.pathname === "/reset-password";
+  location.pathname === "/login" ||
+  location.pathname === "/register" ||
+  location.pathname === "/forgot-password" ||
+  location.pathname === "/reset-password" ||
+  location.pathname.startsWith("/reset-password/");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");

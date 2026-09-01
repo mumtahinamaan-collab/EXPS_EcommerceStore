@@ -92,13 +92,13 @@ urlpatterns = [
     path(
         "password-reset/",
         forgot_password,
-        name="password-reset"
+        name="forgot_password"
     ),
 
     path(
         "password-reset/confirm/",
         reset_password,
-        name="password-reset-confirm"
+        name="reset_password"
     ),
 
     path(

@@ -242,6 +242,20 @@ MEDIA_URL = "/media/"
 
 MEDIA_ROOT = BASE_DIR / "media"
 
+print("BASE_DIR:", BASE_DIR)
+print("MEDIA_ROOT:", MEDIA_ROOT)
+print("MEDIA EXISTS:", os.path.exists(MEDIA_ROOT))
+print(
+    "CATEGORY IMAGE EXISTS:",
+    os.path.exists(
+        os.path.join(
+            MEDIA_ROOT,
+            "category_images",
+            "images.jpeg"
+        )
+    )
+)
+
 
 # ==================================================
 # DEFAULT PRIMARY KEY

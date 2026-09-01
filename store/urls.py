@@ -1,6 +1,5 @@
 from django.urls import path
 from rest_framework_simplejwt.views import TokenRefreshView
-from .views import test_email
 
 from .views import (
     # Authentication
@@ -28,6 +27,7 @@ from .views import (
     # Orders
     create_order,
     confirm_stripe_payment,
+    stripe_webhook,
     my_orders,
     cancel_order,
 )
@@ -166,8 +166,9 @@ urlpatterns = [
         name="confirm-stripe-payment"
 ),
     path(
-        "test-email/",
-        test_email,
-        name="test-email"
+        "stripe/webhook/",
+        stripe_webhook,
+        name="stripe-webhook"
 ),
+
 ]

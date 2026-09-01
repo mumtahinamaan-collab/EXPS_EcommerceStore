@@ -745,19 +745,25 @@ def get_cart_items(request):
 @permission_classes([IsAuthenticated])
 def add_to_cart(request):
 
-    product_id = request.data.get(
-        "productId"
-    )
+    product_id = request.data.get("productId")
 
-    quantity = int(
-        request.data.get(
-            "quantity",
-            1
+    # ========================================================
+    # QUANTITY VALIDATION
+    # ========================================================
+
+    try:
+        quantity = int(
+            request.data.get("quantity", 1)
         )
-    )
+    except (TypeError, ValueError):
+        return Response(
+            {
+                "message": "Quantity must be a valid number"
+            },
+            status=400
+        )
 
     if not product_id:
-
         return Response(
             {
                 "message": "Product ID is required"
@@ -765,13 +771,33 @@ def add_to_cart(request):
             status=400
         )
 
+    # Maximum 5 items per product
+    if quantity <= 0:
+        return Response(
+            {
+                "message": "Quantity must be at least 1"
+            },
+            status=400
+        )
+
+    if quantity > 5:
+        return Response(
+            {
+                "message": "You can add maximum 5 items of one product."
+            },
+            status=400
+        )
+
+    # ========================================================
+    # GET PRODUCT
+    # ========================================================
+
     product = get_object_or_404(
         Product,
         id=product_id
     )
 
     if not product.in_stock or product.quantity <= 0:
-
         return Response(
             {
                 "message": "Product is out of stock"
@@ -779,8 +805,11 @@ def add_to_cart(request):
             status=400
         )
 
-    if quantity > product.quantity:
+    # ========================================================
+    # STOCK CHECK
+    # ========================================================
 
+    if quantity > product.quantity:
         return Response(
             {
                 "message":
@@ -788,6 +817,10 @@ def add_to_cart(request):
             },
             status=400
         )
+
+    # ========================================================
+    # GET / CREATE CART
+    # ========================================================
 
     cart, created = Cart.objects.get_or_create(
 
@@ -800,10 +833,26 @@ def add_to_cart(request):
         }
     )
 
+    # ========================================================
+    # EXISTING CART ITEM
+    # ========================================================
+
     if not created:
 
-        if cart.quantity + quantity > product.quantity:
+        new_quantity = cart.quantity + quantity
 
+        # Maximum 5 per product
+        if new_quantity > 5:
+            return Response(
+                {
+                    "message":
+                    "You can have maximum 5 items of one product in your cart."
+                },
+                status=400
+            )
+
+        # Stock check
+        if new_quantity > product.quantity:
             return Response(
                 {
                     "message":
@@ -812,11 +861,15 @@ def add_to_cart(request):
                 status=400
             )
 
-        cart.quantity += quantity
+        cart.quantity = new_quantity
 
         cart.save(
             update_fields=["quantity"]
         )
+
+    # ========================================================
+    # SUCCESS
+    # ========================================================
 
     return Response(
         {
@@ -831,26 +884,56 @@ def add_to_cart(request):
 @permission_classes([IsAuthenticated])
 def update_cart_item(request):
 
-    cart_id = request.data.get(
-        "cart_id"
-    )
+    cart_id = request.data.get("cart_id")
 
-    quantity = int(
-        request.data.get(
-            "quantity",
-            0
+    # ========================================================
+    # QUANTITY VALIDATION
+    # ========================================================
+
+    try:
+        quantity = int(
+            request.data.get("quantity", 0)
         )
-    )
-
-    if not cart_id or quantity <= 0:
-
+    except (TypeError, ValueError):
         return Response(
             {
-                "message":
-                "Cart ID and valid quantity are required"
+                "message": "Quantity must be a valid number"
             },
             status=400
         )
+
+    if not cart_id:
+        return Response(
+            {
+                "message": "Cart ID is required"
+            },
+            status=400
+        )
+
+    if quantity <= 0:
+        return Response(
+            {
+                "message": "Quantity must be at least 1"
+            },
+            status=400
+        )
+
+    # ========================================================
+    # MAXIMUM 5 CHECK
+    # ========================================================
+
+    if quantity > 5:
+        return Response(
+            {
+                "message":
+                "You can have maximum 5 items of one product in your cart."
+            },
+            status=400
+        )
+
+    # ========================================================
+    # GET USER'S CART
+    # ========================================================
 
     cart = get_object_or_404(
         Cart,
@@ -858,8 +941,11 @@ def update_cart_item(request):
         user=request.user
     )
 
-    if quantity > cart.product.quantity:
+    # ========================================================
+    # STOCK CHECK
+    # ========================================================
 
+    if quantity > cart.product.quantity:
         return Response(
             {
                 "message":
@@ -867,6 +953,10 @@ def update_cart_item(request):
             },
             status=400
         )
+
+    # ========================================================
+    # UPDATE
+    # ========================================================
 
     cart.quantity = quantity
 
@@ -881,7 +971,6 @@ def update_cart_item(request):
         },
         status=200
     )
-
 
 @api_view(["DELETE"])
 @permission_classes([IsAuthenticated])
@@ -1023,8 +1112,11 @@ def create_order(request):
         1
     )
 
-    if not address:
+    # ========================================================
+    # BASIC VALIDATION
+    # ========================================================
 
+    if not address:
         return Response(
             {
                 "message": "Address is required"
@@ -1036,7 +1128,6 @@ def create_order(request):
         "cod",
         "stripe"
     ]:
-
         return Response(
             {
                 "message": "Invalid payment method"
@@ -1051,14 +1142,37 @@ def create_order(request):
     if buy_now_product_id:
 
         try:
-
             buy_now_quantity = int(
                 buy_now_quantity
             )
+        except (TypeError, ValueError):
+            return Response(
+                {
+                    "message": "Quantity must be a valid number"
+                },
+                status=400
+            )
 
-        except:
+        # ====================================================
+        # BUY NOW QUANTITY CHECK
+        # ====================================================
 
-            buy_now_quantity = 1
+        if buy_now_quantity <= 0:
+            return Response(
+                {
+                    "message": "Quantity must be at least 1"
+                },
+                status=400
+            )
+
+        if buy_now_quantity > 5:
+            return Response(
+                {
+                    "message":
+                    "You can purchase maximum 5 items of one product."
+                },
+                status=400
+            )
 
         try:
 
@@ -1070,6 +1184,10 @@ def create_order(request):
 
                     id=buy_now_product_id
                 )
+
+                # ====================================================
+                # STOCK CHECK
+                # ====================================================
 
                 if (
                     not product.in_stock
@@ -1084,6 +1202,10 @@ def create_order(request):
                         },
                         status=400
                     )
+
+                # ====================================================
+                # ORDER
+                # ====================================================
 
                 order_number = (
                     make_unique_order_number()
@@ -1125,6 +1247,10 @@ def create_order(request):
                     subtotal=subtotal
                 )
 
+                # ====================================================
+                # REDUCE STOCK
+                # ====================================================
+
                 product.quantity -= (
                     buy_now_quantity
                 )
@@ -1141,6 +1267,10 @@ def create_order(request):
                         "in_stock"
                     ]
                 )
+
+                # ====================================================
+                # PAYMENT
+                # ====================================================
 
                 payment = Payment.objects.create(
 
@@ -1160,6 +1290,10 @@ def create_order(request):
                     remark="Order placed"
                 )
 
+                # ====================================================
+                # COD
+                # ====================================================
+
                 if payment_method == "cod":
 
                     return Response(
@@ -1175,6 +1309,10 @@ def create_order(request):
                         },
                         status=201
                     )
+
+                # ====================================================
+                # STRIPE
+                # ====================================================
 
                 intent = (
                     create_stripe_payment_intent(
@@ -1211,7 +1349,7 @@ def create_order(request):
             )
 
     # ========================================================
-    # CART ORDER
+    # CART CHECKOUT
     # ========================================================
 
     try:
@@ -1221,12 +1359,19 @@ def create_order(request):
             carts = list(
 
                 Cart.objects
+
                 .select_for_update()
+
                 .filter(
                     user=request.user
                 )
+
                 .select_related("product")
             )
+
+            # ====================================================
+            # EMPTY CART
+            # ====================================================
 
             if not carts:
 
@@ -1237,8 +1382,35 @@ def create_order(request):
                     status=400
                 )
 
+            # ====================================================
+            # VALIDATE EVERY CART ITEM
+            # ====================================================
+
             for cart in carts:
 
+                # Quantity must be positive
+                if cart.quantity <= 0:
+
+                    return Response(
+                        {
+                            "message":
+                            f"Invalid quantity for {cart.product.name}"
+                        },
+                        status=400
+                    )
+
+                # Maximum 5 per product
+                if cart.quantity > 5:
+
+                    return Response(
+                        {
+                            "message":
+                            f"You can purchase maximum 5 items of {cart.product.name}."
+                        },
+                        status=400
+                    )
+
+                # Stock validation
                 if (
                     not cart.product.in_stock
                     or
@@ -1248,10 +1420,14 @@ def create_order(request):
                     return Response(
                         {
                             "message":
-                            f"{cart.product.name} is out of stock"
+                            f"Only {cart.product.quantity} items are available for {cart.product.name}"
                         },
                         status=400
                     )
+
+            # ====================================================
+            # CREATE ORDER
+            # ====================================================
 
             order_number = (
                 make_unique_order_number()
@@ -1276,7 +1452,22 @@ def create_order(request):
 
             total_amount = 0
 
+            # ====================================================
+            # CREATE ORDER ITEMS + REDUCE STOCK
+            # ====================================================
+
             for cart in carts:
+
+                # Extra final security check
+                if cart.quantity > 5:
+
+                    return Response(
+                        {
+                            "message":
+                            f"Maximum 5 items allowed for {cart.product.name}"
+                        },
+                        status=400
+                    )
 
                 subtotal = (
                     cart.product.price
@@ -1316,6 +1507,10 @@ def create_order(request):
                     ]
                 )
 
+            # ====================================================
+            # SAVE TOTAL
+            # ====================================================
+
             order.total_amount = (
                 total_amount
             )
@@ -1325,6 +1520,10 @@ def create_order(request):
                     "total_amount"
                 ]
             )
+
+            # ====================================================
+            # PAYMENT
+            # ====================================================
 
             payment = Payment.objects.create(
 
@@ -1343,6 +1542,10 @@ def create_order(request):
 
                 remark="Order placed"
             )
+
+            # ====================================================
+            # COD
+            # ====================================================
 
             if payment_method == "cod":
 
@@ -1363,6 +1566,10 @@ def create_order(request):
                     },
                     status=201
                 )
+
+            # ====================================================
+            # STRIPE
+            # ====================================================
 
             intent = (
                 create_stripe_payment_intent(
@@ -1403,62 +1610,121 @@ def create_order(request):
             status=400
         )
 
-
 # ============================================================
 # CONFIRM STRIPE PAYMENT
 # ============================================================
 
 @api_view(["POST"])
 @permission_classes([IsAuthenticated])
+@transaction.atomic
 def confirm_stripe_payment(request):
 
-    order_number = request.data.get(
-        "order_number"
-    )
+    order_number = request.data.get("order_number")
 
     if not order_number:
-
         return Response(
             {
-                "message":
-                "Order number is required"
+                "message": "Order number is required"
             },
             status=400
         )
 
+    # ========================================================
+    # GET USER'S ORDER
+    # ========================================================
+
     order = get_object_or_404(
-        Order,
+        Order.objects.select_for_update(),
         order_number=order_number,
         user=request.user
     )
 
-    try:
+    # ========================================================
+    # GET PAYMENT
+    # ========================================================
 
+    try:
         payment = order.payment
 
-    except:
-
+    except Payment.DoesNotExist:
         return Response(
             {
-                "message":
-                "Payment record not found"
+                "message": "Payment record not found"
             },
             status=404
         )
+
+    # ========================================================
+    # ALREADY PAID
+    # ========================================================
+
+    if (
+        payment.payment_status == "paid"
+        and
+        order.payment_status == "paid"
+        and
+        order.status == "confirmed"
+    ):
+
+        return Response(
+            {
+                "message": "Payment already confirmed",
+                "order_number": order.order_number
+            },
+            status=200
+        )
+
+    # ========================================================
+    # ALREADY FAILED / CANCELLED
+    # ========================================================
+
+    if (
+        payment.payment_status == "failed"
+        and
+        order.payment_status == "failed"
+        and
+        order.status == "cancelled"
+    ):
+
+        return Response(
+            {
+                "message": "Payment has already failed",
+                "order_number": order.order_number
+            },
+            status=400
+        )
+
+    # ========================================================
+    # STRIPE PAYMENT REFERENCE CHECK
+    # ========================================================
 
     if not payment.payment_reference:
 
         return Response(
             {
-                "message":
-                "Stripe PaymentIntent not found"
+                "message": "Stripe PaymentIntent not found"
             },
             status=400
         )
 
-    stripe.api_key = (
-        settings.STRIPE_SECRET_KEY
-    )
+    # ========================================================
+    # STRIPE API KEY
+    # ========================================================
+
+    stripe.api_key = settings.STRIPE_SECRET_KEY
+
+    if not stripe.api_key:
+
+        return Response(
+            {
+                "message": "Stripe secret key is not configured"
+            },
+            status=500
+        )
+
+    # ========================================================
+    # RETRIEVE PAYMENT INTENT
+    # ========================================================
 
     try:
 
@@ -1470,16 +1736,21 @@ def confirm_stripe_payment(request):
 
         return Response(
             {
-                "message":
-                "Unable to verify payment",
-
-                "error":
-                str(e)
+                "message": "Unable to verify payment",
+                "error": str(e)
             },
             status=400
         )
 
+    # ========================================================
+    # PAYMENT SUCCESS
+    # ========================================================
+
     if intent.status == "succeeded":
+
+        # -----------------------------------------------
+        # Update payment
+        # -----------------------------------------------
 
         payment.payment_status = "paid"
 
@@ -1490,8 +1761,11 @@ def confirm_stripe_payment(request):
             ]
         )
 
-        order.payment_status = "paid"
+        # -----------------------------------------------
+        # Update order
+        # -----------------------------------------------
 
+        order.payment_status = "paid"
         order.status = "confirmed"
 
         order.save(
@@ -1502,93 +1776,147 @@ def confirm_stripe_payment(request):
             ]
         )
 
+        # -----------------------------------------------
+        # Delete cart items
+        # -----------------------------------------------
+
         Cart.objects.filter(
             user=request.user
         ).delete()
 
+        # -----------------------------------------------
+        # Tracking
+        # -----------------------------------------------
+
         Tracking.objects.create(
-
             order=order,
-
             status="confirmed",
-
             remark="Payment successful"
         )
 
         return Response(
             {
-                "message":
-                "Payment successful",
-
-                "order_number":
-                order.order_number
+                "message": "Payment successful",
+                "order_number": order.order_number
             },
             status=200
         )
+
+    # ========================================================
+    # PAYMENT FAILED / CANCELLED
+    # ========================================================
 
     if intent.status in [
         "requires_payment_method",
         "canceled"
     ]:
 
+        # IMPORTANT:
+        # Agar order pehle hi failed/cancelled ho chuka hai,
+        # stock dobara restore nahi karna.
+        if (
+            order.status == "cancelled"
+            and
+            order.payment_status == "failed"
+        ):
+
+            return Response(
+                {
+                    "message": "Payment has already failed",
+                    "order_number": order.order_number
+                },
+                status=400
+            )
+
+        # -----------------------------------------------
+        # Mark payment failed
+        # -----------------------------------------------
+
         payment.payment_status = "failed"
 
         payment.save(
             update_fields=[
-                "payment_status"
+                "payment_status",
+                "updated_at"
             ]
         )
 
-        order.payment_status = "failed"
+        # -----------------------------------------------
+        # Mark order cancelled
+        # -----------------------------------------------
 
+        order.payment_status = "failed"
         order.status = "cancelled"
 
         order.save(
             update_fields=[
                 "payment_status",
-                "status"
+                "status",
+                "updated_at"
             ]
         )
 
+        # -----------------------------------------------
+        # RESTORE STOCK ONLY ON FIRST FAILURE
+        # -----------------------------------------------
+
         for item in (
             OrderItem.objects
-            .filter(order=order)
             .select_related("product")
+            .filter(order=order)
         ):
 
-            if item.product:
+            if not item.product:
+                continue
 
-                item.product.quantity += (
-                    item.quantity
-                )
+            product = Product.objects.select_for_update().get(
+                id=item.product.id
+            )
 
-                item.product.in_stock = True
+            product.quantity += item.quantity
 
-                item.product.save(
-                    update_fields=[
-                        "quantity",
-                        "in_stock"
-                    ]
-                )
+            product.in_stock = (
+                product.quantity > 0
+            )
+
+            product.save(
+                update_fields=[
+                    "quantity",
+                    "in_stock"
+                ]
+            )
+
+        # -----------------------------------------------
+        # Tracking
+        # -----------------------------------------------
+
+        Tracking.objects.create(
+            order=order,
+            status="cancelled",
+            remark="Payment failed - stock restored"
+        )
 
         return Response(
             {
-                "message":
-                "Payment failed"
+                "message": "Payment failed",
+                "order_number": order.order_number
             },
             status=400
         )
 
+    # ========================================================
+    # PAYMENT STILL PROCESSING
+    # ========================================================
+
     return Response(
         {
-            "message":
-            "Payment is still processing",
-
-            "stripe_status":
-            intent.status
+            "message": "Payment is still processing",
+            "stripe_status": intent.status,
+            "order_number": order.order_number
         },
         status=202
     )
+
 
 
 # ============================================================
@@ -1770,47 +2098,315 @@ def cancel_order(
         status=200
     )
 
-
 # ============================================================
-# TEST EMAIL
+# STRIPE WEBHOOK
 # ============================================================
 
-@api_view(["GET"])
+@api_view(["POST"])
 @permission_classes([AllowAny])
-def test_email(request):
+def stripe_webhook(request):
 
-    try:
+    payload = request.body
 
-        send_mail(
+    sig_header = request.META.get(
+        "HTTP_STRIPE_SIGNATURE"
+    )
 
-            subject="Shopora Email Test",
+    webhook_secret = settings.STRIPE_WEBHOOK_SECRET
 
-            message="Email system is working!",
-
-            from_email=settings.DEFAULT_FROM_EMAIL,
-
-            recipient_list=[
-                "mumtahina486@gmail.com"
-            ],
-
-            fail_silently=False,
-        )
-
+    if not webhook_secret:
         return Response(
             {
-                "success": True,
-                "message":
-                "Email sent successfully"
-            }
-        )
-
-    except Exception as e:
-
-        return Response(
-            {
-                "success": False,
-                "error": str(e)
+                "message": "Stripe webhook secret is not configured"
             },
             status=500
         )
+
+    try:
+
+        event = stripe.Webhook.construct_event(
+            payload,
+            sig_header,
+            webhook_secret
+        )
+
+    except ValueError:
+
+        return Response(
+            {
+                "message": "Invalid webhook payload"
+            },
+            status=400
+        )
+
+    except stripe.error.SignatureVerificationError:
+
+        return Response(
+            {
+                "message": "Invalid webhook signature"
+            },
+            status=400
+        )
+
+    # ========================================================
+    # PAYMENT SUCCESS
+    # ========================================================
+
+    if event["type"] == "payment_intent.succeeded":
+
+        intent = event["data"]["object"]
+
+        order_number = intent.get(
+            "metadata",
+            {}
+        ).get("order_number")
+
+        if not order_number:
+
+            return Response(
+                {
+                    "message": "Order number missing"
+                },
+                status=400
+            )
+
+        try:
+
+            with transaction.atomic():
+
+                order = (
+                    Order.objects
+                    .select_for_update()
+                    .get(
+                        order_number=order_number
+                    )
+                )
+
+                payment = Payment.objects.get(
+                    order=order
+                )
+
+                # ------------------------------------------
+                # Already processed
+                # ------------------------------------------
+
+                if (
+                    payment.payment_status == "paid"
+                    and
+                    order.payment_status == "paid"
+                ):
+
+                    return Response(
+                        {
+                            "message": "Already processed"
+                        },
+                        status=200
+                    )
+
+                # ------------------------------------------
+                # Payment update
+                # ------------------------------------------
+
+                payment.payment_status = "paid"
+                payment.payment_reference = intent["id"]
+
+                payment.save(
+                    update_fields=[
+                        "payment_status",
+                        "payment_reference",
+                        "updated_at"
+                    ]
+                )
+
+                # ------------------------------------------
+                # Order update
+                # ------------------------------------------
+
+                order.payment_status = "paid"
+                order.status = "confirmed"
+
+                order.save(
+                    update_fields=[
+                        "payment_status",
+                        "status",
+                        "updated_at"
+                    ]
+                )
+
+                # ------------------------------------------
+                # Remove user's cart
+                # ------------------------------------------
+
+                Cart.objects.filter(
+                    user=order.user
+                ).delete()
+
+                # ------------------------------------------
+                # Tracking
+                # ------------------------------------------
+
+                Tracking.objects.create(
+                    order=order,
+                    status="confirmed",
+                    remark="Stripe payment confirmed"
+                )
+
+        except Order.DoesNotExist:
+
+            return Response(
+                {
+                    "message": "Order not found"
+                },
+                status=404
+            )
+
+    # ========================================================
+    # PAYMENT FAILED
+    # ========================================================
+
+    elif event["type"] == "payment_intent.payment_failed":
+
+        intent = event["data"]["object"]
+
+        order_number = intent.get(
+            "metadata",
+            {}
+        ).get("order_number")
+
+        if not order_number:
+
+            return Response(
+                {
+                    "message": "Order number missing"
+                },
+                status=400
+            )
+
+        try:
+
+            with transaction.atomic():
+
+                order = (
+                    Order.objects
+                    .select_for_update()
+                    .get(
+                        order_number=order_number
+                    )
+                )
+
+                payment = Payment.objects.get(
+                    order=order
+                )
+
+                # ------------------------------------------
+                # IMPORTANT:
+                # Don't restore stock twice
+                # ------------------------------------------
+
+                if (
+                    order.status == "cancelled"
+                    and
+                    order.payment_status == "failed"
+                ):
+
+                    return Response(
+                        {
+                            "message": "Already processed"
+                        },
+                        status=200
+                    )
+
+                # ------------------------------------------
+                # Mark payment failed
+                # ------------------------------------------
+
+                payment.payment_status = "failed"
+
+                payment.save(
+                    update_fields=[
+                        "payment_status",
+                        "updated_at"
+                    ]
+                )
+
+                # ------------------------------------------
+                # Mark order failed
+                # ------------------------------------------
+
+                order.payment_status = "failed"
+                order.status = "cancelled"
+
+                order.save(
+                    update_fields=[
+                        "payment_status",
+                        "status",
+                        "updated_at"
+                    ]
+                )
+
+                # ------------------------------------------
+                # Restore stock
+                # ------------------------------------------
+
+                for item in (
+                    OrderItem.objects
+                    .filter(order=order)
+                    .select_related("product")
+                ):
+
+                    if not item.product:
+                        continue
+
+                    product = (
+                        Product.objects
+                        .select_for_update()
+                        .get(
+                            id=item.product.id
+                        )
+                    )
+
+                    product.quantity += item.quantity
+
+                    product.in_stock = (
+                        product.quantity > 0
+                    )
+
+                    product.save(
+                        update_fields=[
+                            "quantity",
+                            "in_stock"
+                        ]
+                    )
+
+                # ------------------------------------------
+                # Tracking
+                # ------------------------------------------
+
+                Tracking.objects.create(
+                    order=order,
+                    status="cancelled",
+                    remark="Stripe payment failed - stock restored"
+                )
+
+        except Order.DoesNotExist:
+
+            return Response(
+                {
+                    "message": "Order not found"
+                },
+                status=404
+            )
+
+    # ========================================================
+    # RESPONSE
+    # ========================================================
+
+    return Response(
+        {
+            "message": "Webhook received"
+        },
+        status=200
+    )
+
+
 

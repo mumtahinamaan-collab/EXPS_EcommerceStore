@@ -143,7 +143,8 @@ class Product(models.Model):
     )
 
     image = models.ImageField(
-        upload_to="product_images/"
+        upload_to="product_images/",
+        max_length=500
     )
 
     brand = models.CharField(
@@ -211,7 +212,8 @@ class ProductImage(models.Model):
     )
 
     image = models.ImageField(
-        upload_to="product_images/"
+        upload_to="product_images/",
+        max_length=500
     )
 
     is_main = models.BooleanField(

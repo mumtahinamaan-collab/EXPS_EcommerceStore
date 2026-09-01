@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
@@ -19,17 +18,16 @@ import {
 const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
-
+  const [searchQuery, setSearchQuery] = useState("");
   const showMobileSearch =
-    location.pathname === "/" ||
-    location.pathname.startsWith("/products");
+    location.pathname === "/" || location.pathname.startsWith("/products");
 
   const isAuthPage =
-  location.pathname === "/login" ||
-  location.pathname === "/register" ||
-  location.pathname === "/forgot-password" ||
-  location.pathname === "/reset-password" ||
-  location.pathname.startsWith("/reset-password/");
+    location.pathname === "/login" ||
+    location.pathname === "/register" ||
+    location.pathname === "/forgot-password" ||
+    location.pathname === "/reset-password" ||
+    location.pathname.startsWith("/reset-password/");
 
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   const [userName, setUserName] = useState("");
@@ -41,20 +39,36 @@ const Navbar = () => {
   // =====================================================
 
   const checkLoginStatus = () => {
-  const accessToken = localStorage.getItem("accessToken");
-  const refreshToken = localStorage.getItem("refreshToken");
-  const name = localStorage.getItem("userName");
+    const accessToken = localStorage.getItem("accessToken");
+    const refreshToken = localStorage.getItem("refreshToken");
+    const name = localStorage.getItem("userName");
 
-  if (accessToken && refreshToken) {
-    setIsLoggedIn(true);
-    setUserName(name || "My Account");
-  } else {
-    setIsLoggedIn(false);
-    setUserName("");
-    setCartCount(0);
-  }
-};
+    if (accessToken && refreshToken) {
+      setIsLoggedIn(true);
+      setUserName(name || "My Account");
+    } else {
+      setIsLoggedIn(false);
+      setUserName("");
+      setCartCount(0);
+    }
+  };
+// =====================================================
+// HANDLE PRODUCT SEARCH
+// =====================================================
 
+  const handleSearch = (e) => {
+    e.preventDefault();
+
+    const query = searchQuery.trim();
+
+    if (!query) {
+      navigate("/products");
+      return;
+    }
+
+    navigate(`/search?q=${encodeURIComponent(query)}`);
+    setSearchQuery("");
+  };
   // =====================================================
   // GET CART COUNT
   // =====================================================
@@ -93,14 +107,11 @@ const Navbar = () => {
 
       const items = Array.isArray(data)
         ? data
-        : data.results ||
-          data.cart_items ||
-          data.items ||
-          [];
+        : data.results || data.cart_items || data.items || [];
 
       const totalQuantity = items.reduce(
         (total, item) => total + Number(item.quantity || 0),
-        0
+        0,
       );
 
       setCartCount(totalQuantity);
@@ -194,9 +205,7 @@ const Navbar = () => {
   // =====================================================
 
   const mobileNavClass = ({ isActive }) =>
-    isActive
-      ? "text-red-600"
-      : "text-gray-600 hover:text-red-500";
+    isActive ? "text-red-600" : "text-gray-600 hover:text-red-500";
 
   // =====================================================
   // UI
@@ -214,7 +223,6 @@ const Navbar = () => {
         }`}
       >
         <div className="mx-auto flex h-full max-w-7xl items-center justify-between px-3">
-
           {/* LOGO */}
 
           <Link to="/" className="flex items-center gap-2">
@@ -244,65 +252,44 @@ const Navbar = () => {
           {/* CENTER MENU */}
 
           <div className="hidden items-center gap-7 font-medium lg:flex">
-
-            <NavLink
-              to="/"
-              end
-              className={desktopNavClass}
-            >
+            <NavLink to="/" end className={desktopNavClass}>
               Home
             </NavLink>
 
-            <NavLink
-              to="/products"
-              className={desktopNavClass}
-            >
+            <NavLink to="/products" className={desktopNavClass}>
               Products
             </NavLink>
 
             {isLoggedIn && (
-              <NavLink
-                to="/myorder"
-                className={desktopNavClass}
-              >
+              <NavLink to="/myorder" className={desktopNavClass}>
                 My Orders
               </NavLink>
             )}
 
-            <NavLink
-              to="/about"
-              className={desktopNavClass}
-            >
+            <NavLink to="/about" className={desktopNavClass}>
               About
             </NavLink>
 
-            <NavLink
-              to="/contact"
-              className={desktopNavClass}
-            >
+            <NavLink to="/contact" className={desktopNavClass}>
               Contact
             </NavLink>
-
           </div>
 
           {/* RIGHT SIDE */}
 
           <div className="flex items-center gap-2">
-
             {/* SEARCH */}
 
             <form
-              method="GET"
-              action="/search"
+              onSubmit={handleSearch}
               className="flex items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 hover:border-red-400"
             >
-              <Search
-                size={18}
-                className="text-gray-400"
-              />
+              <Search size={18} className="text-gray-400" />
 
               <input
-                name="q"
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search products..."
                 className="ml-2 w-40 bg-transparent text-sm text-gray-700 outline-none"
               />
@@ -328,42 +315,30 @@ const Navbar = () => {
 
             {isLoggedIn ? (
               <div className="relative">
-
                 <button
-                  onClick={() =>
-                    setShowDropdown(!showDropdown)
-                  }
+                  onClick={() => setShowDropdown(!showDropdown)}
                   className="flex items-center gap-2 rounded-md bg-black px-4 py-2 text-sm font-medium text-white transition hover:bg-gray-800"
                 >
                   <User size={17} />
 
-                  <span>
-                    {userName || "My Account"}
-                  </span>
+                  <span>{userName || "My Account"}</span>
 
                   <ChevronDown
                     size={15}
                     className={`transition-transform ${
-                      showDropdown
-                        ? "rotate-180"
-                        : ""
+                      showDropdown ? "rotate-180" : ""
                     }`}
                   />
                 </button>
 
                 {showDropdown && (
                   <div className="absolute right-0 top-12 w-48 rounded-lg border border-gray-100 bg-white py-2 shadow-lg">
-
                     <div className="border-b px-4 py-2">
-
-                      <p className="text-xs text-gray-400">
-                        Logged in as
-                      </p>
+                      <p className="text-xs text-gray-400">Logged in as</p>
 
                       <p className="truncate text-sm font-medium text-gray-800">
                         {userName || "User"}
                       </p>
-
                     </div>
 
                     <button
@@ -373,10 +348,8 @@ const Navbar = () => {
                       <LogOut size={17} />
                       Logout
                     </button>
-
                   </div>
                 )}
-
               </div>
             ) : (
               <Link
@@ -387,7 +360,6 @@ const Navbar = () => {
                 Login
               </Link>
             )}
-
           </div>
         </div>
       </nav>
@@ -402,11 +374,7 @@ const Navbar = () => {
         }`}
       >
         <div className="flex flex-col items-center px-4 py-3">
-
-          <Link
-            to="/"
-            className="flex flex-col items-center"
-          >
+          <Link to="/" className="flex flex-col items-center">
             <img
               src={logo}
               alt="Shopora Logo"
@@ -418,7 +386,6 @@ const Navbar = () => {
             </h1>
 
             <div className="mt-0.5 flex items-center justify-center gap-1">
-
               <span className="h-px w-2 bg-red-500"></span>
 
               <p className="text-[7px] font-medium uppercase tracking-[1.5px] text-red-500">
@@ -426,7 +393,6 @@ const Navbar = () => {
               </p>
 
               <span className="h-px w-2 bg-red-500"></span>
-
             </div>
           </Link>
 
@@ -434,23 +400,20 @@ const Navbar = () => {
 
           {showMobileSearch && (
             <form
-              method="GET"
-              action="/search"
-              className="mt-3 flex w-full max-w-md items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2"
+              onSubmit={handleSearch}
+              className="mt-3 flex w-full max-w-md items-center rounded-lg border border-gray-200 bg-gray-50 px-3 py-2 hover:border-red-400"
             >
-              <Search
-                size={18}
-                className="shrink-0 text-gray-400"
-              />
+              <Search size={18} className="shrink-0 text-gray-400" />
 
               <input
-                name="q"
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Search products..."
                 className="ml-2 w-full bg-transparent text-sm text-gray-700 outline-none"
               />
             </form>
           )}
-
         </div>
       </nav>
 
@@ -459,16 +422,10 @@ const Navbar = () => {
       ===================================================== */}
 
       <nav className="fixed bottom-0 left-0 z-50 w-full border-t bg-white shadow-lg md:hidden">
-
         <div className="flex items-center justify-around px-1 py-2">
-
           {/* HOME */}
 
-          <NavLink
-            to="/"
-            end
-            className={mobileNavClass}
-          >
+          <NavLink to="/" end className={mobileNavClass}>
             <div className="flex flex-col items-center gap-1 text-[10px]">
               <Home size={21} />
               <span>Home</span>
@@ -477,10 +434,7 @@ const Navbar = () => {
 
           {/* PRODUCTS */}
 
-          <NavLink
-            to="/products"
-            className={mobileNavClass}
-          >
+          <NavLink to="/products" className={mobileNavClass}>
             <div className="flex flex-col items-center gap-1 text-[10px]">
               <ShoppingBag size={21} />
               <span>Products</span>
@@ -490,10 +444,7 @@ const Navbar = () => {
           {/* ORDERS */}
 
           {isLoggedIn && (
-            <NavLink
-              to="/myorder"
-              className={mobileNavClass}
-            >
+            <NavLink to="/myorder" className={mobileNavClass}>
               <div className="flex flex-col items-center gap-1 text-[10px]">
                 <ClipboardList size={21} />
                 <span>Orders</span>
@@ -517,7 +468,6 @@ const Navbar = () => {
                 {cartCount > 99 ? "99+" : cartCount}
               </span>
             )}
-
           </Link>
 
           {/* ACCOUNT / LOGIN */}
@@ -533,17 +483,13 @@ const Navbar = () => {
               </div>
             </button>
           ) : (
-            <Link
-              to="/login"
-              className="text-gray-600 hover:text-red-600"
-            >
+            <Link to="/login" className="text-gray-600 hover:text-red-600">
               <div className="flex flex-col items-center gap-1 text-[10px]">
                 <User size={21} />
                 <span>Login</span>
               </div>
             </Link>
           )}
-
         </div>
       </nav>
     </>
@@ -551,4 +497,3 @@ const Navbar = () => {
 };
 
 export default Navbar;
-

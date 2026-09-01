@@ -4,7 +4,7 @@
   "pk": 1,
   "fields": {
     "name": "Fashion",
-    "image": "category_images/istockphoto-1367180724-612x612.jpg",
+    "image": "category_images/Fashion.jpg",
     "slug": "fashion",
     "created_at": "2026-08-14T12:06:21.435Z"
   }
@@ -14,7 +14,7 @@
   "pk": 2,
   "fields": {
     "name": "Shoes",
-    "image": "category_images/images.jpeg",
+    "image": "category_images/Shoes.png",
     "slug": "shoes",
     "created_at": "2026-08-14T12:07:16.891Z"
   }
@@ -24,7 +24,7 @@
   "pk": 3,
   "fields": {
     "name": "Smartphones",
-    "image": "category_images/Untitled_design_18.png",
+    "image": "category_images/Smartphones.png",
     "slug": "smartphones",
     "created_at": "2026-08-14T12:07:44.226Z"
   }
@@ -34,7 +34,7 @@
   "pk": 4,
   "fields": {
     "name": "Watches",
-    "image": "category_images/Untitled_design_19.png",
+    "image": "category_images/Smartwatch.png",
     "slug": "watches",
     "created_at": "2026-08-14T12:08:11.489Z"
   }
@@ -44,7 +44,7 @@
   "pk": 5,
   "fields": {
     "name": "Mobile_Accessories",
-    "image": "category_images/Untitled_design_7.png",
+    "image": "category_images/Mobile_Accessories.png",
     "slug": "mobile_accessories",
     "created_at": "2026-08-14T12:09:54.641Z"
   }
@@ -54,7 +54,7 @@
   "pk": 6,
   "fields": {
     "name": "Bags",
-    "image": "category_images/Untitled_design_12.png",
+    "image": "category_images/Bags.png",
     "slug": "bags",
     "created_at": "2026-08-14T12:10:25.274Z"
   }
@@ -64,7 +64,7 @@
   "pk": 7,
   "fields": {
     "name": "jewellery",
-    "image": "category_images/Untitled_design_15.png",
+    "image": "category_images/jewellery.png",
     "slug": "jewellery",
     "created_at": "2026-08-14T12:11:23.025Z"
   }
@@ -74,7 +74,7 @@
   "pk": 8,
   "fields": {
     "name": "Laptop",
-    "image": "category_images/Untitled_design_13.png",
+    "image": "category_images/Laptop.png",
     "slug": "laptop",
     "created_at": "2026-08-14T12:13:35.775Z"
   }
@@ -84,7 +84,7 @@
   "pk": 9,
   "fields": {
     "name": "Makeup",
-    "image": "category_images/Untitled_design_17.png",
+    "image": "category_images/Makeup.png",
     "slug": "makeup",
     "created_at": "2026-08-14T12:32:28.009Z"
   }
@@ -94,7 +94,7 @@
   "pk": 10,
   "fields": {
     "name": "Beauty_Care",
-    "image": "category_images/Untitled_design_6.png",
+    "image": "category_images/Beauty_Care.png",
     "slug": "beauty_care",
     "created_at": "2026-08-14T12:32:34.391Z"
   }
@@ -104,7 +104,7 @@
   "pk": 11,
   "fields": {
     "name": "Fragrance",
-    "image": "category_images/images_1.jpeg",
+    "image": "category_images/Fragrance.jpeg",
     "slug": "fragrance",
     "created_at": "2026-08-14T12:32:52.009Z"
   }

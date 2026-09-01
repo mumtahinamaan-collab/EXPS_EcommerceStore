@@ -110,30 +110,120 @@ def login(request):
         "refresh": str(refresh),
     }, status=200)
 
+import requests
+import os
+
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def forgot_password(request):
-    email = request.data.get("email","").strip().lower()
-    if not email:
-        return Response({"message": "Email is required"}, status=400)
-    try:
-        user = User.objects.get(email=email)
-    except User.DoesNotExist:
-        return Response({"message": "No account found with this email"}, status=404)
-    token = uuid.uuid4().hex
-    user.reset_token = token
-    user.reset_token_created = timezone.now()
-    user.save(update_fields=["reset_token", "reset_token_created"])
-    reset_link = f"{settings.FRONTEND_URL}/reset-password?token={token}"
-    send_mail(
-        subject="Shopora - Reset Your Password",
-        message=f"Hello {user.first_name},\n\nReset link: {reset_link}\n\nExpires in 15 min.",
-        from_email=settings.DEFAULT_FROM_EMAIL,
-        recipient_list=[user.email],
-        fail_silently=False,
-    )
-    return Response({"message": "Password reset link has been sent to your email"}, status=200)
+    email = request.data.get("email")
 
+    if not email:
+        return Response(
+            {"message": "Email is required"},
+            status=400
+        )
+
+    user = User.objects.filter(email=email).first()
+
+    if not user:
+        return Response(
+            {"message": "If this email exists, a reset link has been sent."},
+            status=200
+        )
+
+    token = default_token_generator.make_token(user)
+
+    reset_url = (
+        f"{os.getenv('FRONTEND_URL')}"
+        f"/reset-password/{user.id}/{token}/"
+    )
+
+    api_key = os.getenv("BREVO_API_KEY")
+
+    payload = {
+        "sender": {
+            "name": "Shopora",
+            "email": "mumtahina486@gmail.com"
+        },
+        "to": [
+            {
+                "email": email
+            }
+        ],
+        "subject": "Shopora - Reset Your Password",
+        "htmlContent": f"""
+            <h2>Reset Your Password</h2>
+
+            <p>Hello {user.first_name},</p>
+
+            <p>
+                Click the button below to reset your Shopora password.
+            </p>
+
+            <p>
+                <a href="{reset_url}"
+                   style="
+                   display:inline-block;
+                   padding:12px 20px;
+                   background:#e11d48;
+                   color:white;
+                   text-decoration:none;
+                   border-radius:6px;
+                   ">
+                   Reset Password
+                </a>
+            </p>
+
+            <p>This link will expire for security reasons.</p>
+
+            <p>Thanks,<br>Shopora Team</p>
+        """
+    }
+
+    try:
+        response = requests.post(
+            "https://api.brevo.com/v3/smtp/email",
+            headers={
+                "accept": "application/json",
+                "api-key": api_key,
+                "content-type": "application/json",
+            },
+            json=payload,
+            timeout=20,
+        )
+
+        print("BREVO STATUS:", response.status_code)
+        print("BREVO RESPONSE:", response.text)
+
+        if response.status_code not in [200, 201, 202]:
+            return Response(
+                {
+                    "success": False,
+                    "message": "Unable to send reset email.",
+                    "brevo": response.text,
+                },
+                status=500
+            )
+
+        return Response(
+            {
+                "success": True,
+                "message": "Password reset link has been sent to your email."
+            },
+            status=200
+        )
+
+    except Exception as e:
+        print("BREVO ERROR:", str(e))
+
+        return Response(
+            {
+                "success": False,
+                "message": "Email service error."
+            },
+            status=500
+        )
 @api_view(["POST"])
 @permission_classes([AllowAny])
 def reset_password(request):

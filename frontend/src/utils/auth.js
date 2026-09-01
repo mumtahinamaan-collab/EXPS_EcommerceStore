@@ -1,4 +1,3 @@
-
 import API_BASE_URL from "../config/api";
 
 // ==========================================
@@ -29,10 +28,15 @@ export const refreshAccessToken = async () => {
 
     const data = await response.json();
 
+    if (!data.access) {
+      return null;
+    }
+
     localStorage.setItem("accessToken", data.access);
 
     return data.access;
-  } catch {
+  } catch (error) {
+    console.error("TOKEN REFRESH ERROR:", error);
     return null;
   }
 };
@@ -44,29 +48,55 @@ export const refreshAccessToken = async () => {
 export const authFetch = async (url, options = {}) => {
   let accessToken = localStorage.getItem("accessToken");
 
+  // ------------------------------------------
+  // Request function
+  // ------------------------------------------
+
   const request = async (token) => {
     return fetch(url, {
       ...options,
       headers: {
         ...(options.headers || {}),
-        Authorization: `Bearer ${token}`,
+        ...(token
+          ? {
+              Authorization: `Bearer ${token}`,
+            }
+          : {}),
       },
     });
   };
 
+  // ------------------------------------------
+  // No access token
+  // ------------------------------------------
+
+  if (!accessToken) {
+    return request(null);
+  }
+
+  // ------------------------------------------
   // First request
+  // ------------------------------------------
+
   let response = await request(accessToken);
 
+  // ------------------------------------------
   // Access token expired
+  // ------------------------------------------
+
   if (response.status === 401) {
     const newAccessToken = await refreshAccessToken();
 
-    // Refresh token bhi invalid/expired
+    // Refresh token invalid/expired
     if (!newAccessToken) {
+      logoutUser();
       return response;
     }
 
-    // Same request again with new token
+    // ------------------------------------------
+    // Retry original request
+    // ------------------------------------------
+
     response = await request(newAccessToken);
   }
 
@@ -86,4 +116,3 @@ export const logoutUser = () => {
 
   window.dispatchEvent(new Event("authChanged"));
 };
-

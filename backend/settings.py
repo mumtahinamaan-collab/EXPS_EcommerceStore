@@ -47,6 +47,8 @@ ALLOWED_HOSTS = [
 # ==================================================
 # CORS
 # ==================================================
+
+# Development ke liye
 CORS_ALLOWED_ORIGINS = [
     "https://shopora-omega.vercel.app",
     "http://localhost:3000",

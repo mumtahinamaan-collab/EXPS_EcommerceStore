@@ -16,6 +16,7 @@ import Cart from "./Pages/Cart";
 import MyOrders from "./Pages/MyOrders";
 import Checkout from "./Pages/Checkout";
 import StripePayment from "./Pages/StripePayment";
+import NotFound from "./Pages/NotFounf";
 function App() {
   return (
     <>
@@ -33,6 +34,7 @@ function App() {
         <Route
           path="/products/:categorySlug/:productSlug"
           element={<ProductDetail />}
+        
         />
 
         <Route path="/reset-password" element={<ResetPassword />} />
@@ -40,6 +42,8 @@ function App() {
         <Route path="/myorder" element={<MyOrders />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/stripe-payment" element={<StripePayment />} />
+          <Route path="*" element={<NotFound />} />
+
       </Routes>
       <Footer />
     </>

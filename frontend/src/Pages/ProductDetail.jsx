@@ -276,7 +276,7 @@ const ProductDetail = () => {
                   className={`flex h-9 w-9 items-center justify-center ${
                     !product.in_stock
                       ? "cursor-not-allowed bg-black text-white"
-                      : "hover:bg-gray-100"
+                      : "hover:bg-gray-100 cursor-pointer"
                   }`}
                 >
                   <Minus size={12} />
@@ -295,7 +295,7 @@ const ProductDetail = () => {
                   className={`flex h-9 w-9 items-center justify-center ${
                     !product.in_stock
                       ? "cursor-not-allowed bg-black text-white"
-                      : "hover:bg-gray-100"
+                      : "hover:bg-gray-100 cursor-pointer"
                   }`}
                 >
                   <Plus size={16} />
@@ -314,7 +314,7 @@ const ProductDetail = () => {
                 type="button"
                 disabled={!product.in_stock}
                 onClick={handleBuyNow}
-                className="w-full rounded-lg border border-red-500 bg-red-500 py-2 font-semibold text-white transition hover:bg-red-600 disabled:cursor-not-allowed disabled:border-black disabled:bg-black disabled:text-white"
+                className="w-full rounded-lg border  border-red-500 cursor-pointer bg-red-500 py-2 font-semibold text-white transition hover:bg-red-600 disabled:cursor-not-allowed disabled:border-black disabled:bg-black disabled:text-white"
               >
                 Buy it Now
               </button>
@@ -325,7 +325,7 @@ const ProductDetail = () => {
                 type="button"
                 disabled={!product.in_stock}
                 onClick={handleAddToCart}
-                className="flex w-full items-center justify-center gap-2 rounded-lg border border-red-500 bg-white py-2 font-semibold text-red-500 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:border-black disabled:bg-black disabled:text-white"
+                className="flex w-full items-center justify-center gap-2 rounded-lg border border-red-500 bg-white py-2 font-semibold text-red-500 transition hover:bg-red-50 disabled:cursor-not-allowed disabled:border-black disabled:bg-black disabled:text-white cursor-pointer"
               >
                 <ShoppingCart size={19} />
                 Add To Cart

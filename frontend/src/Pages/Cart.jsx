@@ -292,7 +292,7 @@ export default function Cart() {
 
                         <button
                           type="button"
-                          className="flex shrink-0 items-center gap-2 rounded-md border border-red-500 px-3 py-2 text-sm font-medium text-red-500 transition hover:bg-red-500 hover:text-white"
+                          className="flex shrink-0 items-center gap-2 rounded-md border border-red-500 px-3 py-2 text-sm font-medium text-red-500 transition cursor-pointer hover:bg-red-500 hover:text-white"
                           aria-label="Remove product"
                           onClick={() =>
                             deleteCartItem(item.id)
@@ -327,7 +327,7 @@ export default function Cart() {
                                 item.quantity - 1
                               )
                             }
-                            className="flex h-9 w-9 items-center justify-center hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40"
+                            className="flex h-9 w-9 items-center cursor-pointer justify-center hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40"
                           >
                             <Minus size={12} />
                           </button>
@@ -345,7 +345,7 @@ export default function Cart() {
                                 item.quantity + 1
                               )
                             }
-                            className="flex h-9 w-9 items-center justify-center hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40"
+                            className="flex h-9 w-9 items-center  cursor-pointer justify-center hover:bg-gray-100 disabled:cursor-not-allowed disabled:opacity-40"
                           >
                             <Plus size={16} />
                           </button>
@@ -444,7 +444,7 @@ export default function Cart() {
 
                 <Link
                   to="/checkout"
-                  className="mt-6 flex w-full items-center justify-center rounded-lg bg-red-500 py-3 font-semibold text-white transition hover:bg-red-600"
+                  className="mt-6 flex w-full items-center justify-center cursor-pointer rounded-lg bg-red-500 py-3 font-semibold text-white transition hover:bg-red-600"
                 >
                   Proceed to Checkout
                 </Link>

@@ -65,7 +65,7 @@ const Register = () => {
         });
         setTimeout(() => {
           navigate("/login");
-        }, 1000);
+        }, 500);
       } else {
         toast.error(
           result.message || "Something went wrong. Please try again.",
@@ -193,7 +193,7 @@ const Register = () => {
               {/* Submit */}
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-red-500 py-3 font-semibold text-white transition hover:bg-red-600"
+                className="flex w-full items-center justify-center  cursor-pointer gap-2 rounded-lg bg-red-500 py-3 font-semibold text-white transition hover:bg-red-600"
               >
                 <FaSignInAlt />
                 Submit

@@ -688,7 +688,7 @@ export default function Checkout() {
                   !address.trim()
                 }
                 onClick={handlePlaceOrder}
-                className="mt-6 flex w-full items-center justify-center gap-2 rounded-lg bg-red-500 py-3 font-semibold text-white transition hover:bg-red-600 disabled:cursor-not-allowed disabled:bg-gray-400"
+                className="mt-6 flex w-full items-center justify-center cursor-pointer gap-2 rounded-lg bg-red-500 py-3 font-semibold text-white transition hover:bg-red-600 disabled:cursor-not-allowed disabled:bg-gray-400"
               >
                 <ShoppingBag size={19} />
 

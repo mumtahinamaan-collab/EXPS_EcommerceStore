@@ -146,7 +146,7 @@ export default function ProductCard({ product }) {
           className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border transition-all duration-200 sm:h-10 sm:w-10 ${
             !product?.in_stock
               ? "cursor-not-allowed border-black bg-black text-white"
-              : "border-red-500 text-red-500 hover:bg-red-500 hover:text-white"
+              : "border-red-500 text-red-500 hover:bg-red-500 hover:text-white cursor-pointer"
           }`}
         >
           <ShoppingCart size={18} />

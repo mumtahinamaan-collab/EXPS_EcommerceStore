@@ -55,7 +55,7 @@ const Login = () => {
       window.dispatchEvent(new Event("authChanged"));
         setTimeout(() => {
           navigate("/");
-        }, 1000);
+        }, 500);
       } else {
         toast.error(result.message || "Invalid email or password");
       }
@@ -141,7 +141,7 @@ const Login = () => {
               {/* Login Button */}
               <button
                 type="submit"
-                className="flex w-full items-center justify-center gap-2 rounded-lg bg-red-500 py-3 font-semibold text-white transition hover:bg-red-600"
+                className="flex w-full items-center cursor-pointer justify-center gap-2 rounded-lg bg-red-500 py-3 font-semibold text-white transition hover:bg-red-600"
               >
                 <FaSignInAlt />
                 Login

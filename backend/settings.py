@@ -6,7 +6,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 import os
 load_dotenv
-
+import dj_database_url
 # ==================================================
 # BASE DIRECTORY
 # ==================================================
@@ -35,9 +35,8 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 # SECURITY
 # ==================================================
 
-SECRET_KEY = "django-insecure-vzty46%y_fe@ik*=ufsmk((su1-)^b0@%-$%h&7m5%bwb@y50_"
-
-DEBUG = True
+SECRET_KEY = os.getenv("SECRET_KEY")
+DEBUG = False
 
 ALLOWED_HOSTS = [
     "exps-ecommercestore.onrender.com",
@@ -48,11 +47,11 @@ ALLOWED_HOSTS = [
 # ==================================================
 # CORS
 # ==================================================
-
-# Development ke liye
 CORS_ALLOWED_ORIGINS = [
     "https://shopora-omega.vercel.app",
+    "http://localhost:3000",
     "http://localhost:3001",
+    "http://localhost:5173",
 ]
 
 CORS_ALLOW_CREDENTIALS = True
@@ -190,15 +189,10 @@ WSGI_APPLICATION = "backend.wsgi.application"
 # ==================================================
 
 DATABASES = {
-
-    "default": {
-
-        "ENGINE": "django.db.backends.sqlite3",
-
-        "NAME": BASE_DIR / "db.sqlite3",
-
-    }
-
+    "default": dj_database_url.config(
+        default=f"sqlite:///{BASE_DIR / 'db.sqlite3'}",
+        conn_max_age=600,
+    )
 }
 
 

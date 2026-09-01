@@ -40,18 +40,19 @@ const Navbar = () => {
   // =====================================================
 
   const checkLoginStatus = () => {
-    const accessToken = localStorage.getItem("accessToken");
-    const name = localStorage.getItem("userName");
+  const accessToken = localStorage.getItem("accessToken");
+  const refreshToken = localStorage.getItem("refreshToken");
+  const name = localStorage.getItem("userName");
 
-    if (accessToken) {
-      setIsLoggedIn(true);
-      setUserName(name || "My Account");
-    } else {
-      setIsLoggedIn(false);
-      setUserName("");
-      setCartCount(0);
-    }
-  };
+  if (accessToken && refreshToken) {
+    setIsLoggedIn(true);
+    setUserName(name || "My Account");
+  } else {
+    setIsLoggedIn(false);
+    setUserName("");
+    setCartCount(0);
+  }
+};
 
   // =====================================================
   // GET CART COUNT

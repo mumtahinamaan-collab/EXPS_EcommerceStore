@@ -52,7 +52,7 @@ const Login = () => {
           email: "",
           password: "",
         });
-        window.dispatchEvent(new Event("storage"));
+      window.dispatchEvent(new Event("authChanged"));
         setTimeout(() => {
           navigate("/");
         }, 1000);

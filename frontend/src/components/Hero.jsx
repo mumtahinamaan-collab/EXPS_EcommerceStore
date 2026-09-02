@@ -35,13 +35,12 @@ export default function Hero() {
           Live Better
         </h1>
 
-        <p
-          className="mb-4 max-w-lg bg-transparent text-sm leading-relaxed text-semibold sm:text-base md:mb-6 md:text-xl "
-          
-        >
-          Explore the latest products at prices you'll love.
-          Easy shopping, secure payments, and fast delivery.
-        </p>
+       <p className="mb-4 max-w-lg text-sm leading-relaxed sm:text-base md:mb-6 md:text-xl">
+  <span className="bg-black/20 text-white box-decoration-clone px-0.5 py-0.5">
+    Explore the latest products at prices you'll love.
+    Easy shopping, secure payments, and fast delivery.
+  </span>
+</p>
 
         <button
           className="

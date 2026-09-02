@@ -42,12 +42,6 @@ export default function Home() {
                     Shop By Category
                 </h2>
 
-                <Link
-                    to="/products"
-                    className="hidden md:block text-md py-4 text-red-500 cursor-pointer"
-                >
-                    View All Categories →
-                </Link>
 
             </div>
       <CategorySection />
@@ -55,12 +49,7 @@ export default function Home() {
       <div className="flex justify-between items-center px-8">
         <div className="text-xl sm:text-2xl md:text-3xl font-bold py-4">Fresh Picks</div>
 
-        <Link
-          to="/products"
-          className="hidden md:block text-md py-4 text-red-500 cursor-pointer"
-        >
-          View All Products →
-        </Link>
+      
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 px-4">
@@ -68,7 +57,7 @@ export default function Home() {
           <ProductCard key={product.id} product={product} />
         ))}
       </div>
-      <div className="my-6 flex justify-center md:hidden">
+      <div className="my-6 flex justify-center">
   <Link
     to="/products"
     className="rounded-lg bg-red-500 px-6 py-3 text-sm font-semibold text-white transition hover:bg-red-600"

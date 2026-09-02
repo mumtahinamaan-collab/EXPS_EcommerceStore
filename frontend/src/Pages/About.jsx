@@ -1,10 +1,13 @@
+
 import {
   Truck,
   ShieldCheck,
   RotateCcw,
   Headphones,
   ArrowRight,
+  CheckCircle2,
 } from "lucide-react";
+
 import { Link } from "react-router-dom";
 
 import heroimg from "../assets/about1.jpg";
@@ -15,58 +18,125 @@ import easy from "../assets/about5.jpg";
 
 function About() {
   return (
-    <div className="w-full bg-white">
+    <div className="w-full overflow-hidden bg-white text-slate-900">
 
       {/* =====================================================
-          HERO
+          HERO SECTION
       ===================================================== */}
+      <section className="relative overflow-hidden bg-[#fff5f2]">
 
-      <section className="relative overflow-hidden bg-[#fff3ef] px-4 py-10 md:px-10 md:py-12">
+        {/* Decorative background */}
+        <div className="absolute -right-32 -top-32 h-80 w-80 rounded-full bg-red-100/70 blur-3xl" />
+        <div className="absolute -bottom-32 -left-32 h-72 w-72 rounded-full bg-orange-100/60 blur-3xl" />
 
-        {/* Background Image */}
-        <div
-          className="
-            pointer-events-none absolute inset-0
-            bg-cover bg-center bg-no-repeat
-            opacity-80
-            md:bg-contain md:bg-right
-          "
-          style={{
-            backgroundImage: `url(${heroimg})`,
-            filter: "brightness(0.65)",
-          }}
-        />
+        <div className="relative mx-auto max-w-7xl px-5 py-12 sm:px-6 md:px-10 md:py-16 lg:py-20">
 
-        {/* Mobile/desktop soft overlay */}
-        <div className="pointer-events-none absolute inset-0 bg-[#fff3ef]/20" />
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-        {/* Content */}
-        <div className="relative z-10 grid min-h-[380px] grid-cols-1 items-center md:min-h-[430px] md:grid-cols-2">
+            {/* HERO CONTENT */}
+            <div className="max-w-xl">
 
-          <div className="px-2 py-8 sm:px-6 md:px-8 lg:px-12">
+              {/* Label */}
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full border border-red-100 bg-white px-4 py-2 shadow-sm">
 
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-red-500 sm:text-sm md:mb-4">
-              About Shop<span className="text-black">Ease</span>
-            </p>
+                <span className="h-2 w-2 rounded-full bg-red-500" />
 
-            <h1 className="mb-4 text-3xl font-bold leading-tight text-slate-900 sm:text-4xl md:mb-5 md:text-5xl">
-              Shopping Made
-              <br />
-              <span className="text-red-500">
-                Simple & Better
-              </span>
-            </h1>
+                <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-red-500 sm:text-xs">
+                  About Shop<span className="text-slate-900">Ease</span>
+                </span>
 
-            <p className="max-w-lg text-sm leading-6 text-slate-700 sm:text-base sm:leading-7 md:text-lg">
-              Discover quality products, great prices and a seamless
-              shopping experience designed to make your everyday
-              shopping easier.
-            </p>
+              </div>
 
-            <p className="mt-4 max-w-lg text-sm leading-6 text-slate-600 sm:text-base">
-              From everyday essentials to products you love, ShopEase
-              brings everything together in one convenient place.
-            </p>
+
+              {/* Heading */}
+              <h1 className="text-4xl font-extrabold leading-[1.08] tracking-tight text-slate-900 sm:text-5xl md:text-6xl">
+
+                Shopping Made
+
+                <span className="block text-red-500">
+                  Simple & Better
+                </span>
+
+              </h1>
+
+
+              {/* Description */}
+              <p className="mt-6 max-w-lg text-sm leading-7 text-slate-600 sm:text-base">
+                Discover quality products, great prices and a seamless
+                shopping experience designed to make your everyday
+                shopping easier.
+              </p>
+
+              <p className="mt-4 max-w-lg text-sm leading-7 text-slate-500 sm:text-base">
+                From everyday essentials to products you love, ShopEase
+                brings everything together in one convenient place.
+              </p>
+
+
+              {/* Button */}
+              <div className="mt-8">
+
+                <Link
+                  to="/products"
+                  className="inline-flex items-center gap-2 rounded-xl bg-red-500 px-6 py-3.5 text-sm font-semibold text-white shadow-lg shadow-red-200 transition duration-300 hover:-translate-y-0.5 hover:bg-red-600 hover:shadow-xl"
+                >
+                  Explore Products
+                  <ArrowRight size={18} />
+                </Link>
+
+              </div>
+
+            </div>
+
+
+            {/* HERO IMAGE */}
+            <div className="relative mx-auto w-full max-w-xl lg:ml-auto">
+
+              {/* Glow */}
+              <div className="absolute inset-5 rounded-[2rem] bg-red-200/60 blur-2xl" />
+
+              <div className="relative overflow-hidden rounded-[2rem] border-8 border-white shadow-2xl">
+
+                <img
+                  src={heroimg}
+                  alt="ShopEase Shopping"
+                  className="h-[300px] w-full object-cover sm:h-[380px] md:h-[430px]"
+                />
+
+                <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-transparent to-transparent" />
+
+
+                {/* Floating Card */}
+                <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/40 bg-white/90 p-4 shadow-xl backdrop-blur-md sm:bottom-6 sm:left-6 sm:right-6">
+
+                  <div className="flex items-center justify-between gap-3">
+
+                    <div>
+
+                      <p className="text-xs text-slate-400">
+                        Our Promise
+                      </p>
+
+                      <p className="mt-1 text-sm font-bold text-slate-900 sm:text-base">
+                        Quality products. Better experience.
+                      </p>
+
+                    </div>
+
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-red-50">
+                      <CheckCircle2
+                        size={21}
+                        className="text-red-500"
+                      />
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
 
           </div>
 
@@ -77,88 +147,109 @@ function About() {
       {/* =====================================================
           OUR STORY
       ===================================================== */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
 
-      <section className="relative overflow-hidden  px-4 py-12 sm:px-6 md:px-10 md:py-16">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-10">
 
-        {/* Story Background */}
-        <div
-          className="
-            pointer-events-none absolute inset-0
-            bg-cover bg-center bg-no-repeat
-          "
-          style={{
-            backgroundImage: `url(${story})`,
+          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
 
-          }}
-        />
+            {/* STORY IMAGE */}
+            <div className="relative order-2 lg:order-1">
 
-        {/* Overlay */}
-        <div className="pointer-events-none absolute inset-0 bg-[#fff3ef]/65" />
+              <div className="absolute -bottom-4 -left-4 h-32 w-32 rounded-3xl bg-[#fff0eb]" />
 
-        {/* Content */}
-        <div className="relative z-10 mx-auto max-w-7xl">
+              <div className="relative overflow-hidden rounded-[2rem]">
 
-          <div className="max-w-3xl">
+                <img
+                  src={story}
+                  alt="Our Story"
+                  className="h-[320px] w-full object-cover sm:h-[400px] md:h-[470px]"
+                />
 
-            <p className="mb-3 text-xs font-bold uppercase tracking-widest text-red-500 sm:text-sm">
-              Our Story
-            </p>
+              </div>
 
-            <h2 className="mb-5 text-2xl font-bold leading-tight text-slate-900 sm:text-3xl md:text-4xl">
-              Your Trusted
-              <br />
-              <span className="text-red-500">
-                Shopping Partner
-              </span>
-            </h2>
+              {/* Small floating stat */}
+              <div className="absolute -bottom-5 right-4 rounded-2xl bg-white px-5 py-4 shadow-xl sm:right-8">
 
-            <p className="mb-4 text-sm leading-7 text-slate-700 sm:text-base">
-              ShopEase was created with one simple goal — to make online
-              shopping easy, convenient and enjoyable for everyone. We
-              believe that finding the right product should not be
-              complicated or stressful.
-            </p>
-
-            <p className="mb-4 text-sm leading-7 text-slate-700 sm:text-base">
-              Our platform brings a wide range of products together in
-              one place, allowing customers to explore different
-              categories, compare products and find exactly what they
-              need without wasting time.
-            </p>
-
-            <p className="mb-7 text-sm leading-7 text-slate-700 sm:text-base">
-              From electronics and fashion to everyday essentials, we
-              focus on providing quality products, simple navigation and
-              a smooth shopping experience from browsing to checkout.
-            </p>
-
-
-            {/* Stats */}
-
-            <div className="grid max-w-lg grid-cols-2 gap-3 sm:gap-5">
-
-              <div className="rounded-xl border border-slate-200 bg-white/85 p-4 shadow-sm backdrop-blur-sm sm:p-5">
-
-                <p className="text-xl font-bold text-red-500 sm:text-2xl">
+                <p className="text-xl font-extrabold text-red-500">
                   10K+
                 </p>
 
-                <p className="mt-1 text-xs text-slate-500 sm:text-sm">
+                <p className="text-xs text-slate-500">
                   Happy Customers
                 </p>
 
               </div>
 
+            </div>
 
-              <div className="rounded-xl border border-slate-200 bg-white/85 p-4 shadow-sm backdrop-blur-sm sm:p-5">
 
-                <p className="text-xl font-bold text-red-500 sm:text-2xl">
-                  500+
+            {/* STORY CONTENT */}
+            <div className="order-1 lg:order-2">
+
+              <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-red-500">
+                Our Story
+              </span>
+
+              <h2 className="mt-3 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+
+                Your Trusted
+
+                <span className="block text-red-500">
+                  Shopping Partner
+                </span>
+
+              </h2>
+
+              <div className="mt-6 space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
+
+                <p>
+                  ShopEase was created with one simple goal — to make
+                  online shopping easy, convenient and enjoyable for
+                  everyone.
                 </p>
 
-                <p className="mt-1 text-xs text-slate-500 sm:text-sm">
-                  Quality Products
+                <p>
+                  We believe finding the right product should not be
+                  complicated or stressful. Our platform brings a wide
+                  range of products together in one convenient place.
                 </p>
+
+                <p>
+                  From electronics and fashion to everyday essentials,
+                  we focus on quality products, simple navigation and
+                  a smooth shopping experience from browsing to checkout.
+                </p>
+
+              </div>
+
+
+              {/* Stats */}
+              <div className="mt-8 grid max-w-lg grid-cols-2 gap-4">
+
+                <div className="rounded-2xl border border-red-100 bg-[#fff9f7] p-5">
+
+                  <p className="text-2xl font-extrabold text-red-500">
+                    10K+
+                  </p>
+
+                  <p className="mt-1 text-sm text-slate-500">
+                    Happy Customers
+                  </p>
+
+                </div>
+
+                <div className="rounded-2xl border border-red-100 bg-[#fff9f7] p-5">
+
+                  <p className="text-2xl font-extrabold text-red-500">
+                    500+
+                  </p>
+
+                  <p className="mt-1 text-sm text-slate-500">
+                    Quality Products
+                  </p>
+
+                </div>
 
               </div>
 
@@ -167,133 +258,133 @@ function About() {
           </div>
 
         </div>
+
       </section>
 
 
       {/* =====================================================
           WHY CHOOSE US
       ===================================================== */}
+      <section className="bg-[#fffaf8] py-16 sm:py-20 md:py-24">
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-10">
 
-        <div className="mb-8 text-center sm:mb-10">
+          {/* Heading */}
+          <div className="mx-auto mb-12 max-w-2xl text-center">
 
-          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-500 sm:mb-3 sm:text-sm">
-            Why ShopEase
-          </p>
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-red-500">
+              Why ShopEase
+            </span>
 
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
-            Why Choose Us?
-          </h2>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Why Choose Us?
+            </h2>
 
-          <p className="mx-auto mt-3 max-w-xl text-sm leading-6 text-slate-500 sm:text-base">
-            Everything we do is focused on giving you a simple,
-            reliable and enjoyable shopping experience.
-          </p>
-
-        </div>
-
-
-        {/* Cards */}
-
-        <div className="grid grid-cols-2 gap-3 sm:gap-5 lg:grid-cols-4">
-
-          {/* Fast Delivery */}
-
-          <div className="rounded-2xl border border-slate-200 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
-
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-red-50 sm:mb-5 sm:h-12 sm:w-12">
-
-              <Truck
-                size={20}
-                className="text-red-500 sm:h-[23px] sm:w-[23px]"
-              />
-
-            </div>
-
-            <h3 className="mb-2 text-sm font-bold text-slate-900 sm:text-lg">
-              Fast Delivery
-            </h3>
-
-            <p className="text-xs leading-5 text-slate-500 sm:text-sm sm:leading-6">
-              Get your favorite products delivered quickly,
-              safely and conveniently to your doorstep.
+            <p className="mt-4 text-sm leading-6 text-slate-500 sm:text-base">
+              Everything we do is focused on giving you a simple,
+              reliable and enjoyable shopping experience.
             </p>
 
           </div>
 
 
-          {/* Secure Payments */}
+          {/* Cards */}
+          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
 
-          <div className="rounded-2xl border border-slate-200 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
+            {/* FAST DELIVERY */}
+            <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-xl">
 
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-red-50 sm:mb-5 sm:h-12 sm:w-12">
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 transition duration-300 group-hover:bg-red-500">
 
-              <ShieldCheck
-                size={20}
-                className="text-red-500 sm:h-[23px] sm:w-[23px]"
-              />
+                <Truck
+                  size={22}
+                  className="text-red-500 transition group-hover:text-white"
+                />
 
-            </div>
+              </div>
 
-            <h3 className="mb-2 text-sm font-bold text-slate-900 sm:text-lg">
-              Secure Payments
-            </h3>
+              <h3 className="text-lg font-bold text-slate-900">
+                Fast Delivery
+              </h3>
 
-            <p className="text-xs leading-5 text-slate-500 sm:text-sm sm:leading-6">
-              Shop confidently with secure payment options
-              designed to keep your shopping experience safe.
-            </p>
-
-          </div>
-
-
-          {/* Easy Returns */}
-
-          <div className="rounded-2xl border border-slate-200 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
-
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-red-50 sm:mb-5 sm:h-12 sm:w-12">
-
-              <RotateCcw
-                size={20}
-                className="text-red-500 sm:h-[23px] sm:w-[23px]"
-              />
+              <p className="mt-3 text-sm leading-6 text-slate-500">
+                Get your favorite products delivered quickly,
+                safely and conveniently to your doorstep.
+              </p>
 
             </div>
 
-            <h3 className="mb-2 text-sm font-bold text-slate-900 sm:text-lg">
-              Easy Returns
-            </h3>
 
-            <p className="text-xs leading-5 text-slate-500 sm:text-sm sm:leading-6">
-              Simple return options help make your shopping
-              experience smooth and worry-free.
-            </p>
+            {/* SECURE PAYMENTS */}
+            <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-xl">
 
-          </div>
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 transition duration-300 group-hover:bg-red-500">
 
+                <ShieldCheck
+                  size={22}
+                  className="text-red-500 transition group-hover:text-white"
+                />
 
-          {/* Support */}
+              </div>
 
-          <div className="rounded-2xl border border-slate-200 p-4 transition duration-300 hover:-translate-y-1 hover:shadow-lg sm:p-6">
+              <h3 className="text-lg font-bold text-slate-900">
+                Secure Payments
+              </h3>
 
-            <div className="mb-4 flex h-10 w-10 items-center justify-center rounded-full bg-red-50 sm:mb-5 sm:h-12 sm:w-12">
-
-              <Headphones
-                size={20}
-                className="text-red-500 sm:h-[23px] sm:w-[23px]"
-              />
+              <p className="mt-3 text-sm leading-6 text-slate-500">
+                Shop confidently with secure payment options
+                designed to keep your shopping experience safe.
+              </p>
 
             </div>
 
-            <h3 className="mb-2 text-sm font-bold text-slate-900 sm:text-lg">
-              24/7 Support
-            </h3>
 
-            <p className="text-xs leading-5 text-slate-500 sm:text-sm sm:leading-6">
-              Our support team is always ready to help
-              whenever you need assistance.
-            </p>
+            {/* EASY RETURNS */}
+            <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-xl">
+
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 transition duration-300 group-hover:bg-red-500">
+
+                <RotateCcw
+                  size={22}
+                  className="text-red-500 transition group-hover:text-white"
+                />
+
+              </div>
+
+              <h3 className="text-lg font-bold text-slate-900">
+                Easy Returns
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-slate-500">
+                Simple return options help make your shopping
+                experience smooth and worry-free.
+              </p>
+
+            </div>
+
+
+            {/* SUPPORT */}
+            <div className="group rounded-2xl border border-slate-100 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-xl">
+
+              <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-xl bg-red-50 transition duration-300 group-hover:bg-red-500">
+
+                <Headphones
+                  size={22}
+                  className="text-red-500 transition group-hover:text-white"
+                />
+
+              </div>
+
+              <h3 className="text-lg font-bold text-slate-900">
+                24/7 Support
+              </h3>
+
+              <p className="mt-3 text-sm leading-6 text-slate-500">
+                Our support team is always ready to help
+                whenever you need assistance.
+              </p>
+
+            </div>
 
           </div>
 
@@ -305,119 +396,124 @@ function About() {
       {/* =====================================================
           OUR VALUES
       ===================================================== */}
+      <section className="bg-white py-16 sm:py-20 md:py-24">
 
-      <section className="mx-auto max-w-7xl px-4 py-12 sm:px-6 sm:py-16 lg:px-8">
+        <div className="mx-auto max-w-7xl px-5 sm:px-6 md:px-10">
 
-        <div className="mb-8 text-center sm:mb-10">
+          {/* Heading */}
+          <div className="mx-auto mb-12 max-w-2xl text-center">
 
-          <p className="mb-2 text-xs font-bold uppercase tracking-widest text-red-500 sm:mb-3 sm:text-sm">
-            What We Believe
-          </p>
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-red-500">
+              What We Believe
+            </span>
 
-          <h2 className="text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
-            Our Values
-          </h2>
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">
+              Our Values
+            </h2>
 
-          <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500 sm:text-base">
-            The principles that guide us in creating a better
-            shopping experience for every customer.
-          </p>
-
-        </div>
-
-
-        {/* 3 images always in ONE ROW */}
-
-        <div className="grid grid-cols-3 gap-2 sm:gap-4 md:gap-6">
-
-
-          {/* Customer First */}
-
-          <div
-            className="
-              relative h-[220px] overflow-hidden rounded-xl
-              bg-cover bg-center
-              sm:h-[300px] sm:rounded-2xl
-              md:h-[380px]
-            "
-            style={{
-              backgroundImage: `url(${customer})`,
-            }}
-          >
-
-            <div className="absolute inset-0 bg-black/40" />
-
-            <div className="absolute bottom-0 left-0 right-0 p-2 text-white sm:p-4 md:p-6">
-
-              <h3 className="mb-1 text-[11px] font-bold sm:text-base md:text-xl">
-                Customer First
-              </h3>
-
-              <p className="text-[8px] leading-3 text-white/90 sm:text-xs sm:leading-5 md:text-sm">
-                Your satisfaction is always our priority.
-              </p>
-
-            </div>
+            <p className="mt-4 text-sm leading-6 text-slate-500 sm:text-base">
+              The principles that guide us in creating a better
+              shopping experience for every customer.
+            </p>
 
           </div>
 
 
-          {/* Quality */}
+          {/* Values Grid */}
+          <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
 
-          <div
-            className="
-              relative h-[220px] overflow-hidden rounded-xl
-              bg-cover bg-center
-              sm:h-[300px] sm:rounded-2xl
-              md:h-[380px]
-            "
-            style={{
-              backgroundImage: `url(${quality})`,
-            }}
-          >
+            {/* CUSTOMER FIRST */}
+            <div className="group relative overflow-hidden rounded-3xl">
 
-            <div className="absolute inset-0 bg-black/40" />
+              <img
+                src={customer}
+                alt="Customer First"
+                className="h-[340px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[400px] md:h-[430px]"
+              />
 
-            <div className="absolute bottom-0 left-0 right-0 p-2 text-white sm:p-4 md:p-6">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-              <h3 className="mb-1 text-[11px] font-bold sm:text-base md:text-xl">
-                Quality & Trust
-              </h3>
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
 
-              <p className="text-[8px] leading-3 text-white/90 sm:text-xs sm:leading-5 md:text-sm">
-                Quality products and honest service.
-              </p>
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
+
+                  <CheckCircle2 size={19} />
+
+                </div>
+
+                <h3 className="text-xl font-bold">
+                  Customer First
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-white/80">
+                  Your satisfaction is always our priority.
+                </p>
+
+              </div>
 
             </div>
 
-          </div>
+
+            {/* QUALITY */}
+            <div className="group relative overflow-hidden rounded-3xl">
+
+              <img
+                src={quality}
+                alt="Quality and Trust"
+                className="h-[340px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[400px] md:h-[430px]"
+              />
+
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
+
+                  <ShieldCheck size={19} />
+
+                </div>
+
+                <h3 className="text-xl font-bold">
+                  Quality & Trust
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-white/80">
+                  Quality products and honest service.
+                </p>
+
+              </div>
+
+            </div>
 
 
-          {/* Easy Shopping */}
+            {/* EASY SHOPPING */}
+            <div className="group relative overflow-hidden rounded-3xl">
 
-          <div
-            className="
-              relative h-[220px] overflow-hidden rounded-xl
-              bg-cover bg-center
-              sm:h-[300px] sm:rounded-2xl
-              md:h-[380px]
-            "
-            style={{
-              backgroundImage: `url(${easy})`,
-            }}
-          >
+              <img
+                src={easy}
+                alt="Easy Shopping"
+                className="h-[340px] w-full object-cover transition duration-500 group-hover:scale-105 sm:h-[400px] md:h-[430px]"
+              />
 
-            <div className="absolute inset-0 bg-black/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
 
-            <div className="absolute bottom-0 left-0 right-0 p-2 text-white sm:p-4 md:p-6">
+              <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
 
-              <h3 className="mb-1 text-[11px] font-bold sm:text-base md:text-xl">
-                Easy Shopping
-              </h3>
+                <div className="mb-3 flex h-10 w-10 items-center justify-center rounded-xl bg-white/20 backdrop-blur">
 
-              <p className="text-[8px] leading-3 text-white/90 sm:text-xs sm:leading-5 md:text-sm">
-                Everything you need in one place.
-              </p>
+                  <ArrowRight size={19} />
+
+                </div>
+
+                <h3 className="text-xl font-bold">
+                  Easy Shopping
+                </h3>
+
+                <p className="mt-2 text-sm leading-6 text-white/80">
+                  Everything you need in one convenient place.
+                </p>
+
+              </div>
 
             </div>
 
@@ -431,36 +527,40 @@ function About() {
       {/* =====================================================
           CTA
       ===================================================== */}
+      <section className="px-5 pb-12 sm:px-6 md:px-10 md:pb-16">
 
-      <section className="mx-auto max-w-7xl px-4 pb-10 sm:px-6 sm:pb-12 lg:px-8">
+        <div className="relative mx-auto max-w-7xl overflow-hidden rounded-[2rem] bg-[#fff3ef] px-6 py-12 text-center sm:px-10 md:py-16">
 
-        <div className="rounded-2xl bg-[#fff3ef] px-5 py-10 text-center sm:px-6 sm:py-12 md:py-14">
+          {/* Decorative circles */}
+          <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-red-100/70" />
 
-          <p className="mb-2 text-xs font-semibold text-red-500 sm:text-sm">
-            START SHOPPING
-          </p>
+          <div className="absolute -bottom-28 -left-20 h-64 w-64 rounded-full bg-orange-100/60" />
 
-          <h2 className="mb-3 text-2xl font-bold text-slate-900 sm:text-3xl md:text-4xl">
-            Ready to Find Something You Love?
-          </h2>
 
-          <p className="mx-auto mb-6 max-w-xl text-sm leading-6 text-slate-500 sm:mb-7 sm:text-base">
-            Explore our collection and discover quality products,
-            great prices and everything you need in one place.
-          </p>
+          <div className="relative z-10">
 
-          <Link
-            to="/products"
-            className="
-              inline-flex items-center gap-2 rounded-lg
-              bg-red-500 px-6 py-3 text-sm font-semibold
-              text-white transition hover:bg-red-600
-              sm:px-7
-            "
-          >
-            Shop Now
-            <ArrowRight size={18} />
-          </Link>
+            <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-red-500">
+              Start Shopping
+            </span>
+
+            <h2 className="mx-auto mt-3 max-w-2xl text-2xl font-extrabold tracking-tight text-slate-900 sm:text-3xl md:text-4xl">
+              Ready To Find Something You Love?
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-500 sm:text-base">
+              Explore our collection and discover quality products,
+              great prices and everything you need in one place.
+            </p>
+
+            <Link
+              to="/products"
+              className="mt-7 inline-flex items-center gap-2 rounded-xl bg-red-500 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-200 transition duration-300 hover:-translate-y-0.5 hover:bg-red-600 hover:shadow-xl"
+            >
+              Shop Now
+              <ArrowRight size={18} />
+            </Link>
+
+          </div>
 
         </div>
 
@@ -471,3 +571,4 @@ function About() {
 }
 
 export default About;
+

@@ -1,288 +1,402 @@
+
 import {
   Mail,
   Phone,
   MapPin,
   Clock,
   ArrowRight,
-} from "lucide-react"
+  Send,
+} from "lucide-react";
 
 import {
   FaFacebookF,
   FaInstagram,
   FaTwitter,
   FaLinkedinIn,
-} from "react-icons/fa"
+} from "react-icons/fa";
+
 import { Link } from "react-router-dom";
-
-
-import contactImg from "../assets/contact.jpg"
-
+import contactImg from "../assets/contact.jpg";
 
 function Contact() {
   return (
-    <div className="w-full bg-white">
+    <div className="w-full bg-white text-slate-900">
 
-      {/* ================= HERO ================= */}
-<section className="relative overflow-hidden  bg-[#fff3ef] px-4 py-10 md:px-10 md:py-12">
+      {/* =====================================================
+          HERO SECTION
+      ===================================================== */}
+      <section className="relative overflow-hidden bg-[#fff3ef]">
 
-  {/* Background Image */}
-  <div
-className="pointer-events-none absolute inset-0 bg-contain bg-right bg-no-repeat opacity-60 md:bg-[length:auto_100%]"    style={{
-      backgroundImage: `url(${contactImg})`,
-    }}
-  />
+        <div className="mx-auto max-w-7xl px-5 py-12 md:px-10 md:py-16">
 
-  {/* Content */}
-  <div className="relative z-10 grid grid-cols-1 items-center md:grid-cols-2">
+          <div className="relative grid items-center gap-10 md:grid-cols-2 md:gap-6">
 
-    {/* Text */}
-    <div className="text-center md:text-left">
+            {/* HERO CONTENT */}
+            <div className="relative z-10 max-w-xl">
 
-      <p className="mb-3 text-sm font-bold uppercase tracking-wide text-red-500">
-        Contact Us
-      </p>
+              <div className="mb-5 inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 shadow-sm">
 
-      <h1 className="mb-5 text-lg font-bold leading-tight text-slate-900 md:text-5xl">
-        We'd Love To
-        <br />
-        <span className="text-red-500">
-          Hear From You
-        </span>
-      </h1>
+                <span className="h-2 w-2 rounded-full bg-red-500"></span>
 
-      <p className="max-w-xl text-sm leading-7 ">
-        Have a question or need help?
-        Feel free to reach out to our team.
-        We're always happy to help you with your shopping experience.
-      </p>
+                <span className="text-xs font-bold uppercase tracking-[0.18em] text-red-500">
+                  Contact Us
+                </span>
+
+              </div>
+
+              <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-slate-900 md:text-6xl">
+
+                We'd Love To
+
+                <span className="block text-red-500">
+                  Hear From You
+                </span>
+
+              </h1>
+
+              <p className="mt-6 max-w-lg text-sm leading-7 text-slate-600 md:text-base">
+                Have a question about your order, products, or shopping
+                experience? Our friendly support team is always ready to
+                help you.
+              </p>
+
+              {/* HERO BUTTONS */}
+              <div className="mt-8 flex flex-wrap gap-3">
+
+                <a
+                  href="mailto:support@shopease.com"
+                  className="inline-flex items-center gap-2 rounded-lg bg-red-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-200 transition duration-300 hover:bg-red-600 hover:shadow-xl"
+                >
+                  <Mail size={17} />
+                  Email Us
+                </a>
+
+                <a
+                  href="tel:+923001234567"
+                  className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 transition duration-300 hover:border-red-200 hover:text-red-500"
+                >
+                  <Phone size={17} />
+                  Call Us
+                </a>
+
+              </div>
+
+            </div>
+
+
+            {/* HERO IMAGE */}
+            <div className="relative flex justify-center md:justify-end">
+
+              {/* Decorative Circle */}
+              <div className="absolute right-5 top-1/2 h-64 w-64 -translate-y-1/2 rounded-full bg-red-100 blur-3xl"></div>
+
+              <img
+                src={contactImg}
+                alt="Contact ShopEase"
+                className="relative z-10 h-[280px] w-full max-w-md rounded-3xl object-cover shadow-2xl md:h-[380px]"
+              />
+
+              {/* FLOATING BADGE */}
+              <div className="absolute -bottom-5 left-3 z-20 flex items-center gap-3 rounded-2xl bg-white px-5 py-4 shadow-xl md:left-0">
+
+                <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-red-50">
+                  <Send
+                    size={20}
+                    className="text-red-500"
+                  />
+                </div>
+
+                <div>
+                  <p className="text-xs text-slate-400">
+                    Quick Support
+                  </p>
+
+                  <p className="text-sm font-bold text-slate-900">
+                    We're here for you
+                  </p>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CONTACT INFO + SOCIAL MEDIA
+      ===================================================== */}
+      <section className="bg-[#fffaf8] py-16 md:py-20">
+
+        <div className="mx-auto max-w-7xl px-5 md:px-10">
+
+          {/* SECTION HEADING */}
+          <div className="mx-auto mb-12 max-w-2xl text-center">
+
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-red-500">
+              Get In Touch
+            </span>
+
+            <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 md:text-4xl">
+              We're Here To Help
+            </h2>
+
+            <p className="mt-4 text-sm leading-6 text-slate-500 md:text-base">
+              Have a question or need assistance? Reach out to us anytime.
+              Our team is always happy to help.
+            </p>
+
+          </div>
+
+
+          {/* =================================================
+              CONTACT CARDS
+          ================================================= */}
+          <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+            {/* EMAIL */}
+            <div className="group rounded-2xl border border-slate-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-lg">
+
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 transition duration-300 group-hover:bg-red-500">
+
+                <Mail
+                  size={23}
+                  className="text-red-500 transition group-hover:text-white"
+                />
+
+              </div>
+
+              <h3 className="mb-2 text-base font-bold text-slate-900">
+                Email Us
+              </h3>
+
+              <p className="mb-1 text-xs text-slate-400">
+                Send us an email
+              </p>
+
+              <a
+                href="mailto:support@shopease.com"
+                className="text-sm font-medium text-slate-600 transition hover:text-red-500"
+              >
+                support@shopease.com
+              </a>
+
+            </div>
+
+
+            {/* PHONE */}
+            <div className="group rounded-2xl border border-slate-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-lg">
+
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 transition duration-300 group-hover:bg-red-500">
+
+                <Phone
+                  size={23}
+                  className="text-red-500 transition group-hover:text-white"
+                />
+
+              </div>
+
+              <h3 className="mb-2 text-base font-bold text-slate-900">
+                Call Us
+              </h3>
+
+              <p className="mb-1 text-xs text-slate-400">
+                Mon - Sat support
+              </p>
+
+              <a
+                href="tel:+923001234567"
+                className="text-sm font-medium text-slate-600 transition hover:text-red-500"
+              >
+                +92 300 1234567
+              </a>
+
+            </div>
+
+
+            {/* LOCATION */}
+            <div className="group rounded-2xl border border-slate-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-lg">
+
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 transition duration-300 group-hover:bg-red-500">
+
+                <MapPin
+                  size={23}
+                  className="text-red-500 transition group-hover:text-white"
+                />
+
+              </div>
+
+              <h3 className="mb-2 text-base font-bold text-slate-900">
+                Our Location
+              </h3>
+
+              <p className="mb-1 text-xs text-slate-400">
+                Visit our office
+              </p>
+
+              <p className="text-sm font-medium text-slate-600">
+                Lahore, Pakistan
+              </p>
+
+            </div>
+
+
+            {/* WORKING HOURS */}
+            <div className="group rounded-2xl border border-slate-100 bg-white p-7 text-center shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red-100 hover:shadow-lg">
+
+              <div className="mx-auto mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-red-50 transition duration-300 group-hover:bg-red-500">
+
+                <Clock
+                  size={23}
+                  className="text-red-500 transition group-hover:text-white"
+                />
+
+              </div>
+
+              <h3 className="mb-2 text-base font-bold text-slate-900">
+                Working Hours
+              </h3>
+
+              <p className="mb-1 text-xs text-slate-400">
+                We're available
+              </p>
+
+              <p className="text-sm font-medium text-slate-600">
+                Mon - Sat, 9 AM - 6 PM
+              </p>
+
+            </div>
+
+          </div>
+
+
+          {/* =================================================
+              SOCIAL MEDIA
+          ================================================= */}
+          <div className="mt-12 border-t border-red-100 pt-10 text-center">
+
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-red-500">
+              Follow Us
+            </span>
+
+            <h3 className="mt-2 text-2xl font-extrabold text-slate-900 md:text-3xl">
+              Stay Connected With ShopEase
+            </h3>
+
+            <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500">
+              Follow us for new products, special offers and latest updates.
+            </p>
+
+
+            {/* SOCIAL ICONS */}
+            <div className="mt-6 flex justify-center gap-3">
+
+              {/* FACEBOOK */}
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition duration-300 hover:border-red-500 hover:bg-red-500 hover:text-white"
+              >
+                <FaFacebookF size={16} />
+              </a>
+
+
+              {/* INSTAGRAM */}
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Instagram"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition duration-300 hover:border-red-500 hover:bg-red-500 hover:text-white"
+              >
+                <FaInstagram size={17} />
+              </a>
+
+
+              {/* TWITTER */}
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Twitter"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition duration-300 hover:border-red-500 hover:bg-red-500 hover:text-white"
+              >
+                <FaTwitter size={16} />
+              </a>
+
+
+              {/* LINKEDIN */}
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-slate-200 bg-white text-slate-600 transition duration-300 hover:border-red-500 hover:bg-red-500 hover:text-white"
+              >
+                <FaLinkedinIn size={16} />
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+      {/* =====================================================
+          CTA SECTION
+      ===================================================== */}
+      <section className="mx-auto max-w-7xl px-5 py-16 md:px-10">
+
+        <div className="relative overflow-hidden rounded-3xl bg-[#fff3ef] px-6 py-12 text-center md:px-10 md:py-14">
+
+          {/* DECORATIVE CIRCLES */}
+          <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-red-100"></div>
+
+          <div className="absolute -bottom-24 -left-16 h-48 w-48 rounded-full bg-red-100"></div>
+
+
+          <div className="relative z-10">
+
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-red-500">
+              Start Shopping
+            </span>
+
+            <h2 className="mt-3 text-2xl font-extrabold text-slate-900 md:text-4xl">
+              Ready To Start Shopping?
+            </h2>
+
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-6 text-slate-500 md:text-base">
+              Explore our latest products and discover something you'll
+              absolutely love.
+            </p>
+
+
+            <Link
+              to="/products"
+              className="mt-7 inline-flex items-center gap-2 rounded-lg bg-red-500 px-7 py-3.5 text-sm font-bold text-white shadow-lg shadow-red-200 transition duration-300 hover:bg-red-600 hover:shadow-xl"
+            >
+              Shop Now
+              <ArrowRight size={18} />
+            </Link>
+
+          </div>
+
+        </div>
+
+      </section>
 
     </div>
-
-  </div>
-
-</section>
-
-
-
-
-      {/* ================= CONTACT INFO ================= */}
-      <section className="py-6 md:py-10">
-
-        <div className="text-center mb-10">
-
-          <p className="text-red-500 text-sm font-bold uppercase tracking-wide mb-2">
-            Get In Touch
-          </p>
-
-          <h2 className="text-lg md:text-4xl font-bold text-slate-900">
-            We're Here To Help
-          </h2>
-
-          <p className="text-slate-500 mt-3">
-            Reach out to us whenever you need assistance.
-          </p>
-
-        </div>
-
-
-        {/* Contact Cards */}
-        <div className="grid grid-cols-2  lg:grid-cols-4 gap-5">
-
-
-          {/* Email */}
-          <div className="border border-slate-200 rounded-xl p-6 text-center hover:shadow-md transition duration-300">
-
-            <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-
-              <Mail
-                size={23}
-                className="text-red-500"
-              />
-
-            </div>
-
-            <h3 className="font-bold text-slate-900 mb-2">
-              Email
-            </h3>
-
-            <p className="text-sm text-slate-500">
-              support@shopease.com
-            </p>
-
-          </div>
-
-
-          {/* Phone */}
-          <div className="border border-slate-200 rounded-xl p-6 text-center hover:shadow-md transition duration-300">
-
-            <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-
-              <Phone
-                size={23}
-                className="text-red-500"
-              />
-
-            </div>
-
-            <h3 className="font-bold text-slate-900 mb-2">
-              Phone
-            </h3>
-
-            <p className="text-sm text-slate-500">
-              +92 300 1234567
-            </p>
-
-          </div>
-
-
-          {/* Location */}
-          <div className="border border-slate-200 rounded-xl p-6 text-center hover:shadow-md transition duration-300">
-
-            <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-
-              <MapPin
-                size={23}
-                className="text-red-500"
-              />
-
-            </div>
-
-            <h3 className="font-bold text-slate-900 mb-2">
-              Location
-            </h3>
-
-            <p className="text-sm text-slate-500">
-              Lahore, Pakistan
-            </p>
-
-          </div>
-
-
-          {/* Working Hours */}
-          <div className="border border-slate-200 rounded-xl p-6 text-center hover:shadow-md transition duration-300">
-
-            <div className="w-12 h-12 bg-red-50 rounded-full flex items-center justify-center mx-auto mb-4">
-
-              <Clock
-                size={23}
-                className="text-red-500"
-              />
-
-            </div>
-
-            <h3 className="font-bold text-slate-900 mb-2">
-              Working Hours
-            </h3>
-
-            <p className="text-sm text-slate-500">
-              Mon - Sat, 9 AM - 6 PM
-            </p>
-
-          </div>
-
-        </div>
-
-      </section>
-
-
-      {/* ================= SOCIAL MEDIA ================= */}
-      <section className="bg-slate-50 rounded-2xl py-6 md:py-1 px-2 text-center">
-
-        <p className="text-red-500 text-sm font-bold uppercase tracking-wide mb-2">
-          Follow Us
-        </p>
-
-        <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-3">
-          Stay Connected With ShopEase
-        </h2>
-
-        <p className="text-slate-500 mb-8">
-          Follow us for new products, special offers and updates.
-        </p>
-
-
-        <div className="flex justify-center gap-4">
-
-          {/* Facebook */}
-          <a
-            href="https://facebook.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Facebook"
-            className="w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-700 hover:text-red-500 hover:border-red-200 hover:shadow-sm transition duration-300"
-          >
-            <FaFacebookF size={18} />
-          </a>
-
-
-          {/* Instagram */}
-          <a
-            href="https://instagram.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Instagram"
-            className="w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-700 hover:text-red-500 hover:border-red-200 hover:shadow-sm transition duration-300"
-          >
-            <FaInstagram size={19} />
-          </a>
-
-
-          {/* Twitter */}
-          <a
-            href="https://twitter.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="Twitter"
-            className="w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-700 hover:text-red-500 hover:border-red-200 hover:shadow-sm transition duration-300"
-          >
-            <FaTwitter size={18} />
-          </a>
-
-
-          {/* LinkedIn */}
-          <a
-            href="https://linkedin.com"
-            target="_blank"
-            rel="noreferrer"
-            aria-label="LinkedIn"
-            className="w-12 h-12 bg-white border border-slate-200 rounded-full flex items-center justify-center text-slate-700 hover:text-red-500 hover:border-red-200 hover:shadow-sm transition duration-300"
-          >
-            <FaLinkedinIn size={18} />
-          </a>
-
-        </div>
-
-      </section>
-
-
-      {/* ================= CTA ================= */}
-      <section className="bg-[#fff3ef] rounded-2xl py-10 md:py-12 px-6 text-center my-10">
-
-        <p className="text-red-500 font-semibold mb-2">
-          START SHOPPING
-        </p>
-
-        <h2 className="text-2xl md:text-3xl font-bold text-slate-900 mb-3">
-          Ready To Start Shopping?
-        </h2>
-
-        <p className="text-slate-500 max-w-xl mx-auto mb-6">
-          Explore our products and discover something you'll love.
-        </p>
- 
-        <Link to="/products" className="inline-flex items-center gap-2 bg-red-500 hover:bg-red-600 text-white font-semibold px-7 py-3 rounded-lg transition duration-300">
-
-          Shop Now
-
-          <ArrowRight size={18} />
-
-        </Link>
-
-      </section>
-
-    </div>
-  )
+  );
 }
 
+export default Contact;
 
-export default Contact

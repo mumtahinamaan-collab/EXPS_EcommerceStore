@@ -8,7 +8,7 @@ env/
 
 # Django
 db.sqlite3
-media/
+
 staticfiles/
 
 # React / Node

@@ -64,7 +64,7 @@ function Contact() {
               <div className="mt-8 flex flex-wrap gap-3">
 
                 <a
-                  href="mailto:support@shopease.com"
+                  href="mailto:support@shopora.com"
                   className="inline-flex items-center gap-2 rounded-lg bg-red-500 px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-red-200 transition duration-300 hover:bg-red-600 hover:shadow-xl"
                 >
                   <Mail size={17} />
@@ -92,7 +92,7 @@ function Contact() {
 
               <img
                 src={contactImg}
-                alt="Contact ShopEase"
+                alt="Contact Shopora"
                 className="relative z-10 h-[280px] w-full max-w-md rounded-3xl object-cover shadow-2xl md:h-[380px]"
               />
 
@@ -179,10 +179,10 @@ function Contact() {
               </p>
 
               <a
-                href="mailto:support@shopease.com"
+                href="mailto:support@shopora.com"
                 className="text-sm font-medium text-slate-600 transition hover:text-red-500"
               >
-                support@shopease.com
+                support@shopora.com
               </a>
 
             </div>
@@ -284,7 +284,7 @@ function Contact() {
             </span>
 
             <h3 className="mt-2 text-2xl font-extrabold text-slate-900 md:text-3xl">
-              Stay Connected With ShopEase
+              Stay Connected With Shopora
             </h3>
 
             <p className="mx-auto mt-3 max-w-xl text-sm text-slate-500">

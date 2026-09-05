@@ -68,7 +68,7 @@ function About() {
               </p>
 
               <p className="mt-4 max-w-lg text-sm leading-7 text-slate-500 sm:text-base">
-                From everyday essentials to products you love, ShopEase
+                From everyday essentials to products you love, Shopora
                 brings everything together in one convenient place.
               </p>
 
@@ -99,7 +99,7 @@ function About() {
 
                 <img
                   src={heroimg}
-                  alt="ShopEase Shopping"
+                  alt="Shopora Shopping"
                   className="h-[300px] w-full object-cover sm:h-[380px] md:h-[430px]"
                 />
 
@@ -204,7 +204,7 @@ function About() {
               <div className="mt-6 space-y-4 text-sm leading-7 text-slate-600 sm:text-base">
 
                 <p>
-                  ShopEase was created with one simple goal — to make
+                  Shopora was created with one simple goal — to make
                   online shopping easy, convenient and enjoyable for
                   everyone.
                 </p>
@@ -273,7 +273,7 @@ function About() {
           <div className="mx-auto mb-12 max-w-2xl text-center">
 
             <span className="text-[11px] font-bold uppercase tracking-[0.22em] text-red-500">
-              Why ShopEase
+              Why Shopora
             </span>
 
             <h2 className="mt-3 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-4xl">

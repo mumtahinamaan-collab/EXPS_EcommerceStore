@@ -42,7 +42,7 @@ function About() {
                 <span className="h-2 w-2 rounded-full bg-red-500" />
 
                 <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-red-500 sm:text-xs">
-                  About Shop<span className="text-slate-900">Ease</span>
+                  About SHOPORA
                 </span>
 
               </div>

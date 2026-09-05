@@ -42,7 +42,20 @@ export default function Hero() {
         {heroImages.map((image, index) => (
           <div
             key={index}
-            className="min-w-full h-[240px] sm:h-[300px] md:h-[320px] bg-cover bg-center bg-no-repeat"
+            className="    min-w-full
+    h-[180px]
+    sm:h-[260px]
+    md:h-[360px]
+    lg:h-[420px]
+    w-full
+    bg-cover
+    bg-center
+    bg-no-repeat
+    rounded-xl
+    sm:rounded-2xl
+    my-2
+    sm:my-4
+    md:mx-4"
             style={{
               backgroundImage: `url(${image})`,
             }}
